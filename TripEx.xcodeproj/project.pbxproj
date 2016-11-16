@@ -1,0 +1,323 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */; };
+		653D5F3D1DDC240600BC0E85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F3C1DDC240600BC0E85 /* ViewController.swift */; };
+		653D5F401DDC240600BC0E85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F3E1DDC240600BC0E85 /* Main.storyboard */; };
+		653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F411DDC240600BC0E85 /* TripEx.xcdatamodeld */; };
+		653D5F451DDC240600BC0E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F441DDC240600BC0E85 /* Assets.xcassets */; };
+		653D5F481DDC240600BC0E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		653D5F371DDC240600BC0E85 /* TripEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		653D5F3C1DDC240600BC0E85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		653D5F3F1DDC240600BC0E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		653D5F421DDC240600BC0E85 /* TripEx.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TripEx.xcdatamodel; sourceTree = "<group>"; };
+		653D5F441DDC240600BC0E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		653D5F471DDC240600BC0E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		653D5F491DDC240600BC0E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		653D5F341DDC240600BC0E85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		653D5F2E1DDC240600BC0E85 = {
+			isa = PBXGroup;
+			children = (
+				653D5F391DDC240600BC0E85 /* TripEx */,
+				653D5F381DDC240600BC0E85 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		653D5F381DDC240600BC0E85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				653D5F371DDC240600BC0E85 /* TripEx.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		653D5F391DDC240600BC0E85 /* TripEx */ = {
+			isa = PBXGroup;
+			children = (
+				653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */,
+				653D5F3C1DDC240600BC0E85 /* ViewController.swift */,
+				653D5F3E1DDC240600BC0E85 /* Main.storyboard */,
+				653D5F441DDC240600BC0E85 /* Assets.xcassets */,
+				653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */,
+				653D5F491DDC240600BC0E85 /* Info.plist */,
+				653D5F411DDC240600BC0E85 /* TripEx.xcdatamodeld */,
+			);
+			path = TripEx;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		653D5F361DDC240600BC0E85 /* TripEx */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 653D5F4C1DDC240600BC0E85 /* Build configuration list for PBXNativeTarget "TripEx" */;
+			buildPhases = (
+				653D5F331DDC240600BC0E85 /* Sources */,
+				653D5F341DDC240600BC0E85 /* Frameworks */,
+				653D5F351DDC240600BC0E85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TripEx;
+			productName = TripEx;
+			productReference = 653D5F371DDC240600BC0E85 /* TripEx.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		653D5F2F1DDC240600BC0E85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0810;
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = "Darryl Lopez";
+				TargetAttributes = {
+					653D5F361DDC240600BC0E85 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 653D5F321DDC240600BC0E85 /* Build configuration list for PBXProject "TripEx" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 653D5F2E1DDC240600BC0E85;
+			productRefGroup = 653D5F381DDC240600BC0E85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				653D5F361DDC240600BC0E85 /* TripEx */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		653D5F351DDC240600BC0E85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653D5F481DDC240600BC0E85 /* LaunchScreen.storyboard in Resources */,
+				653D5F451DDC240600BC0E85 /* Assets.xcassets in Resources */,
+				653D5F401DDC240600BC0E85 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		653D5F331DDC240600BC0E85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653D5F3D1DDC240600BC0E85 /* ViewController.swift in Sources */,
+				653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */,
+				653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		653D5F3E1DDC240600BC0E85 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				653D5F3F1DDC240600BC0E85 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				653D5F471DDC240600BC0E85 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		653D5F4A1DDC240600BC0E85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		653D5F4B1DDC240600BC0E85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		653D5F4D1DDC240600BC0E85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TripEx/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.missouri.cs.TripEx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		653D5F4E1DDC240600BC0E85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TripEx/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = edu.missouri.cs.TripEx;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		653D5F321DDC240600BC0E85 /* Build configuration list for PBXProject "TripEx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				653D5F4A1DDC240600BC0E85 /* Debug */,
+				653D5F4B1DDC240600BC0E85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		653D5F4C1DDC240600BC0E85 /* Build configuration list for PBXNativeTarget "TripEx" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				653D5F4D1DDC240600BC0E85 /* Debug */,
+				653D5F4E1DDC240600BC0E85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		653D5F411DDC240600BC0E85 /* TripEx.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				653D5F421DDC240600BC0E85 /* TripEx.xcdatamodel */,
+			);
+			currentVersion = 653D5F421DDC240600BC0E85 /* TripEx.xcdatamodel */;
+			path = TripEx.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 653D5F2F1DDC240600BC0E85 /* Project object */;
+}
