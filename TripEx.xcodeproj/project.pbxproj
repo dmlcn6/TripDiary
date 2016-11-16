@@ -13,6 +13,7 @@
 		653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F411DDC240600BC0E85 /* TripEx.xcdatamodeld */; };
 		653D5F451DDC240600BC0E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F441DDC240600BC0E85 /* Assets.xcassets */; };
 		653D5F481DDC240600BC0E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */; };
+		653D5F501DDC267A00BC0E85 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		653D5F441DDC240600BC0E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		653D5F471DDC240600BC0E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		653D5F491DDC240600BC0E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 				653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */,
 				653D5F491DDC240600BC0E85 /* Info.plist */,
 				653D5F411DDC240600BC0E85 /* TripEx.xcdatamodeld */,
+				653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */,
 			);
 			path = TripEx;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				653D5F501DDC267A00BC0E85 /* DatabaseController.swift in Sources */,
 				653D5F3D1DDC240600BC0E85 /* ViewController.swift in Sources */,
 				653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */,
 				653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */,

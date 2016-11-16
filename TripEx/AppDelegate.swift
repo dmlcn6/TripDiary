@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  TripEx
 //
-//  Created by Darryl Lopez on 11/15/16.
-//  Copyright © 2016 Darryl Lopez. All rights reserved.
+//  Created by Keepsake on 11/15/16.
+//  Copyright © 2016 Keepsake. All rights reserved.
 //
 
 import UIKit
