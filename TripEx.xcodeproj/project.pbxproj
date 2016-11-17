@@ -13,6 +13,10 @@
 		653D5F451DDC240600BC0E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F441DDC240600BC0E85 /* Assets.xcassets */; };
 		653D5F481DDC240600BC0E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */; };
 		653D5F501DDC267A00BC0E85 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */; };
+		F53594B91DDE38DA0051B28C /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B51DDE38DA0051B28C /* RootTableViewController.swift */; };
+		F53594BA1DDE38DA0051B28C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B61DDE38DA0051B28C /* ProfileViewController.swift */; };
+		F53594BB1DDE38DA0051B28C /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B71DDE38DA0051B28C /* AddTripViewController.swift */; };
+		F53594BC1DDE38DA0051B28C /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B81DDE38DA0051B28C /* TripViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		653D5F471DDC240600BC0E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		653D5F491DDC240600BC0E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		F53594B51DDE38DA0051B28C /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
+		F53594B61DDE38DA0051B28C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F53594B71DDE38DA0051B28C /* AddTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
+		F53594B81DDE38DA0051B28C /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,10 @@
 			isa = PBXGroup;
 			children = (
 				653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */,
+				F53594B51DDE38DA0051B28C /* RootTableViewController.swift */,
+				F53594B61DDE38DA0051B28C /* ProfileViewController.swift */,
+				F53594B71DDE38DA0051B28C /* AddTripViewController.swift */,
+				F53594B81DDE38DA0051B28C /* TripViewController.swift */,
 				653D5F3E1DDC240600BC0E85 /* Main.storyboard */,
 				653D5F441DDC240600BC0E85 /* Assets.xcassets */,
 				653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */,
@@ -141,7 +153,11 @@
 			files = (
 				653D5F501DDC267A00BC0E85 /* DatabaseController.swift in Sources */,
 				653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */,
+				F53594BC1DDE38DA0051B28C /* TripViewController.swift in Sources */,
+				F53594BA1DDE38DA0051B28C /* ProfileViewController.swift in Sources */,
 				653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */,
+				F53594B91DDE38DA0051B28C /* RootTableViewController.swift in Sources */,
+				F53594BB1DDE38DA0051B28C /* AddTripViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +319,7 @@
 				653D5F4E1DDC240600BC0E85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
