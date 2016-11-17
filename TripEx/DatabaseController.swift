@@ -13,7 +13,7 @@ import CoreData
 
 class DatabaseController{
     
-    // MARK: - static class variables
+    
     
     static var persistentContainer: NSPersistentContainer = {
         /*
