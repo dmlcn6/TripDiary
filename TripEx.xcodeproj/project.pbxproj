@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */; };
-		653D5F3D1DDC240600BC0E85 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F3C1DDC240600BC0E85 /* ViewController.swift */; };
 		653D5F401DDC240600BC0E85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F3E1DDC240600BC0E85 /* Main.storyboard */; };
 		653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F411DDC240600BC0E85 /* TripEx.xcdatamodeld */; };
 		653D5F451DDC240600BC0E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F441DDC240600BC0E85 /* Assets.xcassets */; };
@@ -19,7 +18,6 @@
 /* Begin PBXFileReference section */
 		653D5F371DDC240600BC0E85 /* TripEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		653D5F3C1DDC240600BC0E85 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		653D5F3F1DDC240600BC0E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		653D5F421DDC240600BC0E85 /* TripEx.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TripEx.xcdatamodel; sourceTree = "<group>"; };
 		653D5F441DDC240600BC0E85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 			isa = PBXGroup;
 			children = (
 				653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */,
-				653D5F3C1DDC240600BC0E85 /* ViewController.swift */,
 				653D5F3E1DDC240600BC0E85 /* Main.storyboard */,
 				653D5F441DDC240600BC0E85 /* Assets.xcassets */,
 				653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */,
@@ -143,7 +140,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				653D5F501DDC267A00BC0E85 /* DatabaseController.swift in Sources */,
-				653D5F3D1DDC240600BC0E85 /* ViewController.swift in Sources */,
 				653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */,
 				653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */,
 			);

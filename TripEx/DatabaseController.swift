@@ -10,13 +10,10 @@ import Foundation
 import CoreData
 
 //added Dev branch to Git
-// MARK: - Core Data stack
 
 class DatabaseController{
     
-    private init(){
-        
-    }
+    // MARK: - static class variables
     
     static var persistentContainer: NSPersistentContainer = {
         /*
@@ -45,6 +42,20 @@ class DatabaseController{
         return container
     }()
     
+    
+    // MARK: - Private Initializer
+    
+    private init(){
+        
+    }
+    
+    
+    // MARK: - Core Data Context getter
+    
+    class func getContext() -> NSManagedObjectContext{
+        return self.persistentContainer.viewContext
+    }
+
     
     // MARK: - Core Data Saving support
     

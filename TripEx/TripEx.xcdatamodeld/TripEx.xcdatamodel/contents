@@ -9,7 +9,7 @@
         <attribute name="tripLocation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tripLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="tripTitle" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="tripMemories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TripMemory" inverseName="memTrip" inverseEntity="TripMemory" syncable="YES"/>
+        <relationship name="tripMemories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TripMemory" inverseName="memTrip" inverseEntity="TripMemory" syncable="YES"/>
     </entity>
     <entity name="TripMemory" representedClassName="TripMemory" syncable="YES" codeGenerationType="class">
         <attribute name="memDate" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
@@ -17,12 +17,12 @@
         <attribute name="memLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="memNote" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="memTitle" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="memPhotos" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MemoryPhoto" inverseName="associatedMemories" inverseEntity="MemoryPhoto" syncable="YES"/>
+        <relationship name="memPhotos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MemoryPhoto" inverseName="associatedMemories" inverseEntity="MemoryPhoto" syncable="YES"/>
         <relationship name="memTrip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="tripMemories" inverseEntity="Trip" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Trip" positionX="-279" positionY="69" width="128" height="118"/>
-        <element name="MemoryPhoto" positionX="115" positionY="54" width="128" height="73"/>
+        <element name="Trip" positionX="-279" positionY="-91" width="128" height="118"/>
+        <element name="MemoryPhoto" positionX="90" positionY="-90" width="128" height="73"/>
         <element name="TripMemory" positionX="-99" positionY="-108" width="128" height="148"/>
     </elements>
 </model>
