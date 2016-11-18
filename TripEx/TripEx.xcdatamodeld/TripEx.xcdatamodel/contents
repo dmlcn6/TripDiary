@@ -2,13 +2,14 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="MemoryPhoto" representedClassName="MemoryPhoto" syncable="YES" codeGenerationType="class">
         <attribute name="memPhotoName" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="associatedMemories" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TripMemory" inverseName="memPhotos" inverseEntity="TripMemory" syncable="YES"/>
+        <relationship name="associatedMemories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TripMemory" inverseName="memPhotos" inverseEntity="TripMemory" syncable="YES"/>
     </entity>
     <entity name="Trip" representedClassName="Trip" syncable="YES" codeGenerationType="class">
         <attribute name="tripLatitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="tripLocation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tripLongitude" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="tripTitle" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="tripCreator" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="userTrips" inverseEntity="User" syncable="YES"/>
         <relationship name="tripMemories" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TripMemory" inverseName="memTrip" inverseEntity="TripMemory" syncable="YES"/>
     </entity>
     <entity name="TripMemory" representedClassName="TripMemory" syncable="YES" codeGenerationType="class">
@@ -20,9 +21,15 @@
         <relationship name="memPhotos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="MemoryPhoto" inverseName="associatedMemories" inverseEntity="MemoryPhoto" syncable="YES"/>
         <relationship name="memTrip" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="tripMemories" inverseEntity="Trip" syncable="YES"/>
     </entity>
+    <entity name="User" representedClassName="User" syncable="YES" codeGenerationType="class">
+        <attribute name="userEmail" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="userTrips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trip" inverseName="tripCreator" inverseEntity="Trip" syncable="YES"/>
+    </entity>
     <elements>
-        <element name="Trip" positionX="-279" positionY="-91" width="128" height="118"/>
-        <element name="MemoryPhoto" positionX="90" positionY="-90" width="128" height="73"/>
-        <element name="TripMemory" positionX="-99" positionY="-108" width="128" height="148"/>
+        <element name="MemoryPhoto" positionX="-29" positionY="-99" width="128" height="73"/>
+        <element name="Trip" positionX="-63" positionY="-324" width="128" height="135"/>
+        <element name="TripMemory" positionX="-243" positionY="-171" width="128" height="148"/>
+        <element name="User" positionX="-270" positionY="-306" width="128" height="88"/>
     </elements>
 </model>
