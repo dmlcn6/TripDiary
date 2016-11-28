@@ -14,6 +14,8 @@
 		653D5F481DDC240600BC0E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */; };
 		653D5F501DDC267A00BC0E85 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */; };
 		65B13ECF1DDE489100BC8CCA /* TableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B13ECE1DDE489100BC8CCA /* TableCollectionViewController.swift */; };
+		65F2A7DA1DEBCC2600E6739C /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F2A7D91DEBCC2600E6739C /* TripCollectionViewCell.swift */; };
+		65F2A7DC1DEBCD5F00E6739C /* TripCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F2A7DB1DEBCD5F00E6739C /* TripCollectionViewController.swift */; };
 		65FCCFDF1DDE55C7003350E3 /* AddMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCCFDE1DDE55C7003350E3 /* AddMemoryViewController.swift */; };
 		F53594B91DDE38DA0051B28C /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B51DDE38DA0051B28C /* RootTableViewController.swift */; };
 		F53594BA1DDE38DA0051B28C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B61DDE38DA0051B28C /* ProfileViewController.swift */; };
@@ -31,6 +33,8 @@
 		653D5F491DDC240600BC0E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		65B13ECE1DDE489100BC8CCA /* TableCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCollectionViewController.swift; sourceTree = "<group>"; };
+		65F2A7D91DEBCC2600E6739C /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
+		65F2A7DB1DEBCD5F00E6739C /* TripCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCollectionViewController.swift; sourceTree = "<group>"; };
 		65FCCFDE1DDE55C7003350E3 /* AddMemoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoryViewController.swift; sourceTree = "<group>"; };
 		F53594B51DDE38DA0051B28C /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
 		F53594B61DDE38DA0051B28C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 				653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */,
 				653D5F491DDC240600BC0E85 /* Info.plist */,
 				653D5F411DDC240600BC0E85 /* TripEx.xcdatamodeld */,
+				65F2A7D91DEBCC2600E6739C /* TripCollectionViewCell.swift */,
+				65F2A7DB1DEBCD5F00E6739C /* TripCollectionViewController.swift */,
 			);
 			path = TripEx;
 			sourceTree = "<group>";
@@ -162,6 +168,8 @@
 				65B13ECF1DDE489100BC8CCA /* TableCollectionViewController.swift in Sources */,
 				653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */,
 				F53594BC1DDE38DA0051B28C /* TripViewController.swift in Sources */,
+				65F2A7DA1DEBCC2600E6739C /* TripCollectionViewCell.swift in Sources */,
+				65F2A7DC1DEBCD5F00E6739C /* TripCollectionViewController.swift in Sources */,
 				F53594BA1DDE38DA0051B28C /* ProfileViewController.swift in Sources */,
 				653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */,
 				F53594B91DDE38DA0051B28C /* RootTableViewController.swift in Sources */,

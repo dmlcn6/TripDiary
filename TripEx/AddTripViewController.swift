@@ -54,13 +54,12 @@ class AddTripViewController: UIViewController {
             
             do{
                 try context.save()
+                
+                performSegue(withIdentifier: "add", sender: self )
             }catch let error as NSError {
                 print("Error Saving \(error.userInfo)")
             }
-            
-            performSegue(withIdentifier: "add", sender: self )
 
-            
         }
         
     }
@@ -80,6 +79,14 @@ class AddTripViewController: UIViewController {
             if let dest = segue.destination as? AddMemoryViewController{
                 dest.parentTrip = trip
             }
+        }
+        else if segue.identifier == "show" {
+            print("it showed")
+            
+            if let dest = segue.destination as? TripViewController{
+                dest.title = "Trip Cover Photo"
+            }
+
         }
     
     }
