@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ms3-mZ-U6X">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ms3-mZ-U6X">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -27,7 +27,7 @@
             </objects>
             <point key="canvasLocation" x="-4073" y="-671"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--User Profile-->
         <scene sceneID="p9y-o3-TqH">
             <objects>
                 <viewController id="gIc-6b-LAS" customClass="ProfileViewController" customModule="TripEx" customModuleProvider="target" sceneMemberID="viewController">
@@ -38,13 +38,82 @@
                     <view key="view" contentMode="scaleToFill" id="JVv-ra-uxM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCT-Nc-aJL">
+                                <rect key="frame" x="16" y="72" width="59" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="59" id="Yh6-y6-dVk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDj-xq-p0R">
+                                <rect key="frame" x="16" y="101" width="59" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3a5-cI-x5k">
+                                <rect key="frame" x="16" y="286" width="343" height="332"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jSx-Js-CLw">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="332"/>
+                                    </mapView>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ap-QK-DBr">
+                                <rect key="frame" x="75" y="72" width="284" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PUN-KG-VZp">
+                                <rect key="frame" x="75" y="101" width="284" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZK-eV-Q3R">
+                                <rect key="frame" x="16" y="144" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Where I've Traveled" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6l-eg-quv">
+                                <rect key="frame" x="16" y="257" width="343" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fCT-Nc-aJL" firstAttribute="trailing" secondItem="lDj-xq-p0R" secondAttribute="trailing" id="4de-NC-grY"/>
+                            <constraint firstItem="3a5-cI-x5k" firstAttribute="bottom" secondItem="EDh-XS-UOO" secondAttribute="top" id="A7a-lE-4vf"/>
+                            <constraint firstItem="1ap-QK-DBr" firstAttribute="trailing" secondItem="PUN-KG-VZp" secondAttribute="trailing" id="Ir7-pS-8IO"/>
+                            <constraint firstItem="PUN-KG-VZp" firstAttribute="baseline" secondItem="lDj-xq-p0R" secondAttribute="baseline" id="JN3-WO-HlT"/>
+                            <constraint firstItem="1ap-QK-DBr" firstAttribute="baseline" secondItem="fCT-Nc-aJL" secondAttribute="baseline" id="QBU-ix-geq"/>
+                            <constraint firstItem="1ap-QK-DBr" firstAttribute="leading" secondItem="PUN-KG-VZp" secondAttribute="leading" id="Sht-OR-EHe"/>
+                            <constraint firstItem="PUN-KG-VZp" firstAttribute="trailing" secondItem="3a5-cI-x5k" secondAttribute="trailing" id="ehd-7u-iDZ"/>
+                            <constraint firstItem="lDj-xq-p0R" firstAttribute="top" secondItem="fCT-Nc-aJL" secondAttribute="bottom" constant="8" symbolic="YES" id="fJJ-UE-Mxz"/>
+                            <constraint firstItem="1ap-QK-DBr" firstAttribute="leading" secondItem="fCT-Nc-aJL" secondAttribute="trailing" id="lha-qz-Etn"/>
+                            <constraint firstItem="fCT-Nc-aJL" firstAttribute="leading" secondItem="lDj-xq-p0R" secondAttribute="leading" id="nIT-TO-l3Q"/>
+                            <constraint firstItem="fCT-Nc-aJL" firstAttribute="top" secondItem="uMO-w5-Ha1" secondAttribute="bottom" constant="8" symbolic="YES" id="nqK-l6-TPt"/>
+                            <constraint firstItem="lDj-xq-p0R" firstAttribute="leading" secondItem="3a5-cI-x5k" secondAttribute="leading" id="zTv-LK-6AR"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ffE-do-iXj"/>
+                    <navigationItem key="navigationItem" title="User Profile" id="ffE-do-iXj" colorLabel="IBBuiltInLabel-Orange"/>
+                    <connections>
+                        <outlet property="emailLabel" destination="PUN-KG-VZp" id="l4k-vm-yg2"/>
+                        <outlet property="nameLabel" destination="1ap-QK-DBr" id="J9h-YB-2iw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edg-0r-yvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3305" y="-672"/>
+            <point key="canvasLocation" x="-3306.4000000000001" y="-672.41379310344837"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="EEW-0t-nCL">
