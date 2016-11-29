@@ -13,20 +13,7 @@ class TripCollectionViewCell: UICollectionViewCell {
     
     var id:String!
     
+    
     @IBOutlet weak var imageView: UIImageView!
-    
-    var thumbnailImage: UIImage! {
-        didSet {
-            imageView.image = thumbnailImage
-        }
-    }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-        imageView.image = nil
-        
-    }
 
-    
-    
 }

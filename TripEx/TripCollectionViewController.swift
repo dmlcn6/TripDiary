@@ -25,7 +25,7 @@ class TripCollectionViewController: UICollectionViewController {
         self.collectionView!.register(TripCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         
         
-        var cell = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
+        let cell = self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
         
         if let cell = cell{
             cell.itemSize = CGSize(width: 100, height:100)
@@ -75,16 +75,20 @@ class TripCollectionViewController: UICollectionViewController {
         
         // Configure the cell
         
-        PHImageManager.default().requestImage(for: photoAssets[indexPath.row], targetSize: CGSize(width: 100, height: 100), contentMode: .aspectFit, options: nil)
-        {
-            
-            (image, _) -> Void in
-            //add image to cell image view
-            cell.backgroundColor = UIColor(patternImage: image!)
-            
-        }
-        
-        return cell
+            PHImageManager.default().requestImage(for: photoAssets[indexPath.row], targetSize: CGSize(width: 50, height: 50), contentMode: .aspectFit, options: nil)
+            {
+                
+                (image, _) in
+                print("hello \(image)")
+                print("cell \(cell.imageView)")
+                
+                //add image to cell image view
+                
+                cell.backgroundColor = UIColor(patternImage: image!)
+                //cell.imageView?.image = UIImage()
+                
+            }
+            return cell
     }
     
     // MARK: UICollectionViewDelegate
