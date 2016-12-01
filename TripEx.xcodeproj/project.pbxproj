@@ -14,6 +14,7 @@
 		653D5F481DDC240600BC0E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */; };
 		653D5F501DDC267A00BC0E85 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */; };
 		65A969951DEFCF9200708B2A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A969941DEFCF9200708B2A /* LoginViewController.swift */; };
+		65A969971DF0079400708B2A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A969961DF0079400708B2A /* SignupViewController.swift */; };
 		65B13ECF1DDE489100BC8CCA /* TableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B13ECE1DDE489100BC8CCA /* TableCollectionViewController.swift */; };
 		65FCCFDF1DDE55C7003350E3 /* AddMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCCFDE1DDE55C7003350E3 /* AddMemoryViewController.swift */; };
 		F53594B91DDE38DA0051B28C /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B51DDE38DA0051B28C /* RootTableViewController.swift */; };
@@ -32,6 +33,7 @@
 		653D5F491DDC240600BC0E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
 		65A969941DEFCF9200708B2A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		65A969961DF0079400708B2A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		65B13ECE1DDE489100BC8CCA /* TableCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCollectionViewController.swift; sourceTree = "<group>"; };
 		65FCCFDE1DDE55C7003350E3 /* AddMemoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoryViewController.swift; sourceTree = "<group>"; };
 		F53594B51DDE38DA0051B28C /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				653D5F491DDC240600BC0E85 /* Info.plist */,
 				653D5F411DDC240600BC0E85 /* TripEx.xcdatamodeld */,
 				65A969941DEFCF9200708B2A /* LoginViewController.swift */,
+				65A969961DF0079400708B2A /* SignupViewController.swift */,
 			);
 			path = TripEx;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			files = (
 				65FCCFDF1DDE55C7003350E3 /* AddMemoryViewController.swift in Sources */,
 				653D5F501DDC267A00BC0E85 /* DatabaseController.swift in Sources */,
+				65A969971DF0079400708B2A /* SignupViewController.swift in Sources */,
 				65B13ECF1DDE489100BC8CCA /* TableCollectionViewController.swift in Sources */,
 				653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */,
 				F53594BC1DDE38DA0051B28C /* TripViewController.swift in Sources */,
