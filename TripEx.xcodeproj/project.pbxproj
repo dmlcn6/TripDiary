@@ -53,9 +53,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6500F84E1DF20ACD00CABEA1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			path = TripEx;
+			sourceTree = "<group>";
+		};
 		653D5F2E1DDC240600BC0E85 = {
 			isa = PBXGroup;
 			children = (
+				6500F84E1DF20ACD00CABEA1 /* Images */,
 				653D5F391DDC240600BC0E85 /* TripEx */,
 				653D5F381DDC240600BC0E85 /* Products */,
 			);
