@@ -12,16 +12,24 @@ class AddMemoryViewController: UIViewController {
 
     var parentTrip:Trip?
     
+    
+    @IBOutlet weak var location: UITextField!
     @IBOutlet weak var titleText: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         if let parentTrip = parentTrip{
             titleText.text = parentTrip.tripTitle
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tabBarController?.tabBar.isHidden = true
+//        self.navigationController?.navigationBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,14 +38,13 @@ class AddMemoryViewController: UIViewController {
     }
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if (segue.identifier == "findLocation"), let destination = segue.destination as? FindLocationViewController {
+            destination.addMemoryController = self
+        }
     }
-    */
-
 }
