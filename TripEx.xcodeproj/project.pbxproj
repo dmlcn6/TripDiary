@@ -21,6 +21,8 @@
 		F53594BA1DDE38DA0051B28C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B61DDE38DA0051B28C /* ProfileViewController.swift */; };
 		F53594BB1DDE38DA0051B28C /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B71DDE38DA0051B28C /* AddTripViewController.swift */; };
 		F53594BC1DDE38DA0051B28C /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B81DDE38DA0051B28C /* TripViewController.swift */; };
+		F5545A341DF200AE0002C2C6 /* quickaction_icon_capturephoto_2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5545A331DF200AE0002C2C6 /* quickaction_icon_capturephoto_2x.png */; };
+		F5545A3E1DF208660002C2C6 /* Add Button Grey 5.png in Resources */ = {isa = PBXBuildFile; fileRef = F5545A3D1DF208660002C2C6 /* Add Button Grey 5.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		F53594B61DDE38DA0051B28C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F53594B71DDE38DA0051B28C /* AddTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
 		F53594B81DDE38DA0051B28C /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		F5545A331DF200AE0002C2C6 /* quickaction_icon_capturephoto_2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quickaction_icon_capturephoto_2x.png; sourceTree = "<group>"; };
+		F5545A3D1DF208660002C2C6 /* Add Button Grey 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Add Button Grey 5.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		653D5F2E1DDC240600BC0E85 = {
 			isa = PBXGroup;
 			children = (
+				F5545A321DF200A20002C2C6 /* Images */,
 				653D5F391DDC240600BC0E85 /* TripEx */,
 				653D5F381DDC240600BC0E85 /* Products */,
 			);
@@ -89,6 +94,15 @@
 				65A969961DF0079400708B2A /* SignupViewController.swift */,
 			);
 			path = TripEx;
+			sourceTree = "<group>";
+		};
+		F5545A321DF200A20002C2C6 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F5545A3D1DF208660002C2C6 /* Add Button Grey 5.png */,
+				F5545A331DF200AE0002C2C6 /* quickaction_icon_capturephoto_2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,9 +164,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5545A341DF200AE0002C2C6 /* quickaction_icon_capturephoto_2x.png in Resources */,
 				653D5F481DDC240600BC0E85 /* LaunchScreen.storyboard in Resources */,
 				653D5F451DDC240600BC0E85 /* Assets.xcassets in Resources */,
 				653D5F401DDC240600BC0E85 /* Main.storyboard in Resources */,
+				F5545A3E1DF208660002C2C6 /* Add Button Grey 5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
