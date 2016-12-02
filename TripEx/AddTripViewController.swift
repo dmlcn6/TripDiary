@@ -27,7 +27,8 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Do any additional setup after loading the view.
         imagePicker.delegate = self
         
-        //Add NEXT button that saves a Trip
+        //Add NEXT button 
+        //if button pressed, SAVE Trip
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(AddTripViewController.saveTrip))
         
     }
@@ -121,7 +122,7 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "add" {
+        if segue.identifier == "addTrip" {
             //saveTrip()
             print("it saved")
             
