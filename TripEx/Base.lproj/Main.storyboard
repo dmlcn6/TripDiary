@@ -177,7 +177,7 @@
                                 <rect key="frame" x="251" y="453" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
-                                    <segue destination="aKX-02-M3i" kind="show" id="zZv-Il-5qd"/>
+                                    <segue destination="aKX-02-M3i" kind="show" identifier="register" id="zZv-Il-5qd"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -454,7 +454,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omx-Ho-HzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2994.4000000000001" y="122.78860569715144"/>
+            <point key="canvasLocation" x="-2929" y="123"/>
         </scene>
         <!--Signup View Controller-->
         <scene sceneID="Xjn-mK-mvI">

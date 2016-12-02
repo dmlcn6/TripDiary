@@ -79,40 +79,44 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
                 }
             }
          }
-         */
+        */
     }
     
-    //If the User hits the NEXT button in Navigation
+    // If the User hits the NEXT button in Navigation
     func saveTrip(){
         let context = DatabaseController.getContext()
         
-        
-        //new trip
+        // new trip
         if trip == nil{
             trip = Trip(context: context)
         }
         
-        //old trip
+        // old trip
         if let trip = trip{
             trip.tripTitle = titleText.text!
             trip.tripLocation = locationText.text!
             trip.tripLatitude = 0
             trip.tripLongitude = 0
-            //trip.tripMemories
-            
-            //fetch trip cover photo from bundle
             
             
-            do{
-                try context.save()
+            
+            // Try to update the Trip contex with data in text fields
+            // perform addTrip segue
+            if(DatabaseController.saveContext() == true) {
+                print("Saving Trip \(trip.tripTitle)")
                 
-                performSegue(withIdentifier: "add", sender: self)
-            }catch let error as NSError {
-                print("Error Saving \(error.userInfo)")
+                //Trip save coverPhoto in bundle
+                
+                performSegue(withIdentifier: "addTrip", sender: self)
+            } else {
+                //create an alert to user that Trip didnt save
+                let failedAlert = UIAlertController(title: "Save Failed", message: "Trip failed to save in context. Please try again!", preferredStyle: .alert)
+                let okMessage = UIAlertAction(title: "Ok", style: .default, handler: nil)
+               
+                failedAlert.addAction(okMessage)
+                present(failedAlert, animated: true, completion: nil)
             }
-
         }
-        
     }
     
     // MARK: - Navigation
@@ -130,8 +134,7 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
                 dest.parentTrip = trip
             }
         }
-    
     }
     
-
+    
 }
