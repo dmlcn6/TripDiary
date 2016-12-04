@@ -10,7 +10,8 @@ import UIKit
 import MapKit
 
 class ProfileViewController: UIViewController {
-
+    
+    
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
@@ -19,8 +20,9 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //changes color of the nav bar at the top
+        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.00, green:0.70, blue:1.00, alpha:1.0)
     }
 
     override func didReceiveMemoryWarning() {
