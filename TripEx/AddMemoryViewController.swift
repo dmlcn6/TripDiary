@@ -1,10 +1,8 @@
-//
 //  AddMemoryViewController.swift
 //  TripEx
 //
 //  Created by Darryl Lopez on 11/17/16.
 //  Copyright © 2016 Darryl Lopez. All rights reserved.
-//
 
 import UIKit
 
@@ -13,6 +11,7 @@ class AddMemoryViewController: UIViewController {
     var parentTrip:Trip?
     
     
+    @IBOutlet weak var tripTitleTextfield: UITextField!
     @IBOutlet weak var location: UITextField!
     @IBOutlet weak var titleText: UITextField!
     
@@ -44,6 +43,9 @@ class AddMemoryViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "findLocation"), let destination = segue.destination as? FindLocationViewController {
+            destination.addMemoryController = self
+        }
+        if (segue.identifier == "selectTrip"), let destination = segue.destination as? SelectTripTableViewController {
             destination.addMemoryController = self
         }
     }
