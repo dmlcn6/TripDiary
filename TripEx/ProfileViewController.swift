@@ -15,6 +15,8 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
     
+    var currUser: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

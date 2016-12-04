@@ -11,7 +11,7 @@ import CoreData
 
 class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var currUser:User?
+    var currUser: User?
     var trip:Trip?
     
     @IBOutlet weak var titleText: UITextField!

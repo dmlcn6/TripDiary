@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6500F8521DF372A300CABEA1 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6500F8511DF372A300CABEA1 /* TripCollectionViewCell.swift */; };
+		6500F8541DF3DC0D00CABEA1 /* InitialTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6500F8531DF3DC0D00CABEA1 /* InitialTabBarController.swift */; };
 		653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */; };
 		653D5F401DDC240600BC0E85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F3E1DDC240600BC0E85 /* Main.storyboard */; };
 		653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F411DDC240600BC0E85 /* TripEx.xcdatamodeld */; };
@@ -24,6 +26,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6500F8511DF372A300CABEA1 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
+		6500F8531DF3DC0D00CABEA1 /* InitialTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTabBarController.swift; sourceTree = "<group>"; };
 		653D5F371DDC240600BC0E85 /* TripEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		653D5F3F1DDC240600BC0E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -96,6 +100,8 @@
 				653D5F411DDC240600BC0E85 /* TripEx.xcdatamodeld */,
 				65A969941DEFCF9200708B2A /* LoginViewController.swift */,
 				65A969961DF0079400708B2A /* SignupViewController.swift */,
+				6500F8511DF372A300CABEA1 /* TripCollectionViewCell.swift */,
+				6500F8531DF3DC0D00CABEA1 /* InitialTabBarController.swift */,
 			);
 			path = TripEx;
 			sourceTree = "<group>";
@@ -177,9 +183,11 @@
 				65A969971DF0079400708B2A /* SignupViewController.swift in Sources */,
 				65B13ECF1DDE489100BC8CCA /* TableCollectionViewController.swift in Sources */,
 				653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */,
+				6500F8521DF372A300CABEA1 /* TripCollectionViewCell.swift in Sources */,
 				F53594BC1DDE38DA0051B28C /* TripViewController.swift in Sources */,
 				F53594BA1DDE38DA0051B28C /* ProfileViewController.swift in Sources */,
 				653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */,
+				6500F8541DF3DC0D00CABEA1 /* InitialTabBarController.swift in Sources */,
 				F53594B91DDE38DA0051B28C /* RootTableViewController.swift in Sources */,
 				65A969951DEFCF9200708B2A /* LoginViewController.swift in Sources */,
 				F53594BB1DDE38DA0051B28C /* AddTripViewController.swift in Sources */,

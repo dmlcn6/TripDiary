@@ -79,4 +79,12 @@ class LoginViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "register",
+            let dest = segue.destination as? SignupViewController {
+                dest.title = "Register New User"
+        }
+    }
+    
 }

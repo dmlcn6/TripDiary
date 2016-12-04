@@ -10,6 +10,8 @@ import UIKit
 
 class RootTableViewController: UITableViewController {
 
+    var parentTrip: Trip?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
