@@ -1,25 +1,30 @@
 //
-//  RootTableViewController.swift
-//  TripDiaryFrontEnd
+//  SelectTripTableViewController.swift
+//  TripEx
 //
-//  Created by Thomas Van Doorn  on 11/14/16.
-//  Copyright © 2016 Thomas Van Doorn . All rights reserved.
+//  Created by Dominic Pilla on 12/4/16.
+//  Copyright © 2016 Darryl Lopez. All rights reserved.
 //
 
 import UIKit
 
-class RootTableViewController: UITableViewController {
-
-    var parentTrip: Trip?
+class SelectTripTableViewController: UITableViewController {
     
+    var user : User?
+    var trips = [Trip]()
+    
+    var addMemoryController : AddMemoryViewController?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.tabBarController?.tabBar.isHidden = false
+        
+        if let user = user {
+            if let userTrips = user.userTrips {
+                trips = Array(userTrips.allObjects) as! [Trip]
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,23 +36,29 @@ class RootTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return trips.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "trip", for: indexPath)
 
-        // Configure the cell...
-
+        cell.textLabel?.text = trips[indexPath.row].tripTitle
+        
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let indexPath = tableView.indexPathForSelectedRow {
+            self.addMemoryController?.tripTitleTextfield.text = trips[indexPath.row].tripTitle
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

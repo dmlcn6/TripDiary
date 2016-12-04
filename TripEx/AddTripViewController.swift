@@ -11,7 +11,7 @@ import CoreData
 
 class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var currUser:User?
+    var currUser: User?
     var trip:Trip?
     
     @IBOutlet weak var titleText: UITextField!
@@ -30,6 +30,9 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
         //Add NEXT button 
         //if button pressed, SAVE Trip
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(AddTripViewController.saveTrip))
+        
+        //Changes Color on the Bar
+        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.00, green:0.70, blue:1.00, alpha:1.0)
         
     }
     
