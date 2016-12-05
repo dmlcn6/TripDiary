@@ -26,6 +26,10 @@ class SelectTripTableViewController: UITableViewController {
             }
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -56,6 +60,7 @@ class SelectTripTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let indexPath = tableView.indexPathForSelectedRow {
             self.addMemoryController?.tripTitleTextfield.text = trips[indexPath.row].tripTitle
+            _ = navigationController?.popViewController(animated: true)
         }
     }
     
