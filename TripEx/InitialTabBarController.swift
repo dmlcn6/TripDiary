@@ -21,9 +21,9 @@ class InitialTabBarController: UITabBarController {
         
         
             if let viewControllers = self.viewControllers{
-                //let profileViewController = viewControllers[0] as! ProfileViewController
-                //let addTripViewController = viewControllers[1] as! AddTripViewController
-                //let tableCollectionViewController = viewControllers[2] as! TableCollectionViewController
+                let profileViewController = viewControllers[0] as! ProfileViewController
+                let addTripViewController = viewControllers[1] as! AddTripViewController
+                let tableCollectionViewController = viewControllers[2] as! TableCollectionViewController
                 
                 var i = 0
                 for viewController in viewControllers {
