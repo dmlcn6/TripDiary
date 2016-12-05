@@ -16,27 +16,29 @@ class InitialTabBarController: UITabBarController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        if let viewControllers = self.viewControllers{
+            let profileViewController = viewControllers[0]
+            let addTripViewController = viewControllers[1]
+            let tableCollectionViewController = viewControllers[2]
+            
+            var i = 0
+            for viewController in viewControllers {
+                
+                print("\(i) \(String(describing: viewController.self))")
+                i += 1
+            }
+            
+            //profileViewController.currUser = currUser
+            //addTripViewController.currUser = currUser
+            //tableCollectionViewController.currUser = currUser
+        }
+        
         if let currUser = currUser{
             print("\n\nuser \(currUser.userName) is not null\n")
         
-        
-            if let viewControllers = self.viewControllers{
-                //let profileViewController = viewControllers[0] as! ProfileViewController
-                //let addTripViewController = viewControllers[1] as! AddTripViewController
-                //let tableCollectionViewController = viewControllers[2] as! TableCollectionViewController
-                
-                var i = 0
-                for viewController in viewControllers {
-                    print("\(i) \(String(describing: viewController.self))")
-                    i += 1
-                }
-                
-                //profileViewController.currUser = currUser
-                //addTripViewController.currUser = currUser
-                //tableCollectionViewController.currUser = currUser
-            }
         }else{
             print("\n\nuser must be null")
+            
         }
     }
 
