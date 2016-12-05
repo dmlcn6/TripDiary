@@ -13,7 +13,8 @@ class TripViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        //Changes Color on the Bar
+        self.navigationController?.navigationBar.barTintColor = UIColor(red:90.00, green:200, blue:250, alpha:1.0)
     }
 
     override func didReceiveMemoryWarning() {

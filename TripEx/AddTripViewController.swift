@@ -34,8 +34,11 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(AddTripViewController.saveTrip))
         
         //Changes Color on the Bar
-        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.00, green:0.70, blue:1.00, alpha:1.0)
-        
+        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.35, green:0.78, blue:0.98, alpha:1.0)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     //presents the photoLibrary for selecting without editing
@@ -153,6 +156,7 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             if let dest = segue.destination as? AddMemoryViewController{
                 dest.parentTrip = trip
+                dest.user = currUser
             }
         }
     }

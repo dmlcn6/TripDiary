@@ -25,6 +25,9 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Changes Top Bar Color
+        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.35, green:0.78, blue:0.98, alpha:1.0)
+        
         // Do any additional setup after loading the view.
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -39,6 +42,8 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         collectionView.collectionViewLayout = layout
         
         fetchData()
+        
+        
         
     }
 
