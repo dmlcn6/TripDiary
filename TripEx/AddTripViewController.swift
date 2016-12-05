@@ -33,7 +33,10 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         //Changes Color on the Bar
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0.35, green:0.78, blue:0.98, alpha:1.0)
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
     }
     
     //presents the photoLibrary for selecting without editing

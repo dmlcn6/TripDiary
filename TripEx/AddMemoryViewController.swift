@@ -22,8 +22,8 @@ class AddMemoryViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        if let parentTrip = parentTrip{
-            titleText.text = parentTrip.tripTitle
+        if let parentTrip = parentTrip {
+            tripTitleTextfield.text = parentTrip.tripTitle
         }
     }
     
@@ -47,7 +47,10 @@ class AddMemoryViewController: UIViewController {
         }
         if (segue.identifier == "selectTrip"), let destination = segue.destination as? SelectTripTableViewController {
             destination.addMemoryController = self
-            destination.user = self.user
+            if let userTrips = user?.userTrips {
+                destination.trips = Array(userTrips.allObjects) as? [Trip]
+                print(destination.trips)
+            }
         }
     }
 }
