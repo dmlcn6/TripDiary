@@ -16,25 +16,29 @@ class InitialTabBarController: UITabBarController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        if let navControllers = self.viewControllers {
+            var i = 0
+            for navController in navControllers {
+                print("\(i) \(String(describing: navController.self))")
+                print("navcontroller.count \(navController.childViewControllers.count) \(navController.childViewControllers.first?.description)")
+                i += 1
+            }
+            
+            if let tableCollectionViewController = navControllers[0].childViewControllers.first as? TableCollectionViewController,
+                let addTripViewController = navControllers[0].childViewControllers.first as? AddTripViewController,
+                let profileViewController = navControllers[0].childViewControllers.first as? ProfileViewController {
+                
+                tableCollectionViewController.currUser = currUser
+                addTripViewController.currUser = currUser
+                profileViewController.currUser = currUser
+            }else {
+                print("This many NAVS \(navControllers.count) = no data sent")
+            }
+        }
+        
         if let currUser = currUser{
             print("\n\nuser \(currUser.userName) is not null\n")
         
-        
-            if let viewControllers = self.viewControllers{
-                let profileViewController = viewControllers[0] as! ProfileViewController
-                let addTripViewController = viewControllers[1] as! AddTripViewController
-                let tableCollectionViewController = viewControllers[2] as! TableCollectionViewController
-                
-                var i = 0
-                for viewController in viewControllers {
-                    print("\(i) \(String(describing: viewController.self))")
-                    i += 1
-                }
-                
-                //profileViewController.currUser = currUser
-                //addTripViewController.currUser = currUser
-                //tableCollectionViewController.currUser = currUser
-            }
         }else{
             print("\n\nuser must be null")
         }
