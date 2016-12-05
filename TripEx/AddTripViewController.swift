@@ -11,6 +11,8 @@ import CoreData
 
 class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     var currUser: User?
     var trip:Trip?
     
@@ -32,11 +34,8 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Next", style: .plain, target: self, action: #selector(AddTripViewController.saveTrip))
         
         //Changes Color on the Bar
-        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.35, green:0.78, blue:0.98, alpha:1.0)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        self.tabBarController?.tabBar.isHidden = false
+        self.navigationController?.navigationBar.barTintColor = UIColor(red:0.00, green:0.70, blue:1.00, alpha:1.0)
+        
     }
     
     //presents the photoLibrary for selecting without editing
@@ -109,11 +108,27 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             // Try to update the Trip contex with data in text fields
             // perform addTrip segue
             if(DatabaseController.saveContext() == true) {
-                print("Saving Trip \(trip.tripTitle)")
-                
-                //Trip save coverPhoto in bundle
-                
-                performSegue(withIdentifier: "addTrip", sender: self)
+                if let currUser = currUser {
+                    print("currUser \(currUser.userEmail)")
+                    print("Saving Trip \(trip.tripTitle)")
+                    
+                    //Trip save coverPhoto in bundle
+                    
+                    performSegue(withIdentifier: "addTrip", sender: self)
+                }else {
+                    //create an alert to user that Trip didnt save
+                    let failedAlert = UIAlertController(title: "Save Failed", message: "Trip failed to save in context. You are not a registered User!", preferredStyle: .alert)
+                    let okMessage = UIAlertAction(title: "Ok", style: .default, handler: nil)
+                    let registerMessage = UIAlertAction(title: "Sign Up!", style: .default)  { (action) in
+                        let initialSignUp = self.storyboard?.instantiateViewController(withIdentifier: "initialSignupScreen")
+                        
+                        self.appDelegate.window?.rootViewController = initialSignUp
+                    }
+                    
+                    failedAlert.addAction(okMessage)
+                    failedAlert.addAction(registerMessage)
+                    present(failedAlert, animated: true, completion: nil)
+                }
             } else {
                 //create an alert to user that Trip didnt save
                 let failedAlert = UIAlertController(title: "Save Failed", message: "Trip failed to save in context. Please try again!", preferredStyle: .alert)
@@ -138,7 +153,6 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             if let dest = segue.destination as? AddMemoryViewController{
                 dest.parentTrip = trip
-                dest.user = currUser
             }
         }
     }

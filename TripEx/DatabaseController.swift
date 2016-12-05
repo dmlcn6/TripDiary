@@ -13,8 +13,6 @@ import CoreData
 
 class DatabaseController{
     
-    
-    
     static var persistentContainer: NSPersistentContainer = {
         /*
          The persistent container for the application. This implementation
