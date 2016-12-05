@@ -5,10 +5,12 @@
 //  Copyright © 2016 Darryl Lopez. All rights reserved.
 
 import UIKit
+import CoreData
 
 class AddMemoryViewController: UIViewController {
 
     var parentTrip:Trip?
+    var user : User?
     
     
     @IBOutlet weak var tripTitleTextfield: UITextField!
@@ -20,8 +22,8 @@ class AddMemoryViewController: UIViewController {
         
         // Do any additional setup after loading the view.
         
-        if let parentTrip = parentTrip{
-            titleText.text = parentTrip.tripTitle
+        if let parentTrip = parentTrip {
+            tripTitleTextfield.text = parentTrip.tripTitle
         }
     }
     
@@ -36,8 +38,6 @@ class AddMemoryViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -47,6 +47,10 @@ class AddMemoryViewController: UIViewController {
         }
         if (segue.identifier == "selectTrip"), let destination = segue.destination as? SelectTripTableViewController {
             destination.addMemoryController = self
+            if let userTrips = user?.userTrips {
+                destination.trips = Array(userTrips.allObjects) as? [Trip]
+                print(destination.trips)
+            }
         }
     }
 }

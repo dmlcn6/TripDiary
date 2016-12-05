@@ -10,8 +10,7 @@ import UIKit
 
 class SelectTripTableViewController: UITableViewController {
     
-    var user : User?
-    var trips = [Trip]()
+    var trips : [Trip]?
     
     var addMemoryController : AddMemoryViewController?
 
@@ -19,12 +18,10 @@ class SelectTripTableViewController: UITableViewController {
         super.viewDidLoad()
 
         self.tabBarController?.tabBar.isHidden = false
-        
-        if let user = user {
-            if let userTrips = user.userTrips {
-                trips = Array(userTrips.allObjects) as! [Trip]
-            }
-        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -40,22 +37,27 @@ class SelectTripTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return trips.count
+        if let trips = trips {
+            return trips.count
+        }
+        return 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "trip", for: indexPath)
 
-        cell.textLabel?.text = trips[indexPath.row].tripTitle
+        if let trips = trips {
+            cell.textLabel?.text = trips[indexPath.row].tripTitle
+        }
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let indexPath = tableView.indexPathForSelectedRow {
+        if let indexPath = tableView.indexPathForSelectedRow, let trips = trips {
             self.addMemoryController?.tripTitleTextfield.text = trips[indexPath.row].tripTitle
+            _ = navigationController?.popViewController(animated: true)
         }
     }
     
