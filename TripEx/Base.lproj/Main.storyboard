@@ -309,7 +309,7 @@
             </objects>
             <point key="canvasLocation" x="-4922" y="885"/>
         </scene>
-        <!--Table Collection View Controller-->
+        <!--My Trips-->
         <scene sceneID="eab-zD-Vx3">
             <objects>
                 <viewController id="73C-ZE-unq" customClass="TableCollectionViewController" customModule="TripEx" customModuleProvider="target" sceneMemberID="viewController">
@@ -323,7 +323,7 @@
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MCs-vi-59j">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                                <color key="backgroundColor" red="0.40000000600000002" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T3H-ci-pER">
                                     <size key="itemSize" width="221" height="167"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -379,7 +379,7 @@
                             <constraint firstItem="MCs-vi-59j" firstAttribute="top" secondItem="27t-Qo-Vou" secondAttribute="top" id="yX4-AM-N2M"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="dB8-QG-FhT"/>
+                    <navigationItem key="navigationItem" title="My Trips" id="dB8-QG-FhT"/>
                     <connections>
                         <outlet property="collectionView" destination="MCs-vi-59j" id="DZ4-7o-4be"/>
                     </connections>
@@ -813,7 +813,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vza-PJ-1IM" id="yGL-4A-6rL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
