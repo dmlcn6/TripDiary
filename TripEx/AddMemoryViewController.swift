@@ -29,8 +29,7 @@ class AddMemoryViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.tabBarController?.tabBar.isHidden = true
-//        self.navigationController?.navigationBar.isHidden = false
+        //self.tabBarController?.tabBar.isHidden = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,9 +47,7 @@ class AddMemoryViewController: UIViewController {
         if (segue.identifier == "selectTrip"), let destination = segue.destination as? SelectTripTableViewController {
             destination.addMemoryController = self
             if let userTrips = user?.userTrips {
-                destination.trips = Array(userTrips.allObjects) as? [Trip]
-                print(destination.trips)
-            }
+                destination.trips = Array(userTrips.allObjects) as? [Trip]            }
         }
     }
 }
