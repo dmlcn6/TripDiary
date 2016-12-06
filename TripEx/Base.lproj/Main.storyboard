@@ -279,7 +279,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PbC-X3-TG5" id="u1d-lB-Asv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -649,7 +649,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vza-PJ-1IM" id="yGL-4A-6rL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -737,9 +737,6 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a Note..." translatesAutoresizingMaskIntoConstraints="NO" id="85H-NA-k2K">
                                 <rect key="frame" x="16" y="130" width="343" height="309"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="309" id="8Wn-Au-lXK"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -784,7 +781,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6OW-6f-bUl">
                                 <rect key="frame" x="16" y="538" width="171" height="79"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-Tc-fTL">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="AddTagsImage" translatesAutoresizingMaskIntoConstraints="NO" id="9yI-Tc-fTL">
                                         <rect key="frame" x="46" y="8" width="79" height="63"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="63" id="WCX-DN-aED"/>
@@ -860,7 +857,6 @@
                             <constraint firstItem="ruM-RN-4Qh" firstAttribute="top" secondItem="13z-tv-mGH" secondAttribute="bottom" id="fhv-gn-wnv"/>
                             <constraint firstItem="85H-NA-k2K" firstAttribute="top" secondItem="85X-LR-rG2" secondAttribute="bottom" constant="10" id="hat-r1-ddS"/>
                             <constraint firstItem="1gl-AH-UpM" firstAttribute="trailing" secondItem="13z-tv-mGH" secondAttribute="trailing" id="hnC-5G-1sg"/>
-                            <constraint firstItem="85X-LR-rG2" firstAttribute="top" secondItem="6rI-Lp-WyF" secondAttribute="bottom" constant="10" id="igl-5N-Tga"/>
                             <constraint firstAttribute="leadingMargin" secondItem="OEg-pk-f8u" secondAttribute="leading" id="na4-rC-R99"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6rI-Lp-WyF" secondAttribute="trailing" id="ne5-Sw-GE0"/>
                             <constraint firstItem="85X-LR-rG2" firstAttribute="leading" secondItem="UsG-Ag-wFq" secondAttribute="leading" id="nvg-b1-zfj"/>
@@ -868,6 +864,7 @@
                             <constraint firstItem="rf7-Q1-b4x" firstAttribute="leading" secondItem="FCR-bo-GOW" secondAttribute="trailing" constant="10" id="rh5-pf-Uam"/>
                             <constraint firstItem="NLq-0q-AK6" firstAttribute="top" secondItem="85H-NA-k2K" secondAttribute="bottom" constant="10" id="sV5-B4-tPo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FCR-bo-GOW" secondAttribute="trailing" constant="25" id="sbC-bb-f1V"/>
+                            <constraint firstItem="85X-LR-rG2" firstAttribute="top" secondItem="6rI-Lp-WyF" secondAttribute="bottom" constant="10" id="t4p-r9-FDt"/>
                             <constraint firstItem="85H-NA-k2K" firstAttribute="leading" secondItem="L0U-GG-pUC" secondAttribute="leadingMargin" id="va1-oz-Qvk"/>
                             <constraint firstItem="UsG-Ag-wFq" firstAttribute="centerY" secondItem="6rI-Lp-WyF" secondAttribute="centerY" id="wfz-ST-5eZ"/>
                         </constraints>
@@ -884,6 +881,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="AddTagsImage" width="32" height="32"/>
         <image name="TabBarAddButton" width="32" height="32"/>
         <image name="TabBarMyTripsButton" width="32" height="32"/>
         <image name="TabBarProfileButton" width="32" height="32"/>
