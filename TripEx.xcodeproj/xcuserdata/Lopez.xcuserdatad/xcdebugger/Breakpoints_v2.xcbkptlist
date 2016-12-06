@@ -47,7 +47,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "77"
             endingLineNumber = "77"
-            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkName = "numberOfSections(in:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -63,8 +63,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "90"
             endingLineNumber = "90"
-            landmarkName = "TableCollectionViewController"
-            landmarkType = "3">
+            landmarkName = "collectionView(_:didSelectItemAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -79,7 +79,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
             endingLineNumber = "91"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "92"
             endingLineNumber = "92"
-            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkName = "collectionView(_:didSelectItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -111,8 +111,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
             endingLineNumber = "93"
-            landmarkName = "collectionView(_:cellForItemAt:)"
-            landmarkType = "7">
+            landmarkName = "TableCollectionViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -218,7 +218,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.662179"
+                  timestampString = "502606692.458939"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -233,7 +233,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.663302"
+                  timestampString = "502606692.46012"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -266,7 +266,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.665899"
+                  timestampString = "502606692.462541"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -281,7 +281,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.667008"
+                  timestampString = "502606692.463607"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -314,7 +314,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.669476"
+                  timestampString = "502606692.465845"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -329,7 +329,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.670579"
+                  timestampString = "502606692.466956"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -362,7 +362,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.673232"
+                  timestampString = "502606692.469227"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -377,7 +377,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.674387"
+                  timestampString = "502606692.470656"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "83"
@@ -474,7 +474,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.685543"
+                  timestampString = "502606692.481703"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
@@ -489,7 +489,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.686663"
+                  timestampString = "502606692.482817"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
@@ -570,7 +570,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.696465"
+                  timestampString = "502606692.49164"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "66"
@@ -585,7 +585,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.697633"
+                  timestampString = "502606692.49294"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "66"
@@ -618,71 +618,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TripEx/SignupViewController.swift"
-            timestampString = "502527416.372622"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "registerNewUserButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TripEx/SignupViewController.swift"
-            timestampString = "502527417.443018"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "registerNewUserButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TripEx/SignupViewController.swift"
-            timestampString = "502527517.479881"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
-            landmarkName = "registerNewUserButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TripEx/SignupViewController.swift"
-            timestampString = "502527518.866902"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "registerNewUserButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TripEx/SignupViewController.swift"
-            timestampString = "502527519.724676"
+            timestampString = "502605591.122726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -698,11 +634,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TripEx/SignupViewController.swift"
-            timestampString = "502527522.616389"
+            timestampString = "502605591.122726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "registerNewUserButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -714,11 +650,75 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TripEx/SignupViewController.swift"
-            timestampString = "502527524.177735"
+            timestampString = "502605591.122726"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "registerNewUserButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TripEx/SignupViewController.swift"
+            timestampString = "502605591.122726"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "registerNewUserButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TripEx/SignupViewController.swift"
+            timestampString = "502605591.122726"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "registerNewUserButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TripEx/SignupViewController.swift"
+            timestampString = "502605591.122726"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "registerNewUserButton(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TripEx/SignupViewController.swift"
+            timestampString = "502605591.122726"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
             landmarkName = "registerNewUserButton(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -858,7 +858,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.73267"
+                  timestampString = "502606692.528412"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
@@ -873,7 +873,7 @@
                   moduleName = "TripEx"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/Lopez/Documents/TripDiary/TripEx/SignupViewController.swift"
-                  timestampString = "502527986.733906"
+                  timestampString = "502606692.529706"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
