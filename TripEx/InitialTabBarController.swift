@@ -17,18 +17,20 @@ class InitialTabBarController: UITabBarController {
         // Do any additional setup after loading the view.
         
         if let navControllers = self.viewControllers {
+            /*
             var i = 0
             for navController in navControllers {
                 print("\(i) \(String(describing: navController.self))")
                 print("navcontroller.count \(navController.childViewControllers.count) \(navController.childViewControllers.first?.description)")
                 i += 1
             }
+            */
             
-            if let tableCollectionViewController = navControllers[0].childViewControllers.first as? TableCollectionViewController,
-                let addTripViewController = navControllers[0].childViewControllers.first as? AddTripViewController,
-                let profileViewController = navControllers[0].childViewControllers.first as? ProfileViewController {
+            if let tableViewController = navControllers[0].childViewControllers.first as? TableCollectionViewController,
+                let addTripViewController = navControllers[1].childViewControllers.first as? AddTripViewController,
+                let profileViewController = navControllers[2].childViewControllers.first as? ProfileViewController {
                 
-                tableCollectionViewController.currUser = currUser
+                tableViewController.currUser = currUser
                 addTripViewController.currUser = currUser
                 profileViewController.currUser = currUser
             }else {
@@ -36,10 +38,9 @@ class InitialTabBarController: UITabBarController {
             }
         }
         
-        if let currUser = currUser{
+        if let currUser = currUser {
             print("\n\nuser \(currUser.userName) is not null\n")
-        
-        }else{
+        }else {
             print("\n\nuser must be null")
         }
     }
