@@ -30,7 +30,7 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
         let region = MKCoordinateRegionMake(coordinate, span)
         self.map.setRegion(region, animated: true)
     }
-
+//art was here
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
