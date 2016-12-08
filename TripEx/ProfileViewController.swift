@@ -24,6 +24,14 @@ class ProfileViewController: UIViewController {
         //changes color of the nav bar at the top
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0.35, green:0.78, blue:0.98, alpha:1.0)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        if let currUser = currUser, currUser.isLoggedIn == true{
+            print("\n\nPROFILE \(currUser.userName) logged in \(currUser)\n\n")
+        }else {
+            print("\n\nADDTRIP Not logged or nil\n\n")
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
