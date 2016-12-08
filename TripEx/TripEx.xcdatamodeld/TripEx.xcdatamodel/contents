@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="16B2555" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="MemoryPhoto" representedClassName="MemoryPhoto" syncable="YES" codeGenerationType="class">
+        <attribute name="memPhotoData" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="memPhotoName" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="associatedMemories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TripMemory" inverseName="memPhotos" inverseEntity="TripMemory" syncable="YES"/>
         <relationship name="associatedTripCover" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Trip" inverseName="tripCoverPhoto" inverseEntity="Trip" syncable="YES"/>
@@ -31,7 +32,7 @@
         <relationship name="userTrips" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Trip" inverseName="tripCreator" inverseEntity="Trip" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MemoryPhoto" positionX="-29" positionY="-99" width="128" height="90"/>
+        <element name="MemoryPhoto" positionX="-29" positionY="-99" width="128" height="105"/>
         <element name="Trip" positionX="-63" positionY="-324" width="128" height="150"/>
         <element name="TripMemory" positionX="-243" positionY="-171" width="128" height="148"/>
         <element name="User" positionX="-270" positionY="-306" width="128" height="120"/>

@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ms3-mZ-U6X">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ms3-mZ-U6X">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -241,11 +241,12 @@
                         <outlet property="emailTextField" destination="Xb8-cO-gWl" id="oAE-e5-z48"/>
                         <outlet property="passwordTextField" destination="oPr-nz-5Bm" id="rs6-Sr-YKI"/>
                         <outlet property="responseLabel" destination="C5m-71-Qlz" id="tCT-ws-M0V"/>
+                        <segue destination="Ms3-mZ-U6X" kind="show" identifier="userLoggedIn" id="0Za-wH-K7n"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMc-vw-gnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6556" y="-26"/>
+            <point key="canvasLocation" x="-6556" y="-377"/>
         </scene>
         <!--Initial Tab Bar Controller-->
         <scene sceneID="EEW-0t-nCL">
@@ -526,7 +527,7 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="gsw-D9-cqD"/>
                                 </constraints>
-                                <state key="normal" title="Button" image="camera_2x.png"/>
+                                <state key="normal" title="Button"/>
                                 <connections>
                                     <action selector="presentPhotoLibrary:" destination="tAF-O7-a71" eventType="touchUpInside" id="eD0-Wf-JEd"/>
                                 </connections>
@@ -590,16 +591,23 @@
                                     <constraint firstItem="ELW-om-3of" firstAttribute="top" secondItem="swp-M1-pw7" secondAttribute="top" constant="10" id="u5T-8g-Xp3"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QSy-8G-pmL">
+                                <rect key="frame" x="16" y="269" width="343" height="341"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="QSy-8G-pmL" firstAttribute="centerX" secondItem="swp-M1-pw7" secondAttribute="centerX" id="6VU-vf-872"/>
                             <constraint firstItem="eCn-ez-x6g" firstAttribute="top" secondItem="swp-M1-pw7" secondAttribute="bottom" constant="360" id="7yT-Xq-GkJ"/>
                             <constraint firstAttribute="bottom" secondItem="E4t-gV-0uH" secondAttribute="bottom" constant="284" id="8MC-td-vo4"/>
+                            <constraint firstItem="eCn-ez-x6g" firstAttribute="top" secondItem="QSy-8G-pmL" secondAttribute="bottom" constant="8" symbolic="YES" id="Ewg-jR-LVc"/>
                             <constraint firstItem="SV7-zH-sfh" firstAttribute="top" secondItem="c45-rH-Gm7" secondAttribute="bottom" constant="8" symbolic="YES" id="M0p-6U-CJ2"/>
                             <constraint firstItem="c45-rH-Gm7" firstAttribute="centerX" secondItem="SV7-zH-sfh" secondAttribute="centerX" id="P9D-Od-vi9"/>
                             <constraint firstItem="E4t-gV-0uH" firstAttribute="leading" secondItem="GNQ-Av-Cwo" secondAttribute="leading" constant="185" id="U3X-oO-U5o"/>
                             <constraint firstItem="SV7-zH-sfh" firstAttribute="leading" secondItem="GNQ-Av-Cwo" secondAttribute="leading" id="Wo7-pU-bhE"/>
+                            <constraint firstItem="QSy-8G-pmL" firstAttribute="leading" secondItem="GNQ-Av-Cwo" secondAttribute="leadingMargin" id="X4t-h2-f29"/>
                             <constraint firstItem="swp-M1-pw7" firstAttribute="top" secondItem="SV7-zH-sfh" secondAttribute="bottom" constant="3" id="ddS-TB-QdX"/>
+                            <constraint firstItem="QSy-8G-pmL" firstAttribute="top" secondItem="swp-M1-pw7" secondAttribute="bottom" constant="11" id="g25-Di-LqZ"/>
                             <constraint firstAttribute="trailing" secondItem="SV7-zH-sfh" secondAttribute="trailing" id="jGi-Cw-nc6"/>
                             <constraint firstItem="SV7-zH-sfh" firstAttribute="leading" secondItem="swp-M1-pw7" secondAttribute="leading" id="jyd-p0-iXq"/>
                             <constraint firstItem="SV7-zH-sfh" firstAttribute="trailing" secondItem="swp-M1-pw7" secondAttribute="trailing" id="pWd-kO-oi0"/>
@@ -610,6 +618,7 @@
                         <barButtonItem key="backBarButtonItem" title="Back" id="NoR-6R-hJh"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="coverImageView" destination="QSy-8G-pmL" id="3ec-lj-oUJ"/>
                         <outlet property="locationText" destination="Cah-5c-2kx" id="53x-aN-MPm"/>
                         <outlet property="titleText" destination="tiC-VD-VmI" id="gaR-KJ-6HQ"/>
                         <segue destination="KqY-ak-pTA" kind="show" identifier="addTrip" id="7bn-XC-J4W"/>
@@ -730,11 +739,12 @@
                         <outlet property="fnameLabel" destination="5YP-7N-ifC" id="615-LI-mjJ"/>
                         <outlet property="lnameLabel" destination="5El-8L-4ob" id="hlc-jN-Xx5"/>
                         <outlet property="passwordLabel" destination="XZ7-wO-GrT" id="Dcp-J1-3bz"/>
+                        <segue destination="Ms3-mZ-U6X" kind="show" identifier="userRegistered" id="Cqz-lp-x9G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUI-Fk-LqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5702" y="-26"/>
+            <point key="canvasLocation" x="-6556" y="386"/>
         </scene>
         <!--Select Trip Table View Controller-->
         <scene sceneID="dwe-j1-8I7">
@@ -989,4 +999,7 @@
         <image name="img1.jpg" width="1920" height="1080"/>
         <image name="img2.jpg" width="1920" height="1080"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Cqz-lp-x9G"/>
+    </inferredMetricsTieBreakers>
 </document>
