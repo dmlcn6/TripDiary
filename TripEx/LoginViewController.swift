@@ -7,16 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class LoginViewController: UIViewController {
     
     enum authResposes: String {
         case emptyString = "All fields are required. Please try again!"
         case invalidUsername = "That username is already registered. Please try again!"
-        case wrongCredentials = " Wrong Username or Password. Please try again!"
+        case wrongCredentials = "Wrong Username or Password. Please try again!"
+        case noUsersRegistered = "There are no users by that name. Please register!"
     }
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var fetchedUsers: [User]?
+    var loggedInUser: User?
+    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var responseLabel: UILabel!
@@ -27,22 +32,33 @@ class LoginViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        responseLabel.text = "changed text"
+        responseLabel.text = " "
     }
-
+    
+    func fetchData() {
+        let fetch = NSFetchRequest<User>(entityName: "User")
+        
+        //let predicate = NSPredicate(format: "tripTitle == %@", "*")
+        
+        //fetch.predicate = predicate
+        //fetch.fetchLimit = 2
+        
+        do{
+            fetchedUsers = try DatabaseController.getContext().fetch(fetch)
+        }catch let error as NSError {
+            print(" hello USER FETCH error \(error.userInfo)")
+        }
+    }
 
     
     @IBAction func loginButton(_ sender: Any) {
+        //var isUserUnique = false
         
-        let emailText = emailTextField.text
-        let passwordText = passwordTextField.text
+        //fetch new users first
+        fetchData()
         
-        
-        
-        
-        
-        if let emailText = emailText ,
-            let passwordText = passwordText {
+        if let emailText = emailTextField.text,
+            let passwordText = passwordTextField.text {
         
             let emailIndex = emailText.characters.startIndex
             let passwordIndex = passwordText.characters.startIndex
@@ -53,26 +69,62 @@ class LoginViewController: UIViewController {
                 
                 responseLabel.text = String(describing: authResposes.emptyString.rawValue) 
                 
-                /*
+                /* adds a delay to change the response label to "  "
                 let delay = DispatchTime.now() + 10 // change 2 to desired number of seconds
                 
                 DispatchQueue.main.asyncAfter(deadline: delay, execute: {
                     self.responseLabel.text = ""
                 })
                 */
-                
+            }else {
                 //2. authenticate username and password
-                //get iniital tab bar
                 
-                 let initialTabBar = self.storyboard?.instantiateViewController(withIdentifier: "initialTabBarController")
-                 
-                 appDelegate.window?.rootViewController = initialTabBar
-                
-            }
-            
-            
-        }
-    }
+                //unwrap the array and check count
+                if let fetchedUsers = fetchedUsers , !(fetchedUsers.isEmpty){
+                    for user in fetchedUsers {
+                        if (user.userEmail == emailText) {
+                            //useremail was found
+                            //isUserUnique = true
+                            
+                            print("that user email is found")
+                            //check the password, sorry for not salting/hashing
+                            //just to show proof of concept
+                            if(user.userPassword == passwordText){
+                                loggedInUser = user
+                                
+                                if let loggedInUser = loggedInUser {
+                                    print("\n CURR USER STATUS IS \(loggedInUser.isLoggedIn)\n\n\n USER STATUS IS \(user.isLoggedIn)")
+                                    
+                                    loggedInUser.isLoggedIn = true
+                                    
+                                    // Try to update the User contex with data in text fields
+                                    // perform initialLogin segue
+                                    if(DatabaseController.saveContext() == true) {
+                                        print("\nchanged \(loggedInUser.userEmail) logged in status to \(loggedInUser.isLoggedIn)")
+                                        
+                                        //appDelegate.window?.rootViewController = initialTabBar
+                                        performSegue(withIdentifier: "userLoggedIn", sender: self)
+                                    }else {
+                                        print("oh no that dint saveeeeeee!")
+                                    }
+                                }
+                            }else {
+                                //wrong password
+                                print(authResposes.wrongCredentials.rawValue)
+                                responseLabel.text = String(describing: authResposes.emptyString.rawValue)
+                            }
+                        }else {
+                            print("not the right user to check")
+                        }
+                    } //end for in loop
+                }else {
+                    //fetched users is empty meaning, REGISTER
+                    print(authResposes.noUsersRegistered.rawValue)
+                    responseLabel.text = String(describing: authResposes.noUsersRegistered.rawValue)
+                }// end if (there are users)/ else
+            } //end if( text fields empty)/else
+        } //end if let for textfields
+    } //end function
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -81,9 +133,10 @@ class LoginViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "register",
-            let dest = segue.destination as? SignupViewController {
-                dest.title = "Register New User"
+        if segue.identifier == "register", let dest = segue.destination as? SignupViewController {
+            dest.title = "Register New User"
+        }else if segue.identifier == "userLoggedIn", let dest = segue.destination as? InitialTabBarController {
+            dest.currUser = loggedInUser
         }
     }
     
