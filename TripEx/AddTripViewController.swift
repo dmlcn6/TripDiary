@@ -91,39 +91,60 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     // If the User hits the NEXT button in Navigation
     func saveTrip(){
-        let context = DatabaseController.getContext()
-        
-        // new trip
-        if trip == nil{
-            trip = Trip(context: context)
-        }
-        
-        // old trip
-        if let trip = trip{
-            trip.tripTitle = titleText.text!
-            trip.tripLocation = locationText.text!
-            trip.tripLatitude = 0
-            trip.tripLongitude = 0
+        //if user logged In
+        if let currUser = currUser, currUser.isLoggedIn == true{
+            let context = DatabaseController.getContext()
             
-            
-            
-            // Try to update the Trip contex with data in text fields
-            // perform addTrip segue
-            if(DatabaseController.saveContext() == true) {
-                print("Saving Trip \(trip.tripTitle)")
+            // new trip
+            if trip == nil{
+                trip = Trip(context: context)
                 
-                //Trip save coverPhoto in bundle
-                
-                performSegue(withIdentifier: "addTrip", sender: self)
-            } else {
-                //create an alert to user that Trip didnt save
-                let failedAlert = UIAlertController(title: "Save Failed", message: "Trip failed to save in context. Please try again!", preferredStyle: .alert)
-                let okMessage = UIAlertAction(title: "Ok", style: .default, handler: nil)
-               
-                failedAlert.addAction(okMessage)
-                present(failedAlert, animated: true, completion: nil)
             }
+            
+            // old trip
+            if let trip = trip{
+                trip.tripTitle = titleText.text!
+                trip.tripLocation = locationText.text!
+                trip.tripLatitude = 0
+                trip.tripLongitude = 0
+                
+                if let userPickedImage = userPickedImage,
+                    let imageData = UIImagePNGRepresentation(userPickedImage) as NSData? {
+                    let tripCoverPhoto = MemoryPhoto(context: context)
+                    tripCoverPhoto.memPhotoData = imageData
+                }else{
+                    print("wtf happend? \(userPickedImage)")
+                }
+                
+                //adds trip to currUser
+                currUser.addToUserTrips(trip)
+                
+                // Try to update the Trip contex with data in text fields
+                // perform addTrip segue
+                if(DatabaseController.saveContext() == true) {
+                    print("Saving user \(currUser.userEmail) Trip \(trip.tripTitle)")
+                    performSegue(withIdentifier: "addTrip", sender: self)
+                } else {
+                    //create an alert to user that Trip didnt save
+                    presentFailedAlert("Trip failed to save.", "Trip failed to save in context. Please try again!")
+                }
+            }
+        }else {
+            //if there is no current user logged iN
+            //create an alert to user that Trip didnt save
+            //create an alert to user that Trip didnt save
+            presentFailedAlert("Trip failed to save.", "Please login or register to save a Trip!")
         }
+    }
+    
+    func presentFailedAlert(_ customTitle:String, _ customMessage:String){
+        //create an alert to user that Trip didnt save
+        let failedAlert = UIAlertController(title: customTitle, message: customMessage, preferredStyle: .alert)
+        let okMessage = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        
+        failedAlert.addAction(okMessage)
+        present(failedAlert, animated: true, completion: nil)
+
     }
     
     // MARK: - Navigation
