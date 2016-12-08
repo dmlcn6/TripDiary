@@ -17,7 +17,8 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     var fetchedTrips = [Trip]()
     let reuseIdentifier = "tripcell"
-    var selectedTrip: Trip?
+    var selectedTrip: Trip = Trip()
+    var selectedIndexPath: IndexPath = IndexPath()
     var currUser: User?
     
     let layout = UICollectionViewFlowLayout()
@@ -89,18 +90,18 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedTrip = fetchedTrips[indexPath.row]
+        selectedIndexPath = indexPath
+        
     }
     
     
     //setting cell properties @ indexPath
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
+
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tripcell", for: indexPath) as! TripCollectionViewCell
         
         let size = CGSize(width: 125, height: 125)
-        
         layout.itemSize = size
-        
         cell.backgroundColor = UIColor(red: 0.5, green: 0.2, blue: 0.33, alpha: 0.5)
         
         
@@ -108,10 +109,16 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
             print("empty Trip array")
             cell.tripTitle.text = "Ello"
         }else{
-            if let tempTitle = fetchedTrips[indexPath.row].tripTitle,
-                let cellTripTitle = cell.tripTitle{
-                    cellTripTitle.text = tempTitle
-                    print(tempTitle)
+            if let cellTripTitle = cell.tripTitle, let cellTripImageView = cell.coverPhotoImageView{
+                
+                cellTripTitle.text = fetchedTrips[indexPath.row].tripTitle
+                if let tripPhoto: MemoryPhoto = fetchedTrips[indexPath.row].tripCoverPhoto ,
+                    let tripPhotoData: Data = tripPhoto.memPhotoData as Data?{
+                    cellTripImageView.image = UIImage(data: tripPhotoData, scale: 1.0)
+                    
+                }else {
+                    print("couldnt unwrap that photo")
+                }
             }
         }
         
@@ -130,7 +137,8 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         if segue.identifier == "showMemories"{
             if let dest = segue.destination as? RootTableViewController{
                 dest.parentTrip = selectedTrip
-                dest.title = selectedTrip?.tripTitle
+                dest.currUser = currUser
+                //dest.title = selectedTrip?.tripTitle
             }
         }
     }

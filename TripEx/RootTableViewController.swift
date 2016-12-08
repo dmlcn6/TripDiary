@@ -11,6 +11,7 @@ import UIKit
 class RootTableViewController: UITableViewController {
 
     var parentTrip: Trip?
+    var currUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
