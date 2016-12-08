@@ -48,7 +48,7 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     //BUTTON CLICKED TO PRESENT PHOTOLIBRARY
     @IBAction func presentPhotoLibrary(_ sender: Any) {
-         openPhotoLibrary()
+        openPhotoLibrary()
     }
     
     //IF THE USER PICKS AN IMAGE
@@ -56,10 +56,11 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         //grab the users selected image from the PhotoLibrary
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            userPickedImage = pickedImage
-            coverImageView.contentMode = .scaleAspectFit
-            coverImageView.image = userPickedImage
-            
+            if let coverImageView = coverImageView {
+                userPickedImage = pickedImage
+                coverImageView.contentMode = .scaleAspectFit
+                coverImageView.image = userPickedImage
+            }
         }
         dismiss(animated: true, completion: nil)
     }
