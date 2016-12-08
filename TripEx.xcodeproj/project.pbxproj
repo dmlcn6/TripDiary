@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48B283A81DF8DA090041D2AA /* ArtsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B283A71DF8DA090041D2AA /* ArtsTableViewController.swift */; };
+		48B283AA1DF8DB2C0041D2AA /* ArtsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B283A91DF8DB2C0041D2AA /* ArtsTableViewCell.swift */; };
+		48B283B31DF8FB610041D2AA /* img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 48B283B11DF8FB610041D2AA /* img2.jpg */; };
+		48B283B41DF8FB610041D2AA /* img1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 48B283B21DF8FB610041D2AA /* img1.jpg */; };
 		6500F8521DF372A300CABEA1 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6500F8511DF372A300CABEA1 /* TripCollectionViewCell.swift */; };
 		6500F8541DF3DC0D00CABEA1 /* InitialTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6500F8531DF3DC0D00CABEA1 /* InitialTabBarController.swift */; };
 		653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */; };
@@ -29,6 +33,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48B283A71DF8DA090041D2AA /* ArtsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtsTableViewController.swift; sourceTree = "<group>"; };
+		48B283A91DF8DB2C0041D2AA /* ArtsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtsTableViewCell.swift; sourceTree = "<group>"; };
+		48B283B11DF8FB610041D2AA /* img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img2.jpg; sourceTree = "<group>"; };
+		48B283B21DF8FB610041D2AA /* img1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img1.jpg; sourceTree = "<group>"; };
 		6500F8511DF372A300CABEA1 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
 		6500F8531DF3DC0D00CABEA1 /* InitialTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTabBarController.swift; sourceTree = "<group>"; };
 		653D5F371DDC240600BC0E85 /* TripEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,6 +75,8 @@
 		6500F84E1DF20ACD00CABEA1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				48B283B11DF8FB610041D2AA /* img2.jpg */,
+				48B283B21DF8FB610041D2AA /* img1.jpg */,
 			);
 			name = Images;
 			path = TripEx;
@@ -93,6 +103,8 @@
 		653D5F391DDC240600BC0E85 /* TripEx */ = {
 			isa = PBXGroup;
 			children = (
+				48B283A71DF8DA090041D2AA /* ArtsTableViewController.swift */,
+				48B283A91DF8DB2C0041D2AA /* ArtsTableViewCell.swift */,
 				653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */,
 				F53594B51DDE38DA0051B28C /* RootTableViewController.swift */,
 				65B13ECE1DDE489100BC8CCA /* TableCollectionViewController.swift */,
@@ -184,8 +196,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				653D5F481DDC240600BC0E85 /* LaunchScreen.storyboard in Resources */,
+				48B283B41DF8FB610041D2AA /* img1.jpg in Resources */,
 				653D5F451DDC240600BC0E85 /* Assets.xcassets in Resources */,
 				653D5F401DDC240600BC0E85 /* Main.storyboard in Resources */,
+				48B283B31DF8FB610041D2AA /* img2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,7 +218,9 @@
 				65B13ECF1DDE489100BC8CCA /* TableCollectionViewController.swift in Sources */,
 				653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */,
 				6500F8521DF372A300CABEA1 /* TripCollectionViewCell.swift in Sources */,
+				48B283AA1DF8DB2C0041D2AA /* ArtsTableViewCell.swift in Sources */,
 				F53594BC1DDE38DA0051B28C /* TripViewController.swift in Sources */,
+				48B283A81DF8DA090041D2AA /* ArtsTableViewController.swift in Sources */,
 				F53594BA1DDE38DA0051B28C /* ProfileViewController.swift in Sources */,
 				653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */,
 				6500F8541DF3DC0D00CABEA1 /* InitialTabBarController.swift in Sources */,
