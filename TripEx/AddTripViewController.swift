@@ -92,6 +92,7 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
     // If the User hits the NEXT button in Navigation
     func saveTrip(){
         //if user logged In
+        print("\(currUser?.isLoggedIn)")
         if let currUser = currUser, currUser.isLoggedIn == true{
             let context = DatabaseController.getContext()
             
@@ -133,7 +134,7 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             //if there is no current user logged iN
             //create an alert to user that Trip didnt save
             //create an alert to user that Trip didnt save
-            presentFailedAlert("Trip failed to save.", "Please login or register to save a Trip!")
+            presentFailedAlert("Trips will only save for logged in users.", "Please go to Profile to login or register!")
         }
     }
     

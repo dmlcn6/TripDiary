@@ -97,11 +97,12 @@ class SignupViewController: UIViewController {
                                 print("Creating New User \(newUser.userEmail)")
                                 
                                 //perform makeshift segue to go to home screen as logged IN user
-                                //get iniital tab bar
+                                /*get iniital tab bar
                                 let initialTabBar = self.storyboard?.instantiateViewController(withIdentifier: "initialTabBarController") as! InitialTabBarController
                                 
                                 initialTabBar.currUser = newUser
-                                //appDelegate.window?.rootViewController = initialTabBar
+                                appDelegate.window?.rootViewController = initialTabBar
+                                */
                                 performSegue(withIdentifier: "userRegistered", sender: self)
                             }else {
                                 print("oh no that dint saveeeeeee!")

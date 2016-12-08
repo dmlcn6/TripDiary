@@ -14,7 +14,7 @@
         <!--Profile-->
         <scene sceneID="sE7-9q-mo5">
             <objects>
-                <navigationController id="FHN-WV-cLT" sceneMemberID="viewController">
+                <navigationController navigationBarHidden="YES" id="FHN-WV-cLT" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="TabBarProfileButton" selectedImage="TabBarProfileButton" id="u0M-tT-aK9"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IEm-g5-fQc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -26,7 +26,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nlK-ag-wbz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4073" y="-671"/>
+            <point key="canvasLocation" x="-4074" y="-531"/>
         </scene>
         <!--User Profile-->
         <scene sceneID="p9y-o3-TqH">
@@ -41,15 +41,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3a5-cI-x5k">
-                                <rect key="frame" x="16" y="219" width="343" height="347"/>
+                                <rect key="frame" x="16" y="175" width="343" height="391"/>
                                 <subviews>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jSx-Js-CLw">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="347"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="391"/>
                                     </mapView>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hws-3J-VQq">
-                                <rect key="frame" x="0.0" y="66" width="375" height="39.5"/>
+                                <rect key="frame" x="0.0" y="22" width="375" height="39.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCT-Nc-aJL">
                                         <rect key="frame" x="8" y="10" width="67" height="22.5"/>
@@ -79,7 +79,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2OW-hy-pBk">
-                                <rect key="frame" x="0.0" y="108.5" width="375" height="39.5"/>
+                                <rect key="frame" x="0.0" y="64.5" width="375" height="39.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDj-xq-p0R">
                                         <rect key="frame" x="8" y="10" width="58" height="20.5"/>
@@ -109,7 +109,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where I've Traveled:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6l-eg-quv">
-                                <rect key="frame" x="110" y="191" width="155" height="20"/>
+                                <rect key="frame" x="110" y="147" width="155" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="iEI-u5-beu"/>
                                 </constraints>
@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Edg-0r-yvi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3202" y="-672"/>
+            <point key="canvasLocation" x="-3202" y="-781"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="fNK-9e-xMc">
@@ -257,6 +257,11 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                            <integer key="value" value="0"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <segue destination="j3n-0C-yYP" kind="relationship" relationship="viewControllers" id="xHt-xR-d6V"/>
                         <segue destination="iDA-A7-KDU" kind="relationship" relationship="viewControllers" id="eVG-b1-Br2"/>
@@ -280,7 +285,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="213"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PbC-X3-TG5" id="u1d-lB-Asv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="212"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYE-4F-x5p">
@@ -995,11 +1000,10 @@
         <image name="TabBarAddButton" width="32" height="32"/>
         <image name="TabBarMyTripsButton" width="32" height="32"/>
         <image name="TabBarProfileButton" width="32" height="32"/>
-        <image name="camera_2x.png" width="50" height="38"/>
         <image name="img1.jpg" width="1920" height="1080"/>
         <image name="img2.jpg" width="1920" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Cqz-lp-x9G"/>
+        <segue reference="0Za-wH-K7n"/>
     </inferredMetricsTieBreakers>
 </document>
