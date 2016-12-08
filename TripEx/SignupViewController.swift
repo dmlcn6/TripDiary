@@ -85,6 +85,9 @@ class SignupViewController: UIViewController {
                             
                             let fullName = "\(fnameText.capitalized) \(lnameText.capitalized)"
                             newUser.userName = fullName
+                            
+                            //sorry for not salting or hashing
+                            //just for proof of concept
                             newUser.userPassword = pwText
                             newUser.isLoggedIn = true
                             
@@ -98,7 +101,8 @@ class SignupViewController: UIViewController {
                                 let initialTabBar = self.storyboard?.instantiateViewController(withIdentifier: "initialTabBarController") as! InitialTabBarController
                                 
                                 initialTabBar.currUser = newUser
-                                appDelegate.window?.rootViewController = initialTabBar
+                                //appDelegate.window?.rootViewController = initialTabBar
+                                performSegue(withIdentifier: "userRegistered", sender: self)
                             }else {
                                 print("oh no that dint saveeeeeee!")
                             }
@@ -125,12 +129,8 @@ class SignupViewController: UIViewController {
                         if(DatabaseController.saveContext() == true) {
                             print("2Creating New User \(newUser.userEmail)")
                             
-                            //perform makeshift segue to go to home screen as logged IN user
-                            //get iniital tab bar
-                            let initialTabBar = self.storyboard?.instantiateViewController(withIdentifier: "initialTabBarController") as! InitialTabBarController
-                            
-                            initialTabBar.currUser = newUser
-                            appDelegate.window?.rootViewController = initialTabBar
+                            //appDelegate.window?.rootViewController = initialTabBar
+                            performSegue(withIdentifier: "userRegistered", sender: self)
                         }else{
                             print("oh no that dint saveeeeeee!2")
                         }
@@ -145,5 +145,11 @@ class SignupViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "register", let dest = segue.destination as? SignupViewController {
+            dest.title = "Register New User"
+        }else if segue.identifier == "userRegistered", let dest = segue.destination as? InitialTabBarController {
+            dest.currUser = newUser
+        }
+    }
 }
