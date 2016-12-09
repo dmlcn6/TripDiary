@@ -105,12 +105,12 @@ class SignupViewController: UIViewController {
                                 */
                                 performSegue(withIdentifier: "userRegistered", sender: self)
                             }else {
-                                print("oh no that dint saveeeeeee!")
+                                print("\n\noh no that dint saveeeeeee!\n\n")
                             }
                         }
                     // ELSE the use is not unique
                     }else {
-                        print("that user email \(emailText) is currently registered! Please try again")
+                        print("\n\nthat user email \(emailText) is currently registered! Please try again\n\n")
                     }
                 }else {
                     // create new User
@@ -128,12 +128,12 @@ class SignupViewController: UIViewController {
                         // Try to update the User contex with data in text fields
                         // perform initialLogin segue
                         if(DatabaseController.saveContext() == true) {
-                            print("2Creating New User \(newUser.userEmail)")
+                            print("\n\n2Creating New User \(newUser.userEmail)\n\n")
                             
                             //appDelegate.window?.rootViewController = initialTabBar
                             performSegue(withIdentifier: "userRegistered", sender: self)
                         }else{
-                            print("oh no that dint saveeeeeee!2")
+                            print("\n\noh no that dint saveeeeeee!2\n\n")
                         }
                     }
                 }
@@ -147,10 +147,10 @@ class SignupViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "register", let dest = segue.destination as? SignupViewController {
-            dest.title = "Register New User"
-        }else if segue.identifier == "userRegistered", let dest = segue.destination as? InitialTabBarController {
+        if segue.identifier == "userRegistered", let dest = segue.destination as? InitialTabBarController {
             dest.currUser = newUser
+        }else if segue.identifier == "backToLogin", let dest = segue.destination as? LoginViewController {
+            dest.title = "Login"
         }
     }
 }

@@ -29,7 +29,7 @@ class ProfileViewController: UIViewController {
         if let currUser = currUser, currUser.isLoggedIn == true{
             print("\n\nPROFILE \(currUser.userName) logged in \(currUser)\n\n")
         }else {
-            print("\n\nADDTRIP Not logged or nil\n\n")
+            print("\n\nProfile Not logged or nil\n\n")
         }
     }
 

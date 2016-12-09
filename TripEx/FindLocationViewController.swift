@@ -70,7 +70,7 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
             self.map.centerCoordinate = self.pointAnnotation.coordinate
             self.map.addAnnotation(self.pinAnnotationView.annotation!)
             
-            self.addMemoryController?.location.text = self.pointAnnotation.title
+            self.addMemoryController?.locationTextField.text = self.pointAnnotation.title
         }
     }
 }

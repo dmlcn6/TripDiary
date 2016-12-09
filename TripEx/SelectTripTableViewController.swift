@@ -56,7 +56,7 @@ class SelectTripTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let indexPath = tableView.indexPathForSelectedRow, let trips = trips {
-            self.addMemoryController?.tripTitleTextfield.text = trips[indexPath.row].tripTitle
+            self.addMemoryController?.tripTitleTextField.text = trips[indexPath.row].tripTitle
             _ = navigationController?.popViewController(animated: true)
         }
     }

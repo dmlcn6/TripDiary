@@ -17,7 +17,7 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     var fetchedTrips = [Trip]()
     let reuseIdentifier = "tripcell"
-    var selectedTrip: Trip = Trip()
+    var selectedTrip: Trip?
     var selectedIndexPath: IndexPath = IndexPath()
     var currUser: User?
     
@@ -46,6 +46,11 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         fetchData()
         
         
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+        fetchData()
         
     }
 
@@ -144,7 +149,7 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
             if let dest = segue.destination as? RootTableViewController{
                 dest.parentTrip = selectedTrip
                 dest.currUser = currUser
-                //dest.title = selectedTrip?.tripTitle
+                dest.title = selectedTrip?.tripTitle
             }
         }
     }

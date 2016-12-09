@@ -114,8 +114,8 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             // old trip
             if let trip = trip{
-                trip.tripTitle = titleText.text!
-                trip.tripLocation = locationText.text!
+                trip.tripTitle = titleText.text
+                trip.tripLocation = locationText.text
                 trip.tripLatitude = 0
                 trip.tripLongitude = 0
                 
@@ -163,10 +163,11 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             let registerMessage = UIAlertAction(title: customAlertTitle, style: .default, handler: {
             (action) -> Void in
                 //perform makeshift segue to go to home screen as logged IN user
-                //get iniital tab bar
+                /*get iniital tab bar
                  let initialLogin = self.storyboard?.instantiateViewController(withIdentifier: "initialLoginScreen") as! LoginViewController
                 
                  self.appDelegate.window?.rootViewController = initialLogin
+                */
             })
             
             failedAlert.addAction(okMessage)
@@ -190,8 +191,10 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             print("it saved")
             
             if let dest = segue.destination as? AddMemoryViewController{
+                dest.title = "Add Memory"
                 dest.parentTrip = trip
-                dest.user = currUser
+                dest.currUser = currUser
+                
             }
         }
     }
