@@ -63,7 +63,7 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
                 return
             }
             self.pointAnnotation = MKPointAnnotation()
-            self.pointAnnotation.title = searchBar.text
+            self.pointAnnotation.title = searchBar.text?.capitalized
             self.pointAnnotation.coordinate = CLLocationCoordinate2D(latitude: localSearchResponse!.boundingRegion.center.latitude, longitude:     localSearchResponse!.boundingRegion.center.longitude)
             
             self.pinAnnotationView = MKPinAnnotationView(annotation: self.pointAnnotation, reuseIdentifier: nil)
