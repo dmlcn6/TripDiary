@@ -24,6 +24,11 @@
 		65B13ECF1DDE489100BC8CCA /* TableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B13ECE1DDE489100BC8CCA /* TableCollectionViewController.swift */; };
 		65FCCFDF1DDE55C7003350E3 /* AddMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCCFDE1DDE55C7003350E3 /* AddMemoryViewController.swift */; };
 		8B0BA1CB1DFB441C00F6E137 /* AddMemoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA1CA1DFB441C00F6E137 /* AddMemoryTableViewController.swift */; };
+		8B0BA1CD1DFB491800F6E137 /* MemoryTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA1CC1DFB491800F6E137 /* MemoryTitleCell.swift */; };
+		8B0BA1CF1DFB492D00F6E137 /* MemoryNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA1CE1DFB492D00F6E137 /* MemoryNoteCell.swift */; };
+		8B0BA1D11DFB493E00F6E137 /* MemoryTripTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA1D01DFB493E00F6E137 /* MemoryTripTitleCell.swift */; };
+		8B0BA1D31DFB494A00F6E137 /* MemoryLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA1D21DFB494A00F6E137 /* MemoryLocationCell.swift */; };
+		8B0BA1D51DFB497800F6E137 /* MemoryActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA1D41DFB497800F6E137 /* MemoryActionCell.swift */; };
 		8BD276B91DF4A27B006F4D71 /* SelectTripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD276B81DF4A27B006F4D71 /* SelectTripTableViewController.swift */; };
 		8BD358621DF211FC0030E657 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD358611DF211FC0030E657 /* MapKit.framework */; };
 		8BD358641DF2158E0030E657 /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD358631DF2158E0030E657 /* FindLocationViewController.swift */; };
@@ -53,6 +58,11 @@
 		65B13ECE1DDE489100BC8CCA /* TableCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCollectionViewController.swift; sourceTree = "<group>"; };
 		65FCCFDE1DDE55C7003350E3 /* AddMemoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoryViewController.swift; sourceTree = "<group>"; };
 		8B0BA1CA1DFB441C00F6E137 /* AddMemoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoryTableViewController.swift; sourceTree = "<group>"; };
+		8B0BA1CC1DFB491800F6E137 /* MemoryTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryTitleCell.swift; sourceTree = "<group>"; };
+		8B0BA1CE1DFB492D00F6E137 /* MemoryNoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryNoteCell.swift; sourceTree = "<group>"; };
+		8B0BA1D01DFB493E00F6E137 /* MemoryTripTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryTripTitleCell.swift; sourceTree = "<group>"; };
+		8B0BA1D21DFB494A00F6E137 /* MemoryLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryLocationCell.swift; sourceTree = "<group>"; };
+		8B0BA1D41DFB497800F6E137 /* MemoryActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryActionCell.swift; sourceTree = "<group>"; };
 		8BD276B81DF4A27B006F4D71 /* SelectTripTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTripTableViewController.swift; sourceTree = "<group>"; };
 		8BD358611DF211FC0030E657 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		8BD358631DF2158E0030E657 /* FindLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +137,11 @@
 				6577A4141DFA38C700ED0273 /* MemoryTableViewController.swift */,
 				6577A4161DFA390F00ED0273 /* MemoryTableViewCell.swift */,
 				8B0BA1CA1DFB441C00F6E137 /* AddMemoryTableViewController.swift */,
+				8B0BA1CC1DFB491800F6E137 /* MemoryTitleCell.swift */,
+				8B0BA1CE1DFB492D00F6E137 /* MemoryNoteCell.swift */,
+				8B0BA1D01DFB493E00F6E137 /* MemoryTripTitleCell.swift */,
+				8B0BA1D21DFB494A00F6E137 /* MemoryLocationCell.swift */,
+				8B0BA1D41DFB497800F6E137 /* MemoryActionCell.swift */,
 			);
 			path = TripEx;
 			sourceTree = "<group>";
@@ -216,14 +231,19 @@
 				8BD276B91DF4A27B006F4D71 /* SelectTripTableViewController.swift in Sources */,
 				8BD358641DF2158E0030E657 /* FindLocationViewController.swift in Sources */,
 				65FCCFDF1DDE55C7003350E3 /* AddMemoryViewController.swift in Sources */,
+				8B0BA1D31DFB494A00F6E137 /* MemoryLocationCell.swift in Sources */,
 				653D5F501DDC267A00BC0E85 /* DatabaseController.swift in Sources */,
 				65A969971DF0079400708B2A /* SignupViewController.swift in Sources */,
 				65B13ECF1DDE489100BC8CCA /* TableCollectionViewController.swift in Sources */,
 				653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */,
 				6577A4171DFA390F00ED0273 /* MemoryTableViewCell.swift in Sources */,
+				8B0BA1D11DFB493E00F6E137 /* MemoryTripTitleCell.swift in Sources */,
 				8B0BA1CB1DFB441C00F6E137 /* AddMemoryTableViewController.swift in Sources */,
 				6500F8521DF372A300CABEA1 /* TripCollectionViewCell.swift in Sources */,
+				8B0BA1CF1DFB492D00F6E137 /* MemoryNoteCell.swift in Sources */,
 				F53594BC1DDE38DA0051B28C /* TripViewController.swift in Sources */,
+				8B0BA1CD1DFB491800F6E137 /* MemoryTitleCell.swift in Sources */,
+				8B0BA1D51DFB497800F6E137 /* MemoryActionCell.swift in Sources */,
 				F53594BA1DDE38DA0051B28C /* ProfileViewController.swift in Sources */,
 				6577A4151DFA38C700ED0273 /* MemoryTableViewController.swift in Sources */,
 				653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */,

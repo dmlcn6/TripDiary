@@ -116,17 +116,17 @@ class AddMemoryViewController: UIViewController {
     
     // MARK: - Navigation
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "findLocation"), let destination = segue.destination as? FindLocationViewController {
-            destination.addMemoryController = self
-        }
-        if (segue.identifier == "selectTrip"), let destination = segue.destination as? SelectTripTableViewController {
-            destination.addMemoryController = self
-            /*
-            if let userTrips = user?.userTrips {
-                destination.trips = Array(userTrips.allObjects) as? [Trip]
-            }
-            */
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if (segue.identifier == "findLocation"), let destination = segue.destination as? FindLocationViewController {
+//            destination.addMemoryController = self
+//        }
+//        if (segue.identifier == "selectTrip"), let destination = segue.destination as? SelectTripTableViewController {
+//            destination.addMemoryController = self
+//            /*
+//            if let userTrips = user?.userTrips {
+//                destination.trips = Array(userTrips.allObjects) as? [Trip]
+//            }
+//            */
+//        }
+//    }
 }

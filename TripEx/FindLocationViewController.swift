@@ -20,7 +20,7 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
     var pointAnnotation:MKPointAnnotation!
     var pinAnnotationView:MKPinAnnotationView!
     
-    var addMemoryController : AddMemoryViewController?
+    var addMemoryController : AddMemoryTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +70,7 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
             self.map.centerCoordinate = self.pointAnnotation.coordinate
             self.map.addAnnotation(self.pinAnnotationView.annotation!)
             
-            self.addMemoryController?.locationTextField.text = self.pointAnnotation.title
+            self.addMemoryController?.memoryLocationCell?.memoryLocation.text = self.pointAnnotation.title
         }
     }
 }

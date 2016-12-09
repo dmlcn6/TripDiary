@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddMemoryTableViewController: UITableViewController {
     
@@ -15,16 +16,17 @@ class AddMemoryTableViewController: UITableViewController {
     var currMemory: TripMemory?
     var userPickedImage: UIImage?
     
-    @IBOutlet weak var tripTitleTextField: UITextField!
-    @IBOutlet weak var locationTextField: UITextField!
-    @IBOutlet weak var titleTextField: UITextField!
-    @IBOutlet weak var noteTextView: UITextView!
+    var memoryTitleCell : MemoryTitleCell?
+    var memoryNoteCell : MemoryNoteCell?
+    var memoryTripTitleCell : MemoryTripTitleCell?
+    var memoryLocationCell : MemoryLocationCell?
+    var memoryActionCell : MemoryActionCell?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let parentTrip = parentTrip {
-            tripTitleTextField.text = parentTrip.tripTitle
+            memoryTripTitleCell?.memoryTripTitle.text = parentTrip.tripTitle
         }
         
         //Add NEXT button
@@ -52,25 +54,23 @@ class AddMemoryTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "title", for: indexPath)
-            
-            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "title") as! MemoryTitleCell
             
             return cell
         } else if indexPath.row == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "note", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "note") as! MemoryNoteCell
             
             return cell
         } else if indexPath.row == 2 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "tripTitle", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "tripTitle") as! MemoryTripTitleCell
             
             return cell
         } else if indexPath.row == 3 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "location", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "location") as! MemoryLocationCell
             
             return cell
-        } else if indexPath.row == 4 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "actions", for: indexPath)
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "actions") as! MemoryActionCell
             
             return cell
         }
@@ -131,7 +131,7 @@ class AddMemoryTableViewController: UITableViewController {
         print("\n\nADD MEMORY LOGGED STATUS: \(currUser?.isLoggedIn)\n\n")
         
         // if title text is filled in
-        if let titleText = titleTextField.text {
+        if let titleText = memoryTitleCell?.memoryTitleTextField.text {
             
             //if user logged In
             if let currUser = currUser, currUser.isLoggedIn == true{
@@ -145,7 +145,7 @@ class AddMemoryTableViewController: UITableViewController {
                 // old memory
                 if let currMemory = currMemory {
                     currMemory.memTitle = titleText
-                    currMemory.memNote = noteTextView.text
+                    currMemory.memNote = memoryNoteCell?.memoryNoteTextArea.text
                     
                     let currentDate = NSDate()
                     currMemory.memDate = currentDate
@@ -191,5 +191,9 @@ class AddMemoryTableViewController: UITableViewController {
                 //presentFailedAlert("Trips will only save for logged in users.", "Please go to Profile to login or register!", "Login")
             }
         }
+    }
+    
+    func switchToTab0(){
+        tabBarController?.selectedIndex = 0
     }
 }
