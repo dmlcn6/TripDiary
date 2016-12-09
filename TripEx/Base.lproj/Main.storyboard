@@ -405,6 +405,7 @@
                                         <connections>
                                             <outlet property="coverPhotoImageView" destination="8Je-18-hAi" id="fey-3Y-ctq"/>
                                             <outlet property="tripTitle" destination="kCH-Nt-Noq" id="7TC-2w-a91"/>
+                                            <segue destination="r5I-Vf-40V" kind="show" identifier="showMemories" id="SbU-Nq-uHo"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
