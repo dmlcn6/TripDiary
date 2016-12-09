@@ -70,7 +70,8 @@ class MemoryTableViewController: UITableViewController {
         // Configure the cell...
         
         
-        cell.sizeToFit()
+        let size = CGSize.init(width: 300, height: 250)
+        cell.sizeThatFits(size)
         
         if (cellCount == 0){
             cell.locationTextField.text = "NO MEMORIES"

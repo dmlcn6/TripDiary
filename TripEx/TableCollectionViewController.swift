@@ -108,7 +108,7 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tripcell", for: indexPath) as! TripCollectionViewCell
         
         
-        let size = CGSize(width: 125, height: 125)
+        let size = CGSize(width: 200, height: 200)
         layout.itemSize = size
         cell.backgroundColor = UIColor(red: 0.5, green: 0.2, blue: 0.33, alpha: 0.5)
         
