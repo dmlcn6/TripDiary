@@ -1,27 +1,42 @@
 //
-//  SelectTripTableViewController.swift
+//  MemoryTableViewController.swift
 //  TripEx
 //
-//  Created by Dominic Pilla on 12/4/16.
+//  Created by Darryl Lopez on 12/8/16.
 //  Copyright © 2016 Darryl Lopez. All rights reserved.
 //
 
 import UIKit
 
-class SelectTripTableViewController: UITableViewController {
+class MemoryTableViewController: UITableViewController {
     
-    var trips : [Trip]?
+    var parentTrip: Trip?
+    var tripMemories = [TripMemory]()
+    var currUser: User?
+    var cellCount: Int = 1
+    var index = IndexPath()
     
-    var addMemoryController : AddMemoryViewController?
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.tabBarController?.tabBar.isHidden = false
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    
+        checkTripMems()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+    
+    }
+    
+    func checkTripMems() {
+        if let parentTrip = parentTrip{
+            tripMemories = parentTrip.tripMemories?.allObjects as! [TripMemory]
+        }
+        print("TRIP MEM#: \(tripMemories.count)\n\n")
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,28 +52,31 @@ class SelectTripTableViewController: UITableViewController {
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let trips = trips {
-            return trips.count
+        // #warning Incomplete implementation, return the number of rows
+        
+        if(tripMemories.isEmpty){
+            cellCount = 0
+            return 1
+        }else{
+            return tripMemories.count
+
         }
-        return 0
     }
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "trip", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "memorycell", for: indexPath) as! MemoryTableViewCell
 
-        if let trips = trips {
-            cell.textLabel?.text = trips[indexPath.row].tripTitle
-        }
+        // Configure the cell...
         
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let indexPath = tableView.indexPathForSelectedRow, let trips = trips {
-            self.addMemoryController?.tripTitleTextField.text = trips[indexPath.row].tripTitle
-            _ = navigationController?.popViewController(animated: true)
+        if (cellCount == 0){
+            cell.locationTextField.text = "NO MEMORIES"
+        }else {
+            cell.titleTextField.text = tripMemories[indexPath.row].memTitle
+            cell.locationTextField.text = String(describing: tripMemories[indexPath.row].memDate)
         }
+
+        return cell
     }
     
 

@@ -14,6 +14,8 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
     var currUser: User?
     var trip:Trip?
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
     @IBOutlet weak var titleText: UITextField!
     @IBOutlet weak var locationText: UITextField!
     @IBOutlet weak var coverImageView: UIImageView!
@@ -37,6 +39,14 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
+       
+        if let currUser = currUser, currUser.isLoggedIn == true{
+            print("\n\nADDTRIP \(currUser.userName) logged in \(currUser)\n\n")
+        }else {
+            print("\n\nADDTRIP Not logged or nil\n\n")
+            
+        }
+        
     }
     
     //presents the photoLibrary for selecting without editing
@@ -92,6 +102,7 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
     // If the User hits the NEXT button in Navigation
     func saveTrip(){
         //if user logged In
+        print("\(currUser?.isLoggedIn)")
         if let currUser = currUser, currUser.isLoggedIn == true{
             let context = DatabaseController.getContext()
             
@@ -103,47 +114,68 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             // old trip
             if let trip = trip{
-                trip.tripTitle = titleText.text!
-                trip.tripLocation = locationText.text!
+                trip.tripTitle = titleText.text
+                trip.tripLocation = locationText.text
                 trip.tripLatitude = 0
                 trip.tripLongitude = 0
                 
                 if let userPickedImage = userPickedImage,
-                    let imageData = UIImagePNGRepresentation(userPickedImage) as NSData? {
-                    let tripCoverPhoto = MemoryPhoto(context: context)
-                    tripCoverPhoto.memPhotoData = imageData
+                    let imageData = UIImagePNGRepresentation(userPickedImage) as NSData?,
+                    let image:MemoryPhoto = NSEntityDescription.insertNewObject(forEntityName: "MemoryPhoto", into: context) as? MemoryPhoto{
+                    image.memPhotoData = imageData
+                    
+                    //adds trip to currUser
+                    trip.tripCoverPhoto = image
+
                 }else{
-                    print("wtf happend? \(userPickedImage)")
+                    print("\n\nwtf happend? \(userPickedImage)")
                 }
                 
-                //adds trip to currUser
                 currUser.addToUserTrips(trip)
                 
                 // Try to update the Trip contex with data in text fields
                 // perform addTrip segue
                 if(DatabaseController.saveContext() == true) {
-                    print("Saving user \(currUser.userEmail) Trip \(trip.tripTitle)")
+                    print("\n\nSaving user \(currUser.userEmail) \n\nTrip \(currUser.userTrips?.allObjects.count).tripTitle)")
                     performSegue(withIdentifier: "addTrip", sender: self)
                 } else {
                     //create an alert to user that Trip didnt save
-                    presentFailedAlert("Trip failed to save.", "Trip failed to save in context. Please try again!")
+                    presentFailedAlert("Trip failed to save.", "Trip failed to save in context. Please try again!", nil)
                 }
             }
         }else {
             //if there is no current user logged iN
             //create an alert to user that Trip didnt save
             //create an alert to user that Trip didnt save
-            presentFailedAlert("Trip failed to save.", "Please login or register to save a Trip!")
+            presentFailedAlert("Trips will only save for logged in users.", "Please go to Profile to login or register!", "Login")
         }
     }
     
-    func presentFailedAlert(_ customTitle:String, _ customMessage:String){
+    func presentFailedAlert(_ customTitle:String, _ customMessage:String, _ customAlertTitle:String?){
         //create an alert to user that Trip didnt save
         let failedAlert = UIAlertController(title: customTitle, message: customMessage, preferredStyle: .alert)
         let okMessage = UIAlertAction(title: "Ok", style: .default, handler: nil)
         
-        failedAlert.addAction(okMessage)
-        present(failedAlert, animated: true, completion: nil)
+        if(customAlertTitle == nil){
+            failedAlert.addAction(okMessage)
+            present(failedAlert, animated: true, completion: nil)
+        }else {
+            let registerMessage = UIAlertAction(title: customAlertTitle, style: .default, handler: {
+            (action) -> Void in
+                //perform makeshift segue to go to home screen as logged IN user
+                /*get iniital tab bar
+                 let initialLogin = self.storyboard?.instantiateViewController(withIdentifier: "initialLoginScreen") as! LoginViewController
+                
+                 self.appDelegate.window?.rootViewController = initialLogin
+                */
+            })
+            
+            failedAlert.addAction(okMessage)
+            failedAlert.addAction(registerMessage)
+            present(failedAlert, animated: true, completion: nil)
+        }
+        
+       
 
     }
     
@@ -159,8 +191,10 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             print("it saved")
             
             if let dest = segue.destination as? AddMemoryViewController{
+                dest.title = "Add Memory"
                 dest.parentTrip = trip
-                dest.user = currUser
+                dest.currUser = currUser
+                
             }
         }
     }

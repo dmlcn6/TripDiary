@@ -17,11 +17,12 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     var fetchedTrips = [Trip]()
     let reuseIdentifier = "tripcell"
-    var selectedTrip: Trip = Trip()
+    var selectedTrip: Trip?
     var selectedIndexPath: IndexPath = IndexPath()
     var currUser: User?
     
     let layout = UICollectionViewFlowLayout()
+    var cellCount = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,11 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         fetchData()
         
         
+        
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = false
+        fetchData()
         
     }
 
@@ -81,7 +87,8 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     //setting number of items in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if fetchedTrips.isEmpty {
-                return 5
+            cellCount = 0
+            return 1
         }else{
             return fetchedTrips.count
         }
@@ -100,15 +107,17 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tripcell", for: indexPath) as! TripCollectionViewCell
         
+        
         let size = CGSize(width: 125, height: 125)
         layout.itemSize = size
         cell.backgroundColor = UIColor(red: 0.5, green: 0.2, blue: 0.33, alpha: 0.5)
         
-        
-        if fetchedTrips.isEmpty{
-            print("empty Trip array")
-            cell.tripTitle.text = "Ello"
-        }else{
+        if cellCount == 0 {
+            if let cellTripTitle = cell.tripTitle {
+                cellTripTitle.text = "NO TRIPS"
+                // set the image to be a big plus sign
+            }
+        }else {
             if let cellTripTitle = cell.tripTitle, let cellTripImageView = cell.coverPhotoImageView{
                 
                 cellTripTitle.text = fetchedTrips[indexPath.row].tripTitle
@@ -121,6 +130,8 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
                 }
             }
         }
+        
+        
         
         return cell
     }
@@ -138,7 +149,7 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
             if let dest = segue.destination as? RootTableViewController{
                 dest.parentTrip = selectedTrip
                 dest.currUser = currUser
-                //dest.title = selectedTrip?.tripTitle
+                dest.title = selectedTrip?.tripTitle
             }
         }
     }
