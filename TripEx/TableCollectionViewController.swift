@@ -146,8 +146,9 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "showMemories"{
-            if let dest = segue.destination as? RootTableViewController{
+            if let dest = segue.destination as? MemoryTableViewController{
                 dest.parentTrip = selectedTrip
+                //dest.tripMemories = selectedTrip?.tripMemories?.allObjects as! [TripMemory]
                 dest.currUser = currUser
                 dest.title = selectedTrip?.tripTitle
             }

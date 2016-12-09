@@ -77,7 +77,9 @@ class AddMemoryViewController: UIViewController {
                      }
                     */
                     if let parentTrip = parentTrip{
+                        print(parentTrip.tripMemories?.count as Any)
                         parentTrip.addToTripMemories(currMemory)
+                        
                     }
                     
                     // Try to update the Trip contex with data in text fields
