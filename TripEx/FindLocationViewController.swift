@@ -30,7 +30,11 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
         let region = MKCoordinateRegionMake(coordinate, span)
         self.map.setRegion(region, animated: true)
     }
-//art was here
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.isHidden = true
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

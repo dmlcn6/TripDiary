@@ -145,7 +145,7 @@ class AddMemoryTableViewController: UITableViewController {
                 
                 // new memory
                 if currMemory == nil{
-                    currMemory = TripMemory(context: context)
+                    currMemory = NSEntityDescription.insertNewObject(forEntityName: "TripMemory", into: context) as? TripMemory
                 }
                 
                 // old memory
@@ -170,16 +170,15 @@ class AddMemoryTableViewController: UITableViewController {
                      }
                      */
                     if let parentTrip = parentTrip{
-                        var addingMemory:TripMemory = NSEntityDescription.insertNewObject(forEntityName: "TripMemory", into: context) as! TripMemory
-                        addingMemory = currMemory
+                        print(parentTrip.tripMemories?.count as Any)
+                        parentTrip.addToTripMemories(currMemory)
                         
-                        parentTrip.addToTripMemories(addingMemory)
                     }
                     
                     // Try to update the Trip contex with data in text fields
                     // perform addTrip segue
                     if(DatabaseController.saveContext() == true) {
-                        print("\n\nSaving user \(currUser.userEmail) TripMemory \(parentTrip?.tripMemories?.count).count)")
+                        print("\n\nSaving user \(currUser.userEmail) TripMemory count \(parentTrip?.tripMemories?.count).count)")
                         
                         Timer.scheduledTimer(timeInterval: 0.2, target: self,selector: #selector(switchToTab0),userInfo: nil, repeats: false)
                         
@@ -187,7 +186,7 @@ class AddMemoryTableViewController: UITableViewController {
                     } else {
                         //create an alert to user that Trip didnt save
                         //presentFailedAlert("Trip failed to save.", "Trip failed to save in context. Please try again!", nil)
-                        print("\n\n DINTTT Save MEMORY \(currUser.userEmail) TripMemory \(currUser.userTrips?.allObjects.count).count)\n\n")
+                        print("\n\n DINTTT Save MEMORY \(currUser.userEmail) TripMemory \(parentTrip?.tripMemories?.count).count)\n\n")
                     }
                 }
             }else {
@@ -195,6 +194,7 @@ class AddMemoryTableViewController: UITableViewController {
                 //create an alert to user that Trip didnt save
                 //create an alert to user that Trip didnt save
                 //presentFailedAlert("Trips will only save for logged in users.", "Please go to Profile to login or register!", "Login")
+                print("im getting no user")
             }
         }
     }
