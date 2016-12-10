@@ -108,7 +108,7 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tripcell", for: indexPath) as! TripCollectionViewCell
         
         
-        let size = CGSize(width: 125, height: 125)
+        let size = CGSize(width: 200, height: 200)
         layout.itemSize = size
         cell.backgroundColor = UIColor(red: 0.5, green: 0.2, blue: 0.33, alpha: 0.5)
         
@@ -146,8 +146,9 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "showMemories"{
-            if let dest = segue.destination as? RootTableViewController{
+            if let dest = segue.destination as? MemoryTableViewController{
                 dest.parentTrip = selectedTrip
+                //dest.tripMemories = selectedTrip?.tripMemories?.allObjects as! [TripMemory]
                 dest.currUser = currUser
                 dest.title = selectedTrip?.tripTitle
             }
