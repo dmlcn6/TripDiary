@@ -725,34 +725,6 @@
             </objects>
             <point key="canvasLocation" x="-5948" y="410"/>
         </scene>
-        <!--Select Trip Table View Controller-->
-        <scene sceneID="dwe-j1-8I7">
-            <objects>
-                <tableViewController id="ZP4-Zk-7uL" customClass="SelectTripTableViewController" customModule="TripEx" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9Wa-cr-Vn1">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="trip" id="Vza-PJ-1IM">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vza-PJ-1IM" id="yGL-4A-6rL">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ZP4-Zk-7uL" id="A7g-HP-pPX"/>
-                            <outlet property="delegate" destination="ZP4-Zk-7uL" id="E3E-op-EpN"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="mfJ-2E-F5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1506" y="-211"/>
-        </scene>
         <!--Find Location-->
         <scene sceneID="pIu-U1-wiL">
             <objects>
@@ -778,6 +750,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Find Location" id="93g-rv-tkt">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="VpE-Xa-wDr"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="zMv-OO-SyT">
                             <connections>
                                 <action selector="searchLocation:" destination="wtU-7Z-44c" id="GYa-RC-7Mk"/>
@@ -878,15 +851,8 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XuN-6c-Vnl">
-                                            <rect key="frame" x="345" y="17" width="22" height="22"/>
-                                            <connections>
-                                                <action selector="selectTripPressed:" destination="4eT-uZ-o8f" eventType="touchUpInside" id="sFv-Md-Xlc"/>
-                                                <segue destination="ZP4-Zk-7uL" kind="show" identifier="selectTrip" id="RCe-C0-3He"/>
-                                            </connections>
-                                        </button>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k1q-5u-ewB">
-                                            <rect key="frame" x="97" y="13" width="239.5" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k1q-5u-ewB">
+                                            <rect key="frame" x="97" y="13" width="260" height="30"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
@@ -897,10 +863,8 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="k1q-5u-ewB" secondAttribute="bottom" constant="8" id="7e9-NR-1A5"/>
                                         <constraint firstItem="k1q-5u-ewB" firstAttribute="leading" secondItem="2Mu-1q-xSc" secondAttribute="trailing" constant="45" id="LDy-Xx-57n"/>
                                         <constraint firstItem="k1q-5u-ewB" firstAttribute="top" secondItem="jUB-1V-stg" secondAttribute="topMargin" constant="5" id="Pdo-8F-qTT"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="k1q-5u-ewB" secondAttribute="trailing" constant="30" id="RAP-Aw-6nm"/>
-                                        <constraint firstItem="XuN-6c-Vnl" firstAttribute="centerY" secondItem="k1q-5u-ewB" secondAttribute="centerY" id="aOB-OY-vyI"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="k1q-5u-ewB" secondAttribute="trailing" constant="10" id="RAP-Aw-6nm"/>
                                         <constraint firstItem="k1q-5u-ewB" firstAttribute="centerY" secondItem="2Mu-1q-xSc" secondAttribute="centerY" id="jLF-oh-Clk"/>
-                                        <constraint firstItem="XuN-6c-Vnl" firstAttribute="leading" secondItem="k1q-5u-ewB" secondAttribute="trailing" constant="8" id="sXu-ea-ngZ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -914,14 +878,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ef5-J5-Fog">
-                                            <rect key="frame" x="98.5" y="13" width="238.5" height="30"/>
+                                        <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ef5-J5-Fog">
+                                            <rect key="frame" x="98.5" y="13" width="228.5" height="30"/>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wCc-Ts-Zic">
-                                            <rect key="frame" x="345" y="17" width="22" height="22"/>
+                                            <rect key="frame" x="335" y="17" width="22" height="22"/>
                                             <connections>
                                                 <segue destination="wtU-7Z-44c" kind="show" identifier="findLocation" id="LML-8R-FDA"/>
                                             </connections>
@@ -936,7 +900,7 @@
                                     <constraints>
                                         <constraint firstItem="EDZ-Eu-WR7" firstAttribute="leading" secondItem="3WY-cP-ym9" secondAttribute="leadingMargin" constant="10" id="3Nl-Ne-MJD"/>
                                         <constraint firstItem="wCc-Ts-Zic" firstAttribute="centerY" secondItem="Ef5-J5-Fog" secondAttribute="centerY" id="9et-PT-gM7"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="Ef5-J5-Fog" secondAttribute="trailing" constant="30" id="NfS-qf-Qto"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Ef5-J5-Fog" secondAttribute="trailing" constant="40" id="NfS-qf-Qto"/>
                                         <constraint firstItem="Ef5-J5-Fog" firstAttribute="top" secondItem="3WY-cP-ym9" secondAttribute="topMargin" constant="5" id="VLy-sP-lgN"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Ef5-J5-Fog" secondAttribute="bottom" constant="8" id="dMq-yy-jYA"/>
                                         <constraint firstItem="Ef5-J5-Fog" firstAttribute="leading" secondItem="EDZ-Eu-WR7" secondAttribute="trailing" constant="10" id="hQi-SV-ZhC"/>
@@ -1348,7 +1312,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2U-rP-F3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-746" y="122"/>
+            <point key="canvasLocation" x="-1506" y="-203"/>
         </scene>
     </scenes>
     <resources>
