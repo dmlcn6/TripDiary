@@ -39,6 +39,8 @@
 		F53594BC1DDE38DA0051B28C /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B81DDE38DA0051B28C /* TripViewController.swift */; };
 		F5E138CC1DFC84A500945F16 /* HorizontalAttempt.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E138CB1DFC84A500945F16 /* HorizontalAttempt.png */; };
 		F5E138CE1DFC84CB00945F16 /* imageMasterBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5E138CD1DFC84CB00945F16 /* imageMasterBackground.jpg */; };
+		F5E138D01DFC884600945F16 /* camera2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E138CF1DFC884600945F16 /* camera2x.png */; };
+		F5E138D21DFC908000945F16 /* ShowMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E138D11DFC908000945F16 /* ShowMemoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		F53594B81DDE38DA0051B28C /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		F5E138CB1DFC84A500945F16 /* HorizontalAttempt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HorizontalAttempt.png; sourceTree = "<group>"; };
 		F5E138CD1DFC84CB00945F16 /* imageMasterBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageMasterBackground.jpg; sourceTree = "<group>"; };
+		F5E138CF1DFC884600945F16 /* camera2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera2x.png; sourceTree = "<group>"; };
+		F5E138D11DFC908000945F16 /* ShowMemoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMemoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,7 @@
 		6500F84E1DF20ACD00CABEA1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F5E138CF1DFC884600945F16 /* camera2x.png */,
 				F5E138CD1DFC84CB00945F16 /* imageMasterBackground.jpg */,
 				F5E138CB1DFC84A500945F16 /* HorizontalAttempt.png */,
 				48B283B11DF8FB610041D2AA /* img2.jpg */,
@@ -151,6 +156,7 @@
 				8B0BA1D21DFB494A00F6E137 /* MemoryLocationCell.swift */,
 				8B0BA1D41DFB497800F6E137 /* MemoryActionCell.swift */,
 				6577A41A1DFB6E6200ED0273 /* AddTagsViewController.swift */,
+				F5E138D11DFC908000945F16 /* ShowMemoryViewController.swift */,
 			);
 			path = TripEx;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 			files = (
 				653D5F481DDC240600BC0E85 /* LaunchScreen.storyboard in Resources */,
 				48B283B41DF8FB610041D2AA /* img1.jpg in Resources */,
+				F5E138D01DFC884600945F16 /* camera2x.png in Resources */,
 				653D5F451DDC240600BC0E85 /* Assets.xcassets in Resources */,
 				F5E138CC1DFC84A500945F16 /* HorizontalAttempt.png in Resources */,
 				653D5F401DDC240600BC0E85 /* Main.storyboard in Resources */,
@@ -247,6 +254,7 @@
 				6577A41B1DFB6E6200ED0273 /* AddTagsViewController.swift in Sources */,
 				65A969971DF0079400708B2A /* SignupViewController.swift in Sources */,
 				65B13ECF1DDE489100BC8CCA /* TableCollectionViewController.swift in Sources */,
+				F5E138D21DFC908000945F16 /* ShowMemoryViewController.swift in Sources */,
 				653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */,
 				6577A4171DFA390F00ED0273 /* MemoryTableViewCell.swift in Sources */,
 				8B0BA1D11DFB493E00F6E137 /* MemoryTripTitleCell.swift in Sources */,
