@@ -63,7 +63,7 @@ class AddMemoryTableViewController: UITableViewController {
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "tripTitle") as! MemoryTripTitleCell
-            
+            cell.memoryTripTitle.text = parentTrip?.tripTitle
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "location") as! MemoryLocationCell
