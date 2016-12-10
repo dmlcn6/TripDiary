@@ -37,6 +37,8 @@
 		F53594BA1DDE38DA0051B28C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B61DDE38DA0051B28C /* ProfileViewController.swift */; };
 		F53594BB1DDE38DA0051B28C /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B71DDE38DA0051B28C /* AddTripViewController.swift */; };
 		F53594BC1DDE38DA0051B28C /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B81DDE38DA0051B28C /* TripViewController.swift */; };
+		F5E138CC1DFC84A500945F16 /* HorizontalAttempt.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E138CB1DFC84A500945F16 /* HorizontalAttempt.png */; };
+		F5E138CE1DFC84CB00945F16 /* imageMasterBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5E138CD1DFC84CB00945F16 /* imageMasterBackground.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		F53594B61DDE38DA0051B28C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		F53594B71DDE38DA0051B28C /* AddTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
 		F53594B81DDE38DA0051B28C /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		F5E138CB1DFC84A500945F16 /* HorizontalAttempt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HorizontalAttempt.png; sourceTree = "<group>"; };
+		F5E138CD1DFC84CB00945F16 /* imageMasterBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageMasterBackground.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 		6500F84E1DF20ACD00CABEA1 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				F5E138CD1DFC84CB00945F16 /* imageMasterBackground.jpg */,
+				F5E138CB1DFC84A500945F16 /* HorizontalAttempt.png */,
 				48B283B11DF8FB610041D2AA /* img2.jpg */,
 				48B283B21DF8FB610041D2AA /* img1.jpg */,
 			);
@@ -219,7 +225,9 @@
 				653D5F481DDC240600BC0E85 /* LaunchScreen.storyboard in Resources */,
 				48B283B41DF8FB610041D2AA /* img1.jpg in Resources */,
 				653D5F451DDC240600BC0E85 /* Assets.xcassets in Resources */,
+				F5E138CC1DFC84A500945F16 /* HorizontalAttempt.png in Resources */,
 				653D5F401DDC240600BC0E85 /* Main.storyboard in Resources */,
+				F5E138CE1DFC84CB00945F16 /* imageMasterBackground.jpg in Resources */,
 				48B283B31DF8FB610041D2AA /* img2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
