@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ms3-mZ-U6X">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ms3-mZ-U6X">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -246,7 +246,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EMc-vw-gnq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6556" y="-377"/>
+            <point key="canvasLocation" x="-5948" y="-353"/>
         </scene>
         <!--Initial Tab Bar Controller-->
         <scene sceneID="EEW-0t-nCL">
@@ -280,7 +280,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="213"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PbC-X3-TG5" id="u1d-lB-Asv">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="212"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYE-4F-x5p">
@@ -744,7 +744,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUI-Fk-LqT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-6556" y="386"/>
+            <point key="canvasLocation" x="-5948" y="410"/>
         </scene>
         <!--Select Trip Table View Controller-->
         <scene sceneID="dwe-j1-8I7">
@@ -772,7 +772,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mfJ-2E-F5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1218" y="-229"/>
+            <point key="canvasLocation" x="-1218" y="122"/>
         </scene>
         <!--Find Location-->
         <scene sceneID="pIu-U1-wiL">
@@ -811,7 +811,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZWu-1y-xmM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1218" y="418"/>
+            <point key="canvasLocation" x="-1218" y="885"/>
         </scene>
         <!--Add Memory View Controller-->
         <scene sceneID="vkn-4e-Li1">
@@ -989,13 +989,70 @@
             </objects>
             <point key="canvasLocation" x="-2402" y="122"/>
         </scene>
+        <!--Tags View Controller-->
+        <scene sceneID="XaV-8J-TnQ">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="p2b-uG-frj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="E9t-y7-wqk" customClass="TagsViewController" customModule="TripEx" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0xE-ur-y0L"/>
+                        <viewControllerLayoutGuide type="bottom" id="DPM-Fr-HmO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KeP-v6-zvm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Add Tags..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Anj-cC-oUj">
+                                <rect key="frame" x="16" y="47" width="313" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4HV-D6-bAM">
+                                <rect key="frame" x="337" y="51" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="Hr9-ka-Nzd"/>
+                                </constraints>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Tags:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqW-8U-FpT">
+                                <rect key="frame" x="123" y="190" width="129" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="obn-we-Pyn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Horizontal-Line-Transparent.png" translatesAutoresizingMaskIntoConstraints="NO" id="FeQ-Q4-xk0">
+                                <rect key="frame" x="67" y="169" width="240" height="128"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.89319688080000004" green="0.92128956319999999" blue="0.94624394180000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FeQ-Q4-xk0" firstAttribute="centerX" secondItem="HqW-8U-FpT" secondAttribute="centerX" id="5Dz-Se-o9B"/>
+                            <constraint firstItem="FeQ-Q4-xk0" firstAttribute="leading" secondItem="KeP-v6-zvm" secondAttribute="leadingMargin" constant="51" id="5ug-nq-S78"/>
+                            <constraint firstItem="4HV-D6-bAM" firstAttribute="top" secondItem="0xE-ur-y0L" secondAttribute="bottom" constant="31" id="Jtw-3H-oqx"/>
+                            <constraint firstItem="FeQ-Q4-xk0" firstAttribute="centerX" secondItem="KeP-v6-zvm" secondAttribute="centerX" id="MxF-98-b4W"/>
+                            <constraint firstItem="4HV-D6-bAM" firstAttribute="leading" secondItem="Anj-cC-oUj" secondAttribute="trailing" constant="8" symbolic="YES" id="N6P-oQ-Oye"/>
+                            <constraint firstItem="Anj-cC-oUj" firstAttribute="leading" secondItem="KeP-v6-zvm" secondAttribute="leadingMargin" id="R5B-W1-Lt9"/>
+                            <constraint firstItem="DPM-Fr-HmO" firstAttribute="top" secondItem="FeQ-Q4-xk0" secondAttribute="bottom" constant="370" id="SzA-UV-mqU"/>
+                            <constraint firstItem="DPM-Fr-HmO" firstAttribute="top" secondItem="HqW-8U-FpT" secondAttribute="bottom" constant="441" id="c6z-Jt-Uvw"/>
+                            <constraint firstItem="Anj-cC-oUj" firstAttribute="centerY" secondItem="4HV-D6-bAM" secondAttribute="centerY" id="dj9-SQ-yOt"/>
+                            <constraint firstItem="FeQ-Q4-xk0" firstAttribute="top" secondItem="Anj-cC-oUj" secondAttribute="bottom" constant="92" id="yS9-qR-bdm"/>
+                            <constraint firstItem="4HV-D6-bAM" firstAttribute="trailing" secondItem="KeP-v6-zvm" secondAttribute="trailingMargin" id="zSc-GM-0Tc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="-1218" y="-672"/>
+        </scene>
     </scenes>
     <resources>
         <image name="AddTagsImage" width="32" height="32"/>
+        <image name="Horizontal-Line-Transparent.png" width="775" height="300"/>
         <image name="TabBarAddButton" width="32" height="32"/>
         <image name="TabBarMyTripsButton" width="32" height="32"/>
         <image name="TabBarProfileButton" width="32" height="32"/>
-        <image name="camera_2x.png" width="50" height="38"/>
         <image name="img1.jpg" width="1920" height="1080"/>
         <image name="img2.jpg" width="1920" height="1080"/>
     </resources>
