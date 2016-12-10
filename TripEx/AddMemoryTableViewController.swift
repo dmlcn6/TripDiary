@@ -16,17 +16,24 @@ class AddMemoryTableViewController: UITableViewController {
     var currMemory: TripMemory?
     var userPickedImage: UIImage?
     
-    var memoryTitleCell : MemoryTitleCell?
-    var memoryNoteCell : MemoryNoteCell?
-    var memoryTripTitleCell : MemoryTripTitleCell?
-    var memoryLocationCell : MemoryLocationCell?
-    var memoryActionCell : MemoryActionCell?
+    var memoryTitle : String?
+    var memoryNote : String?
+    var memoryTripTitle : String?
+    var memoryLocation : String?
+    var memoryTags : [Tag]?
+    var memoryPhotos : [MemoryPhoto]?
         
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let parentTrip = parentTrip {
-            memoryTripTitleCell?.memoryTripTitle.text = parentTrip.tripTitle
+            memoryTripTitle = parentTrip.tripTitle
+        }
+        
+        if let memoryLocation = memoryLocation, let memoryTripTitle = memoryTripTitle {
+            print("Location: \(memoryLocation) and Trip Title: \(memoryTripTitle)")
+        } else {
+            print("Location and Trip Title are both empty")
         }
         
         tableView.estimatedRowHeight = 60.0
@@ -36,23 +43,25 @@ class AddMemoryTableViewController: UITableViewController {
         
         //Add NEXT button
         //if button pressed, SAVE Trip
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(AddMemoryViewController.saveMemory))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(AddMemoryTableViewController.saveMemory))
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Refresh the table every time this view appears to load in new data
+        tableView.reloadData()
+        
+        self.tabBarController?.tabBar.isHidden = false
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return 5
     }
 
@@ -60,19 +69,26 @@ class AddMemoryTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "title") as! MemoryTitleCell
+
+            memoryTitle = cell.memoryTitleTextField.text
             
             return cell
         } else if indexPath.row == 1 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "note") as! MemoryNoteCell
             
+            memoryNote = cell.memoryNoteTextArea.text
+            
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "tripTitle") as! MemoryTripTitleCell
             
-            cell.memoryTripTitle.text = parentTrip?.tripTitle
+            cell.memoryTripTitle.text = memoryTripTitle
+            
             return cell
         } else if indexPath.row == 3 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "location") as! MemoryLocationCell
+            
+            cell.memoryLocation.text = memoryLocation
             
             return cell
         } else {
@@ -81,54 +97,14 @@ class AddMemoryTableViewController: UITableViewController {
             return cell
         }
     }
- 
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "findLocation"), let destination = segue.destination as? FindLocationViewController {
             destination.addMemoryController = self
         }
-        if (segue.identifier == "selectTrip"), let destination = segue.destination as? SelectTripTableViewController {
-            destination.addMemoryController = self
-            /*
-             if let userTrips = user?.userTrips {
-             destination.trips = Array(userTrips.allObjects) as? [Trip]
-             }
-             */
+        if (segue.identifier == "addTags"), let destination = segue.destination as? AddTagsViewController {
+            destination.currUser = currUser
+            destination.currMemory = currMemory
         }
     }
     
@@ -137,10 +113,10 @@ class AddMemoryTableViewController: UITableViewController {
         print("\n\nADD MEMORY LOGGED STATUS: \(currUser?.isLoggedIn)\n\n")
         
         // if title text is filled in
-        if let titleText = memoryTitleCell?.memoryTitleTextField.text {
+        if let titleText = memoryTitle {
             
             //if user logged In
-            if let currUser = currUser, currUser.isLoggedIn == true{
+            if let currUser = currUser, currUser.isLoggedIn == true {
                 let context = DatabaseController.getContext()
                 
                 // new memory
@@ -151,7 +127,7 @@ class AddMemoryTableViewController: UITableViewController {
                 // old memory
                 if let currMemory = currMemory {
                     currMemory.memTitle = titleText
-                    currMemory.memNote = memoryNoteCell?.memoryNoteTextArea.text
+                    currMemory.memNote = memoryNote
                     
                     let currentDate = NSDate()
                     currMemory.memDate = currentDate
@@ -196,6 +172,8 @@ class AddMemoryTableViewController: UITableViewController {
                 //presentFailedAlert("Trips will only save for logged in users.", "Please go to Profile to login or register!", "Login")
                 print("im getting no user")
             }
+        } else {
+            print("I am not getting a title!")
         }
     }
     
