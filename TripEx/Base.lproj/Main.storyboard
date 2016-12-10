@@ -812,25 +812,25 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="note" rowHeight="278" id="jLo-V0-A5v" customClass="MemoryNoteCell" customModule="TripEx" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="80" width="375" height="278"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="jLo-V0-A5v" id="AkY-ps-8qv">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jLo-V0-A5v" id="AkY-ps-8qv">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="277"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Write a note..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FDZ-Nv-l2i">
-                                            <rect key="frame" x="18" y="18" width="339" height="268.5"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Write a note..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="FDZ-Nv-l2i">
+                                            <rect key="frame" x="18" y="18" width="339" height="241.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="268.5" id="dae-RX-sta"/>
+                                                <constraint firstAttribute="height" constant="241.5" id="dat-y3-ucn"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="FDZ-Nv-l2i" firstAttribute="top" secondItem="AkY-ps-8qv" secondAttribute="topMargin" constant="10" id="7Wa-X9-AeQ"/>
-                                        <constraint firstAttribute="trailingMargin" secondItem="FDZ-Nv-l2i" secondAttribute="trailing" constant="10" id="V5D-1j-55x"/>
-                                        <constraint firstItem="FDZ-Nv-l2i" firstAttribute="leading" secondItem="AkY-ps-8qv" secondAttribute="leadingMargin" constant="10" id="nrx-3f-SqW"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="FDZ-Nv-l2i" secondAttribute="bottom" constant="10" id="uhG-2U-C37"/>
+                                        <constraint firstItem="FDZ-Nv-l2i" firstAttribute="centerX" secondItem="AkY-ps-8qv" secondAttribute="centerX" id="9FJ-Jk-YWj"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="FDZ-Nv-l2i" secondAttribute="bottom" constant="10" id="Acw-3r-otU"/>
+                                        <constraint firstItem="FDZ-Nv-l2i" firstAttribute="top" secondItem="AkY-ps-8qv" secondAttribute="topMargin" constant="10" id="F4m-iC-irW"/>
+                                        <constraint firstItem="FDZ-Nv-l2i" firstAttribute="leading" secondItem="AkY-ps-8qv" secondAttribute="leadingMargin" constant="10" id="tSt-uL-KIy"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
