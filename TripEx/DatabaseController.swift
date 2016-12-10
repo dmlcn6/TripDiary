@@ -72,8 +72,9 @@ class DatabaseController{
                 print("Unresolved error \(nserror), \(nserror.userInfo)")
                 return false
             }
+        }else {
+            return false
         }
-        return false
     }
 }
 

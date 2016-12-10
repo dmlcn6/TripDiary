@@ -15,33 +15,37 @@ class InitialTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         if let navControllers = self.viewControllers {
             /*
-            var i = 0
-            for navController in navControllers {
-                print("\(i) \(String(describing: navController.self))")
-                print("navcontroller.count \(navController.childViewControllers.count) \(navController.childViewControllers.first?.description)")
-                i += 1
-            }
-            */
+             var i = 0
+             for navController in navControllers {
+             print("\(i) \(String(describing: navController.self))")
+             print("navcontroller.count \(navController.childViewControllers.count) \(navController.childViewControllers.first?.description)")
+             i += 1
+             }
+             */
             
-            if let tableViewController = navControllers[0].childViewControllers.first as? TableCollectionViewController,
-                let addTripViewController = navControllers[1].childViewControllers.first as? AddTripViewController,
-                let profileViewController = navControllers[2].childViewControllers.first as? ProfileViewController {
+            if let currUser = currUser {
+                print("\n\nuser \(currUser.userName) is not null\n")
                 
-                tableViewController.currUser = currUser
-                addTripViewController.currUser = currUser
-                profileViewController.currUser = currUser
+                if let tableViewController = navControllers[0].childViewControllers.first as? TableCollectionViewController,
+                    let addTripViewController = navControllers[1].childViewControllers.first as? AddTripViewController,
+                    let profileViewController = navControllers[2].childViewControllers.first as? ProfileViewController {
+                    
+                    print("TRYING TO SEND DATA")
+                    tableViewController.currUser = currUser
+                    addTripViewController.currUser = currUser
+                    profileViewController.currUser = currUser
+                    print("SEND DATA to views")
+                }else {
+                    print("This many NAVS \(navControllers.count) = no data sent")
+                }
             }else {
-                print("This many NAVS \(navControllers.count) = no data sent")
+                print("\n\nuser must be null")
             }
-        }
-        
-        if let currUser = currUser {
-            print("\n\nuser \(currUser.userName) is not null\n")
-        }else {
-            print("\n\nuser must be null")
         }
     }
 
