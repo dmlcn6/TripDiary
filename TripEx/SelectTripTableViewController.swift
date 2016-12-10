@@ -10,14 +10,15 @@ import UIKit
 
 class SelectTripTableViewController: UITableViewController {
     
+    // The list of trips sent from the AddMemoryTableViewController
     var trips : [Trip]?
     
+    // Reference to the previous controller - used for sending back information
     var addMemoryController : AddMemoryTableViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.tabBarController?.tabBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -26,10 +27,7 @@ class SelectTripTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-
-    // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
@@ -56,7 +54,8 @@ class SelectTripTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let indexPath = tableView.indexPathForSelectedRow, let trips = trips {
-            self.addMemoryController?.memoryTripTitleCell?.memoryTripTitle.text = trips[indexPath.row].tripTitle
+            self.addMemoryController?.memoryTripTitle = trips[indexPath.row].tripTitle
+            self.addMemoryController?.currMemory?.memTrip = trips[indexPath.row]
             _ = navigationController?.popViewController(animated: true)
         }
     }
