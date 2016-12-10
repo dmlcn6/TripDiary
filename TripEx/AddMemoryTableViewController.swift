@@ -21,13 +21,18 @@ class AddMemoryTableViewController: UITableViewController {
     var memoryTripTitleCell : MemoryTripTitleCell?
     var memoryLocationCell : MemoryLocationCell?
     var memoryActionCell : MemoryActionCell?
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if let parentTrip = parentTrip {
             memoryTripTitleCell?.memoryTripTitle.text = parentTrip.tripTitle
         }
+        
+        tableView.estimatedRowHeight = 60.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.allowsSelection = false
+        tableView.reloadData()
         
         //Add NEXT button
         //if button pressed, SAVE Trip
@@ -63,6 +68,7 @@ class AddMemoryTableViewController: UITableViewController {
             return cell
         } else if indexPath.row == 2 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "tripTitle") as! MemoryTripTitleCell
+            
             cell.memoryTripTitle.text = parentTrip?.tripTitle
             return cell
         } else if indexPath.row == 3 {

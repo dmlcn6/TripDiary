@@ -190,7 +190,7 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             //saveTrip()
             print("it saved")
             
-            if let dest = segue.destination as? AddMemoryViewController{
+            if let dest = segue.destination as? AddMemoryTableViewController {
                 dest.title = "Add Memory"
                 dest.parentTrip = trip
                 dest.currUser = currUser
