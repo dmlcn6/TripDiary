@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     enum authResposes: String {
         case emptyString = "All fields are required. Please try again!"
@@ -21,7 +21,10 @@ class LoginViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var fetchedUsers: [User]?
     var loggedInUser: User?
+    var activeTextField: UITextField? = nil
+
     
+    @IBOutlet var textFields: [UITextField]!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var responseLabel: UILabel!
@@ -30,9 +33,25 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        
+        for field in textFields {
+            field.delegate = self
+        }
+
         responseLabel.text = " "
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let backgroundView = UIImageView(frame: UIScreen.main.bounds)
+        backgroundView.contentMode = .scaleAspectFill
+        backgroundView.clipsToBounds = true
+        
+        let image = UIImage(named: "imageMasterBackground.jpg")
+        
+        backgroundView.image = image
+        
+        self.view.insertSubview(backgroundView, at: 0)
+        self.view.addSubview(backgroundView)
+        self.view.sendSubview(toBack: backgroundView)
     }
     
     func fetchData() {
@@ -139,5 +158,25 @@ class LoginViewController: UIViewController {
             dest.currUser = loggedInUser
         }
     }
+    
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeTextField = nil
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        activeTextField?.resignFirstResponder()
+        
+        return true
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: AnyObject) {
+        activeTextField?.resignFirstResponder()
+    }
+
     
 }

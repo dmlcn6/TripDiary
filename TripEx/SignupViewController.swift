@@ -9,23 +9,42 @@
 import UIKit
 import CoreData
 
-class SignupViewController: UIViewController {
+class SignupViewController: UIViewController, UITextFieldDelegate {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
+    @IBOutlet var textFields: [UITextField]!
     @IBOutlet weak var emailLabel: UITextField!
     @IBOutlet weak var fnameLabel: UITextField!
     @IBOutlet weak var lnameLabel: UITextField!
     @IBOutlet weak var passwordLabel: UITextField!
     
+    var activeTextField: UITextField? = nil
     var fetchedUsers: [User]?
     var newUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        for field in textFields {
+        field.delegate = self
+            
         fetchData()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let backgroundView = UIImageView(frame: UIScreen.main.bounds)
+        backgroundView.contentMode = .scaleAspectFill
+        backgroundView.clipsToBounds = true
+        
+        let image = UIImage(named: "imageMasterBackground.jpg")
+        
+        backgroundView.image = image
+        
+        self.view.insertSubview(backgroundView, at: 0)
+        self.view.addSubview(backgroundView)
+        self.view.sendSubview(toBack: backgroundView)
     }
     
     func fetchData() {
@@ -153,4 +172,23 @@ class SignupViewController: UIViewController {
             dest.title = "Login"
         }
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeTextField = nil
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        activeTextField?.resignFirstResponder()
+        
+        return true
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: AnyObject) {
+        activeTextField?.resignFirstResponder()
+    }
+
 }
