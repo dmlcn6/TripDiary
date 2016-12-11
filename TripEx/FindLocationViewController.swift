@@ -21,8 +21,6 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
     var pinAnnotationView:MKPinAnnotationView!
     
     var addMemoryController : AddMemoryTableViewController?
-    var addTripController : AddTripViewController?
-    var identifier : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +29,6 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
         let span = MKCoordinateSpanMake(0.08, 0.08)
         let region = MKCoordinateRegionMake(coordinate, span)
         self.map.setRegion(region, animated: true)
-        
-        let backItem = UIBarButtonItem()
-        backItem.title = "Back"
-        navigationItem.backBarButtonItem = backItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -80,17 +74,10 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
             self.map.centerCoordinate = self.pointAnnotation.coordinate
             self.map.addAnnotation(self.pinAnnotationView.annotation!)
             
-            if self.identifier == "findLocation" {
-                self.addMemoryController?.currMemory?.memLatitude = self.pointAnnotation.coordinate.latitude
-                self.addMemoryController?.currMemory?.memLongitude = self.pointAnnotation.coordinate.longitude
-                self.addMemoryController?.memoryLocation = self.pointAnnotation.title?.capitalized
-            } else if self.identifier == "findTripLocation" {
-                self.addTripController?.trip?.tripLatitude = self.pointAnnotation.coordinate.latitude
-                self.addTripController?.trip?.tripLongitude = self.pointAnnotation.coordinate.longitude
-                self.addTripController?.trip?.tripLocation = self.pointAnnotation.title?.capitalized
-                self.addTripController?.locationText.text = self.pointAnnotation.title?.capitalized
-                print("\(self.pointAnnotation.title?.capitalized)")
-            }
+//            self.addMemoryController?.memoryLocationCell.memoryLocation.text = self.pointAnnotation.title
+            self.addMemoryController?.currMemory?.memLatitude = self.pointAnnotation.coordinate.latitude
+            self.addMemoryController?.currMemory?.memLongitude = self.pointAnnotation.coordinate.longitude
+            self.addMemoryController?.memoryLocation = self.pointAnnotation.title?.capitalized
         }
     }
 }

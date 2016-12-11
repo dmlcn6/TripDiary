@@ -14,8 +14,6 @@ class AddMemoryViewController: UIViewController {
     var currMemory: TripMemory?
     var userPickedImage: UIImage?
     
-    let imagePicker = UIImagePickerController()
-    
     
     @IBOutlet weak var tripTitleTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
@@ -110,7 +108,6 @@ class AddMemoryViewController: UIViewController {
     
     func switchToTab0(){
         tabBarController?.selectedIndex = 0
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -119,7 +116,7 @@ class AddMemoryViewController: UIViewController {
     
     // MARK: - Navigation
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if (segue.identifier == "findLocation"), let destination = segue.destination as? FindLocationViewController {
 //            destination.addMemoryController = self
 //        }
@@ -131,13 +128,5 @@ class AddMemoryViewController: UIViewController {
 //            }
 //            */
 //        }
-    
-        if(segue.identifier == "addTags"),
-            let dest = segue.destination as? AddTagsViewController{
-            
-            dest.parentTrip = parentTrip
-            dest.currUser = currUser
-            dest.currMemory = currMemory
-        }
-    }
+//    }
 }

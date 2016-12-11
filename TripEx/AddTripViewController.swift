@@ -80,6 +80,7 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
         dismiss(animated: true, completion: nil)
     }
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -190,14 +191,13 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             print("it saved")
             
             if let dest = segue.destination as? AddMemoryTableViewController {
+                dest.title = "Add Memory"
                 dest.parentTrip = trip
                 dest.currUser = currUser
+                
             }
         }
-        
-        if (segue.identifier == "findTripLocation"), let destination = segue.destination as? FindLocationViewController {
-            destination.addTripController = self
-            destination.identifier = "findTripLocation"
-        }
     }
+    
+    
 }
