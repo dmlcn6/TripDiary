@@ -38,9 +38,10 @@ class AddMemoryTableViewController: UITableViewController, UIImagePickerControll
             print("Location and Trip Title are both empty")
         }
         
-        tableView.estimatedRowHeight = 44.0
+        tableView.estimatedRowHeight = 80.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.footerView(forSection: 0)
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
+
         tableView.reloadData()
         
         //Add NEXT button

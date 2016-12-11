@@ -85,11 +85,11 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
                 self.addMemoryController?.currMemory?.memLongitude = self.pointAnnotation.coordinate.longitude
                 self.addMemoryController?.memoryLocation = self.pointAnnotation.title?.capitalized
             } else if self.identifier == "findTripLocation" {
-                self.addTripController?.trip?.tripLatitude = self.pointAnnotation.coordinate.latitude
-                self.addTripController?.trip?.tripLongitude = self.pointAnnotation.coordinate.longitude
+                self.addTripController?.tripLatitude = Double(self.pointAnnotation.coordinate.latitude)
+                self.addTripController?.tripLongitude = Double(self.pointAnnotation.coordinate.longitude)
                 self.addTripController?.trip?.tripLocation = self.pointAnnotation.title?.capitalized
                 self.addTripController?.locationText.text = self.pointAnnotation.title?.capitalized
-                print("\(self.pointAnnotation.title?.capitalized)")
+                print("\(self.pointAnnotation.coordinate.latitude)")
             }
         }
     }
