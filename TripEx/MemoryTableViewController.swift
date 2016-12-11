@@ -68,14 +68,14 @@ class MemoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memorycell", for: indexPath) as! MemoryTableViewCell
 
         // Configure the cell...
-        
-        
-        let size = CGSize.init(width: 300, height: 250)
-        cell.sizeThatFits(size)
-        
         if (cellCount == 0){
+            let size = CGSize.init(width: 300, height: 250)
+            cell.sizeThatFits(size)
             cell.locationTextField.text = "NO MEMORIES"
+            
         }else {
+            let size = CGSize.init(width: 300, height: 250)
+            cell.sizeThatFits(size)
             cell.titleTextField.text = tripMemories[indexPath.row].memTitle
             cell.locationTextField.text = String(describing: tripMemories[indexPath.row].memDate)
         }

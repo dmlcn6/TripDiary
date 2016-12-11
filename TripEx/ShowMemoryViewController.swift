@@ -26,11 +26,11 @@ class ShowMemoryViewController: UIViewController {
             memoryNoteArea.text = currMemory.memNote
             
             //photto stuff
-            if let photosArray: [MemoryPhoto] = currMemory.memPhotos?.allObjects as! [MemoryPhoto]{
+            if let photosArray = currMemory.memPhotos?.allObjects as? [MemoryPhoto] {
                 if photosArray.isEmpty{
                     print("empty array of photos")
                 }else {
-                    if let photo = photosArray[0] as? MemoryPhoto{
+                    if let photo = photosArray.first {
                         if let memPhotoData = photo.memPhotoData as Data?{
                             memoryPhotoView.image = UIImage(data: memPhotoData, scale: 1.0)
                         }

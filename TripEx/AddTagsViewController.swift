@@ -40,8 +40,7 @@ class AddTagsViewController: UIViewController {
     }
     
     func checkTripMemsTags() {
-        if let parentTrip = parentTrip,
-            let currMemory = currMemory {
+        if let currMemory = currMemory {
             memoryTags = currMemory.memTags?.allObjects as! [Tag]
         }
         print("TRIP MEM TAGS#: \(memoryTags.count)\n\n")
