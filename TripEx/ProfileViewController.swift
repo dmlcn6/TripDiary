@@ -25,30 +25,12 @@ class ProfileViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0.35, green:0.78, blue:0.98, alpha:1.0)
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
         if let currUser = currUser, currUser.isLoggedIn == true{
             print("\n\nPROFILE \(currUser.userName) logged in \(currUser)\n\n")
         }else {
             print("\n\nProfile Not logged or nil\n\n")
         }
-        
-        let backgroundView = UIImageView(frame: UIScreen.main.bounds)
-        backgroundView.contentMode = .scaleAspectFit
-        backgroundView.clipsToBounds = true
-        
-        let image = UIImage(named: "imageMasterBackground.jpg")
-        
-        
-        backgroundView.image = image
-        
-        self.view.insertSubview(backgroundView, at: 0)
-        
-        self.view.addSubview(backgroundView)
-        self.view.sendSubview(toBack: backgroundView)
-        
-        
     }
 
     override func didReceiveMemoryWarning() {
