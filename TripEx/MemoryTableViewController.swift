@@ -68,21 +68,20 @@ class MemoryTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "memorycell", for: indexPath) as! MemoryTableViewCell
 
         // Configure the cell...
-        
-        
-        let size = CGSize.init(width: 300, height: 250)
-        cell.sizeThatFits(size)
-        
         if (cellCount == 0){
+            let size = CGSize.init(width: 300, height: 250)
+            cell.sizeThatFits(size)
             cell.locationTextField.text = "NO MEMORIES"
+            
         }else {
+            let size = CGSize.init(width: 300, height: 250)
+            cell.sizeThatFits(size)
             cell.titleTextField.text = tripMemories[indexPath.row].memTitle
             cell.locationTextField.text = String(describing: tripMemories[indexPath.row].memDate)
         }
 
         return cell
-    }
-    
+    }   
     
     
     /*
@@ -120,14 +119,17 @@ class MemoryTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showMemory" {
+            if let destination = segue.destination as? ShowMemoryViewController, let indexPath = tableView.indexPathForSelectedRow?.row {
+                destination.currMemory = tripMemories[indexPath]
+            }
+        }
     }
-    */
+ 
 
 }

@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddMemoryTableViewController: UITableViewController {
+class AddMemoryTableViewController: UITableViewController, UIImagePickerControllerDelegate {
     
     var parentTrip: Trip?
     var currUser: User?
@@ -22,7 +22,9 @@ class AddMemoryTableViewController: UITableViewController {
     var memoryLocation : String?
     var memoryTags : [Tag]?
     var memoryPhotos : [MemoryPhoto]?
-        
+    
+    let imagePicker = UIImagePickerController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,9 +38,9 @@ class AddMemoryTableViewController: UITableViewController {
             print("Location and Trip Title are both empty")
         }
         
-        tableView.estimatedRowHeight = 60.0
+        tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.allowsSelection = false
+        tableView.footerView(forSection: 0)
         tableView.reloadData()
         
         //Add NEXT button
@@ -51,6 +53,8 @@ class AddMemoryTableViewController: UITableViewController {
         tableView.reloadData()
         
         self.tabBarController?.tabBar.isHidden = false
+        
+        self.title = "Add Memory"
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,18 +101,39 @@ class AddMemoryTableViewController: UITableViewController {
             return cell
         }
     }
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if (segue.identifier == "findLocation"), let destination = segue.destination as? FindLocationViewController {
-            destination.addMemoryController = self
-        }
-        if (segue.identifier == "addTags"), let destination = segue.destination as? AddTagsViewController {
-            destination.currUser = currUser
-            destination.currMemory = currMemory
-        }
+    
+    //presents the photoLibrary for selecting without editing
+    func openPhotoLibrary() {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
     
-    // If the User hits the NEXT button in Navigation
+    //BUTTON CLICKED TO PRESENT PHOTOLIBRARY
+    @IBAction func presentPhotoLibrary(_ sender: Any) {
+        openPhotoLibrary()
+    }
+    
+    //IF THE USER PICKS AN IMAGE
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
+        //grab the users selected image from the PhotoLibrary
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            //if let coverImageView = coverImageView {
+                userPickedImage = pickedImage
+                //coverImageView.contentMode = .scaleAspectFit
+                //coverImageView.image = userPickedImage
+            //}
+        }
+        dismiss(animated: true, completion: nil)
+    }
+    
+    //User cancels the PhotoLibrary.
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
+
+    // If the User hits the Save button in Navigation
     func saveMemory(){
         print("\n\nADD MEMORY LOGGED STATUS: \(currUser?.isLoggedIn)\n\n")
         
@@ -126,27 +151,31 @@ class AddMemoryTableViewController: UITableViewController {
                 
                 // old memory
                 if let currMemory = currMemory {
+                    print("MEMORY \(currMemory.memTitle) HAS  \(currMemory.memPhotos?.count) # PHOTOS\n\n")
                     currMemory.memTitle = titleText
                     currMemory.memNote = memoryNote
                     
                     let currentDate = NSDate()
                     currMemory.memDate = currentDate
                     
-                    /*
-                     if let userPickedImage = userPickedImage,
-                     let imageData = UIImagePNGRepresentation(userPickedImage) as NSData?,
-                     let imageSet:MemoryPhoto = NSEntityDescription.insertNewObject(forEntityName: "MemoryPhoto", into: context) as? MemoryPhoto{
-                     image.memPhotoData = imageData
-                     
-                     //adds trip to currUser
-                     trip.tripCoverPhoto = image
-                     
-                     }else{
-                     print("\n\nwtf happend? \(userPickedImage)")
-                     }
-                     */
+                    
+                    if let userPickedImage = userPickedImage,
+                    let imageData = UIImagePNGRepresentation(userPickedImage) as NSData?,
+                    let image:MemoryPhoto = NSEntityDescription.insertNewObject(forEntityName: "MemoryPhoto", into: context) as? MemoryPhoto {
+
+                        image.memPhotoData = imageData
+
+                        //adds image to currMemory
+                        currMemory.addToMemPhotos(image)
+                        print("\n\nMEMORY \(currMemory.memTitle) HAS  \(currMemory.memPhotos?.count) # PHOTOS\n\n")
+                    }else {
+                        print("\n\nwtf happend? \(userPickedImage)")
+                    }
+                    
+                    
+                    //add currMemory to parent trip
                     if let parentTrip = parentTrip{
-                        print(parentTrip.tripMemories?.count as Any)
+                        print("\n\nPARENT HAS # \(parentTrip.tripMemories?.count) TRIPS\n\n")
                         parentTrip.addToTripMemories(currMemory)
                         
                     }
@@ -154,7 +183,7 @@ class AddMemoryTableViewController: UITableViewController {
                     // Try to update the Trip contex with data in text fields
                     // perform addTrip segue
                     if(DatabaseController.saveContext() == true) {
-                        print("\n\nSaving user \(currUser.userEmail) TripMemory count \(parentTrip?.tripMemories?.count).count)")
+                        print("\n\nSaving user \(currUser.userEmail) TripMemory count for parent trip is \(parentTrip?.tripMemories?.count).count)")
                         
                         Timer.scheduledTimer(timeInterval: 0.2, target: self,selector: #selector(switchToTab0),userInfo: nil, repeats: false)
                         
@@ -179,5 +208,16 @@ class AddMemoryTableViewController: UITableViewController {
     
     func switchToTab0(){
         tabBarController?.selectedIndex = 0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "findLocation"), let destination = segue.destination as? FindLocationViewController {
+            destination.addMemoryController = self
+            destination.identifier = "findLocation"
+        }
+        if (segue.identifier == "addTags"), let destination = segue.destination as? AddTagsViewController {
+            destination.currUser = currUser
+            destination.currMemory = currMemory
+        }
     }
 }
