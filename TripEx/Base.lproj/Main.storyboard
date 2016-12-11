@@ -1287,7 +1287,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="66" id="AUT-v2-fva"/>
                                 </constraints>
-                            </label>
+                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Suggested Tags:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1qR-nm-kUm">
                                 <rect key="frame" x="123" y="414" width="129" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
