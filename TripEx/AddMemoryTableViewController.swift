@@ -38,9 +38,8 @@ class AddMemoryTableViewController: UITableViewController, UIImagePickerControll
             print("Location and Trip Title are both empty")
         }
         
-        tableView.estimatedRowHeight = 44.0
+        tableView.estimatedRowHeight = 60.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.footerView(forSection: 0)
         tableView.reloadData()
         
         //Add NEXT button
@@ -50,6 +49,8 @@ class AddMemoryTableViewController: UITableViewController, UIImagePickerControll
     
     override func viewWillAppear(_ animated: Bool) {
         // Refresh the table every time this view appears to load in new data
+        tableView.setNeedsLayout()
+        tableView.layoutIfNeeded()
         tableView.reloadData()
         
         self.tabBarController?.tabBar.isHidden = false

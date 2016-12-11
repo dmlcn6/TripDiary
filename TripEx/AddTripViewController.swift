@@ -20,6 +20,9 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var locationText: UITextField!
     @IBOutlet weak var coverImageView: UIImageView!
     
+    var tripLatitude : Double = 0
+    var tripLongitude : Double = 0
+    
     var userPickedImage: UIImage?
     let imagePicker = UIImagePickerController()
     
@@ -115,8 +118,8 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             if let trip = trip{
                 trip.tripTitle = titleText.text
                 trip.tripLocation = locationText.text
-                trip.tripLatitude = 0
-                trip.tripLongitude = 0
+                trip.tripLatitude = self.tripLatitude
+                trip.tripLongitude = self.tripLongitude
                 
                 if let userPickedImage = userPickedImage,
                     let imageData = UIImagePNGRepresentation(userPickedImage) as NSData?,

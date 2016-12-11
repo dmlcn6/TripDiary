@@ -108,6 +108,9 @@ class AddTagsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func hideKeyBoardOnTouch(_ sender: Any) {
+        tagsTextField.resignFirstResponder()
+    }
     
 
     /*
