@@ -67,6 +67,8 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         
         //fetch.predicate = predicate
         //fetch.fetchLimit = 2
+        let descript = NSSortDescriptor(key:"tripTitle", ascending: true)
+        fetch.sortDescriptors = [descript]
         
         do{
             fetchedTrips = try DatabaseController.getContext().fetch(fetch)
