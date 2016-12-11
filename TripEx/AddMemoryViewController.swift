@@ -14,6 +14,8 @@ class AddMemoryViewController: UIViewController {
     var currMemory: TripMemory?
     var userPickedImage: UIImage?
     
+    let imagePicker = UIImagePickerController()
+    
     
     @IBOutlet weak var tripTitleTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!

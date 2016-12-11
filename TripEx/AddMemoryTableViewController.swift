@@ -36,9 +36,9 @@ class AddMemoryTableViewController: UITableViewController {
             print("Location and Trip Title are both empty")
         }
         
-        tableView.estimatedRowHeight = 60.0
+        tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.allowsSelection = false
+        tableView.footerView(forSection: 0)
         tableView.reloadData()
         
         //Add NEXT button
@@ -103,10 +103,8 @@ class AddMemoryTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "findLocation"), let destination = segue.destination as? FindLocationViewController {
             destination.addMemoryController = self
+            destination.identifier = "findLocation"
             // Set the back button text for FindLocation
-            let backItem = UIBarButtonItem()
-            backItem.title = "Back"
-            navigationItem.backBarButtonItem = backItem
         }
         if (segue.identifier == "addTags"), let destination = segue.destination as? AddTagsViewController {
             destination.currUser = currUser
