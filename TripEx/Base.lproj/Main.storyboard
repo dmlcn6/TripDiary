@@ -326,7 +326,7 @@
                                     <outlet property="coverImageView" destination="XvR-J4-7or" id="xRk-Ux-9Jr"/>
                                     <outlet property="locationTextField" destination="UNs-96-11J" id="b0W-Io-E3b"/>
                                     <outlet property="titleTextField" destination="BpX-KH-b5V" id="rBo-ia-x0d"/>
-                                    <segue destination="vzO-By-VmZ" kind="show" identifier="showMemoryView" id="7jL-Bq-yfZ"/>
+                                    <segue destination="vzO-By-VmZ" kind="show" identifier="showMemory" id="5E8-eg-x1o"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -352,43 +352,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pbR-Zp-BHr">
-                                <rect key="frame" x="67" y="323" width="240" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Memory description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pbR-Zp-BHr">
+                                <rect key="frame" x="31" y="372" width="313" height="236"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rm-Ms-g3v">
-                                <rect key="frame" x="166" y="101" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Memory Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Rm-Ms-g3v">
+                                <rect key="frame" x="137" y="101" width="100.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jn4-Cx-1ya">
-                                <rect key="frame" x="67" y="153" width="240" height="128"/>
+                            <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jn4-Cx-1ya">
+                                <rect key="frame" x="26" y="142" width="323" height="220"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="NQ4-bg-iji"/>
+                                    <constraint firstAttribute="height" constant="220" id="Utd-1q-w1F"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
-                            <constraint firstItem="1Rm-Ms-g3v" firstAttribute="centerX" secondItem="Jn4-Cx-1ya" secondAttribute="centerX" id="1J6-zt-hho"/>
-                            <constraint firstItem="wgm-Qu-34d" firstAttribute="top" secondItem="pbR-Zp-BHr" secondAttribute="bottom" constant="167" id="Gr8-vL-h2a"/>
-                            <constraint firstItem="Jn4-Cx-1ya" firstAttribute="leading" secondItem="pbR-Zp-BHr" secondAttribute="leading" id="Gu0-jU-IJe"/>
-                            <constraint firstItem="pbR-Zp-BHr" firstAttribute="top" secondItem="Jn4-Cx-1ya" secondAttribute="bottom" constant="42" id="HDH-45-cIb"/>
-                            <constraint firstItem="1Rm-Ms-g3v" firstAttribute="top" secondItem="03D-UV-jif" secondAttribute="bottom" constant="37" id="XdU-pC-zwr"/>
-                            <constraint firstItem="Jn4-Cx-1ya" firstAttribute="top" secondItem="1Rm-Ms-g3v" secondAttribute="bottom" constant="31" id="YVG-Am-NtP"/>
-                            <constraint firstItem="Jn4-Cx-1ya" firstAttribute="trailing" secondItem="pbR-Zp-BHr" secondAttribute="trailing" id="f9D-PT-sSe"/>
-                            <constraint firstItem="1Rm-Ms-g3v" firstAttribute="centerX" secondItem="UTb-jv-ovd" secondAttribute="centerX" id="hrw-G0-XnA"/>
-                            <constraint firstItem="Jn4-Cx-1ya" firstAttribute="leading" secondItem="UTb-jv-ovd" secondAttribute="leadingMargin" constant="51" id="qtK-FQ-hh8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jn4-Cx-1ya" secondAttribute="trailing" constant="10" id="7MI-Mk-7d4"/>
+                            <constraint firstItem="pbR-Zp-BHr" firstAttribute="top" secondItem="Jn4-Cx-1ya" secondAttribute="bottom" constant="10" id="8lq-6N-pYY"/>
+                            <constraint firstItem="Jn4-Cx-1ya" firstAttribute="leading" secondItem="UTb-jv-ovd" secondAttribute="leadingMargin" constant="10" id="9Bh-yS-wBv"/>
+                            <constraint firstItem="Jn4-Cx-1ya" firstAttribute="top" secondItem="1Rm-Ms-g3v" secondAttribute="bottom" constant="20" id="BiT-Jl-HfG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pbR-Zp-BHr" secondAttribute="trailing" constant="15" id="DYy-Sr-J6y"/>
+                            <constraint firstItem="1Rm-Ms-g3v" firstAttribute="top" secondItem="03D-UV-jif" secondAttribute="bottom" constant="37" id="as9-qF-L86"/>
+                            <constraint firstItem="pbR-Zp-BHr" firstAttribute="leading" secondItem="UTb-jv-ovd" secondAttribute="leadingMargin" constant="15" id="la0-9u-ikT"/>
+                            <constraint firstItem="1Rm-Ms-g3v" firstAttribute="centerX" secondItem="UTb-jv-ovd" secondAttribute="centerX" id="mh6-ua-aea"/>
+                            <constraint firstItem="wgm-Qu-34d" firstAttribute="top" secondItem="pbR-Zp-BHr" secondAttribute="bottom" constant="10" id="nz6-go-S9Z"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="9lW-02-eqy" appends="YES" id="M5N-gQ-qZv"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="memoryNoteArea" destination="pbR-Zp-BHr" id="x3x-Gf-u2w"/>
+                        <outlet property="memoryPhotoView" destination="Jn4-Cx-1ya" id="1dT-hJ-ZpQ"/>
+                        <outlet property="memoryTitleLabel" destination="1Rm-Ms-g3v" id="r2x-2q-U3q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rWZ-gZ-Bev" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="9lW-02-eqy">
+                    <connections>
+                        <action selector="imageTapped:" destination="vzO-By-VmZ" id="WeH-MA-Y2n"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2346" y="884"/>
+            <point key="canvasLocation" x="-2346.4000000000001" y="883.80809595202402"/>
         </scene>
         <!--My Trips-->
         <scene sceneID="udd-5M-VXX">
@@ -528,7 +541,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SV7-zH-sfh">
-                                <rect key="frame" x="0.0" y="169" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="156" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Title: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k6Q-c0-nqh">
                                         <rect key="frame" x="8" y="10" width="77" height="21"/>
@@ -554,7 +567,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="swp-M1-pw7">
-                                <rect key="frame" x="0.0" y="212" width="375" height="40"/>
+                                <rect key="frame" x="0.0" y="199" width="375" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trip Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ELW-om-3of">
                                         <rect key="frame" x="8" y="10" width="104" height="21"/>
@@ -580,10 +593,10 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QSy-8G-pmL">
-                                <rect key="frame" x="16" y="263" width="343" height="347"/>
+                                <rect key="frame" x="16" y="250" width="343" height="360"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c45-rH-Gm7">
-                                <rect key="frame" x="161" y="129" width="53" height="32"/>
+                                <rect key="frame" x="161" y="94" width="53" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="53" id="YTl-or-Omf"/>
                                 </constraints>
@@ -602,8 +615,8 @@
                             <constraint firstItem="SV7-zH-sfh" firstAttribute="trailing" secondItem="swp-M1-pw7" secondAttribute="trailing" id="Ky4-zh-2ix"/>
                             <constraint firstItem="QSy-8G-pmL" firstAttribute="top" secondItem="swp-M1-pw7" secondAttribute="bottom" constant="11" id="M0T-bv-PH4"/>
                             <constraint firstItem="QSy-8G-pmL" firstAttribute="leading" secondItem="GNQ-Av-Cwo" secondAttribute="leadingMargin" id="Mal-Qo-vZg"/>
-                            <constraint firstItem="c45-rH-Gm7" firstAttribute="top" secondItem="Kl4-Ez-FjE" secondAttribute="bottom" constant="65" id="TqX-Oo-WaL"/>
-                            <constraint firstItem="SV7-zH-sfh" firstAttribute="top" secondItem="c45-rH-Gm7" secondAttribute="bottom" constant="8" symbolic="YES" id="eDb-4L-ZxV"/>
+                            <constraint firstItem="c45-rH-Gm7" firstAttribute="top" secondItem="Kl4-Ez-FjE" secondAttribute="bottom" constant="30" id="TqX-Oo-WaL"/>
+                            <constraint firstItem="SV7-zH-sfh" firstAttribute="top" secondItem="c45-rH-Gm7" secondAttribute="bottom" constant="30" id="eDb-4L-ZxV"/>
                             <constraint firstItem="SV7-zH-sfh" firstAttribute="leading" secondItem="GNQ-Av-Cwo" secondAttribute="leading" id="f9A-YG-bUk"/>
                             <constraint firstItem="E4t-gV-0uH" firstAttribute="leading" secondItem="GNQ-Av-Cwo" secondAttribute="leading" constant="185" id="gtK-Yv-ENV"/>
                             <constraint firstAttribute="bottom" secondItem="E4t-gV-0uH" secondAttribute="bottom" constant="284" id="mfx-52-eDO"/>
@@ -768,7 +781,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Find Location" id="93g-rv-tkt">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="VpE-Xa-wDr"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="8f9-me-Evv"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="zMv-OO-SyT">
                             <connections>
                                 <action selector="searchLocation:" destination="wtU-7Z-44c" id="GYa-RC-7Mk"/>
@@ -960,9 +973,9 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZM-6g-C3p">
                                             <rect key="frame" x="194" y="8" width="173" height="62"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfC-13-ijG">
-                                                    <rect key="frame" x="63" y="16" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfC-13-ijG">
+                                                    <rect key="frame" x="70" y="15" width="32" height="32"/>
+                                                    <state key="normal" image="Camera"/>
                                                     <connections>
                                                         <action selector="addPhotosPressed:" destination="f9o-BK-Bh2" eventType="touchUpInside" id="WQH-Qp-ZPt"/>
                                                     </connections>

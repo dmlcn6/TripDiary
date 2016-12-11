@@ -51,6 +51,8 @@ class AddMemoryTableViewController: UITableViewController {
         tableView.reloadData()
         
         self.tabBarController?.tabBar.isHidden = false
+        
+        self.title = "Add Memory"
     }
 
     override func didReceiveMemoryWarning() {
@@ -101,6 +103,10 @@ class AddMemoryTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "findLocation"), let destination = segue.destination as? FindLocationViewController {
             destination.addMemoryController = self
+            // Set the back button text for FindLocation
+            let backItem = UIBarButtonItem()
+            backItem.title = "Back"
+            navigationItem.backBarButtonItem = backItem
         }
         if (segue.identifier == "addTags"), let destination = segue.destination as? AddTagsViewController {
             destination.currUser = currUser
