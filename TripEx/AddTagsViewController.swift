@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class AddTagsViewController: UIViewController, UITextFieldDelegate {
+class AddTagsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
     var parentTrip: Trip?
     var currMemory: TripMemory?
@@ -17,9 +17,11 @@ class AddTagsViewController: UIViewController, UITextFieldDelegate {
     var currUser: User?
     var activeTextField: UITextField? = nil
     
+    let columnNum: CGFloat = 3 //use number of columns instead of a static maximum cell width
+    var cellWidth: CGFloat = 0
     
-    @IBOutlet var textFields: [UITextField]!
     @IBOutlet weak var tagsTextField: UITextField!
+    @IBOutlet weak var tagsCollection: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +45,36 @@ class AddTagsViewController: UIViewController, UITextFieldDelegate {
                 print("\n\ntag Name is: \(tag.tagName)\n\n")
             }
         }
+        
+        if let flowLayout = tagsCollection.collectionViewLayout as? UICollectionViewFlowLayout {
+            let spaceBetweenCells = flowLayout.minimumInteritemSpacing * (columnNum - 1)
+            let totalCellAvailableWidth = tagsCollection.frame.size.width - flowLayout.sectionInset.left - flowLayout.sectionInset.right - spaceBetweenCells
+            cellWidth = floor(totalCellAvailableWidth / columnNum);
+        }
+    }
+    
+    override func viewWillLayoutSubviews()
+    {
+        super.viewWillLayoutSubviews()
+        
+        //recalculate the collection view layout when the view layout changes
+        tagsCollection.collectionViewLayout.invalidateLayout()
+    }
+    
+    @IBAction func addTag(_ sender: Any) {
+        let context = DatabaseController.getContext()
+        let newTag = NSEntityDescription.insertNewObject(forEntityName: "Tag", into: context) as? Tag
+        
+        if let newTag = newTag {
+            if !((tagsTextField.text?.isEmpty)!) {
+                newTag.tagName = tagsTextField.text
+                memoryTags.append(newTag)
+                
+                currMemory?.memTags?.addingObjects(from: memoryTags)
+                
+                tagsCollection.reloadData()
+            }
+        }
     }
     
     func checkTripMemsTags() {
@@ -51,6 +83,32 @@ class AddTagsViewController: UIViewController, UITextFieldDelegate {
         }
         print("TRIP MEM TAGS#: \(memoryTags.count)\n\n")
     }
+    
+    //setting number of items in section
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return memoryTags.count
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "tagCell", for: indexPath) as! TagsCollectionViewCell
+        
+        cell.tagLabel.text = memoryTags[indexPath.item].tagName
+        
+        cell.layer.borderWidth = 1
+        cell.layer.borderColor = UIColor(red:0/255.0, green:0/255.0, blue:0/255.0, alpha: 1.0).cgColor
+        cell.tagLabel.preferredMaxLayoutWidth = 80
+        
+        return cell
+    }
+    
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return
+//    }
 
     
     // If the User hits the NEXT button in Navigation
