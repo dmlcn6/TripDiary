@@ -121,6 +121,9 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
                 trip.tripLatitude = self.tripLatitude
                 trip.tripLongitude = self.tripLongitude
                 
+                let currentDate = NSDate()
+                trip.tripDate = currentDate
+                
                 if let userPickedImage = userPickedImage,
                     let imageData = UIImagePNGRepresentation(userPickedImage) as NSData?,
                     let image:MemoryPhoto = NSEntityDescription.insertNewObject(forEntityName: "MemoryPhoto", into: context) as? MemoryPhoto{

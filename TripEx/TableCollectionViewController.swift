@@ -13,6 +13,7 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
 
     
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     
     var fetchedTrips = [Trip]()
@@ -21,8 +22,11 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     var selectedIndexPath: IndexPath = IndexPath()
     var currUser: User?
     
+    
     let layout = UICollectionViewFlowLayout()
     var cellCount = 1
+    let searchTitle = "tripTitle"
+    let searchDate = "tripDate"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,14 +47,13 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         
         collectionView.collectionViewLayout = layout
         
-        fetchData()
-        
-        
-        
+        fetchData(searchDate)
     }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = false
-        fetchData()
+        fetchData(searchDate)
         
     }
 
@@ -59,15 +62,31 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func searchTrips(_ sender: Any) {
+        
+
+    }
     
-    func fetchData() {
+    
+    @IBAction func segmentChange(_ sender: Any) {
+        if(segmentedControl.selectedSegmentIndex == 0)
+        {
+            fetchData(searchTitle)
+        }
+        else if(segmentedControl.selectedSegmentIndex == 1)
+        {
+            fetchData(searchDate)
+        }
+    }
+    
+    func fetchData(_ key: String) {
         let fetch = NSFetchRequest<Trip>(entityName: "Trip")
         
         //let predicate = NSPredicate(format: "tripTitle == %@", "*")
         
         //fetch.predicate = predicate
         //fetch.fetchLimit = 2
-        let descript = NSSortDescriptor(key:"tripTitle", ascending: true)
+        let descript = NSSortDescriptor(key: key, ascending: true)
         fetch.sortDescriptors = [descript]
         
         do{
