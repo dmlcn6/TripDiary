@@ -9,11 +9,11 @@
 import UIKit
 import CoreData
 
-class TableCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
-
+class TableCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchResultsUpdating, UISearchBarDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
+    var searchController: UISearchController!
     
     
     var fetchedTrips = [Trip]()
@@ -43,9 +43,13 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         layout.minimumInteritemSpacing = 5
         layout.minimumLineSpacing = 10
         
-        
-        
         collectionView.collectionViewLayout = layout
+        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.searchBar.sizeToFit()
+        
         
         fetchData(searchDate)
     }
@@ -63,8 +67,26 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     }
     
     @IBAction func searchTrips(_ sender: Any) {
-        
+        searchController = UISearchController(searchResultsController: nil)
+        searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchBar.delegate = self
+        present(searchController, animated: true, completion: nil)
 
+    }
+    
+    
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            let predicate = NSPredicate(format: "tripTite contains[c] %@", searchText)
+            
+            if let userTrips = currUser?.userTrips?.allObjects as? NSArray {
+                fetchedTrips = userTrips.filtered(using: predicate) as! [Trip]
+            }
+            
+            
+            collectionView.reloadData()
+        }
     }
     
     
@@ -88,6 +110,7 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         //fetch.fetchLimit = 2
         let descript = NSSortDescriptor(key: key, ascending: true)
         fetch.sortDescriptors = [descript]
+
         
         do{
             fetchedTrips = try DatabaseController.getContext().fetch(fetch)
