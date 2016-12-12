@@ -9,22 +9,24 @@
 import UIKit
 import CoreData
 
-class TableCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class TableCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, UISearchResultsUpdating {
 
     
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var segmentedControl: UISegmentedControl!
-    
+    var searchController: UISearchController!
+
     
     var fetchedTrips = [Trip]()
     let reuseIdentifier = "tripcell"
     var selectedTrip: Trip?
     var selectedIndexPath: IndexPath = IndexPath()
     var currUser: User?
-    
+
     
     let layout = UICollectionViewFlowLayout()
-    var cellCount = 1
+    var cellCount = 0
+    
     let searchTitle = "tripTitle"
     let searchDate = "tripDate"
     
@@ -46,13 +48,16 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         
         
         collectionView.collectionViewLayout = layout
-        
-        fetchData(searchDate)
+        collectionView.reloadData()
+        //fetchData(searchDate)
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
+        collectionView.reloadData()
+        segmentedControl.setEnabled(true, forSegmentAt: 1)
         self.tabBarController?.tabBar.isHidden = false
+        
         fetchData(searchDate)
         
     }
@@ -63,19 +68,45 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     }
     
     @IBAction func searchTrips(_ sender: Any) {
+        searchController = UISearchController(searchResultsController: nil)
+        //searchController.resignFirstResponder()
         
+        searchController.hidesNavigationBarDuringPresentation = false
+        self.searchController.searchBar.delegate = self
+        present(searchController, animated: true, completion: nil)
 
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if let searchText = searchController.searchBar.text {
+            let predicate = NSPredicate(format: "tripTite contains[c] '%@'", searchText)
+           
+            if let currUser = currUser {
+                if let userTrips = currUser.userTrips?.allObjects{
+                    let array  = userTrips as NSArray
+                    
+                    fetchedTrips = (array.filtered(using: predicate) as! [Trip])
+                    
+                }
+            }else {
+                print("no user plz login")
+            }
+        }
+        else {
+            print("im getting no search text")
+        }
+        collectionView.reloadData()
     }
     
     
     @IBAction func segmentChange(_ sender: Any) {
         if(segmentedControl.selectedSegmentIndex == 0)
         {
-            fetchData(searchTitle)
+            fetchData(searchDate)
         }
         else if(segmentedControl.selectedSegmentIndex == 1)
         {
-            fetchData(searchDate)
+            fetchData(searchTitle)
         }
     }
     
@@ -107,19 +138,25 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     //setting number of items in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        //fetchData(searchDate)
+        
         if fetchedTrips.isEmpty {
             cellCount = 0
             return 1
         }else{
+            cellCount = 1
             return fetchedTrips.count
         }
     }
     
    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        selectedTrip = fetchedTrips[indexPath.row]
-        selectedIndexPath = indexPath
-        
+        if cellCount == 0 {
+            selectedTrip = nil
+        }else {
+            selectedTrip = fetchedTrips[indexPath.row]
+            selectedIndexPath = indexPath
+        }
     }
     
     
@@ -166,12 +203,13 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        if segue.identifier == "showMemories"{
+        if segue.identifier == "showMemories", let selectedTrip = selectedTrip {
             if let dest = segue.destination as? MemoryTableViewController{
+                print("\n\nSELECTED TRIP IS \(selectedTrip)\n\n")
                 dest.parentTrip = selectedTrip
                 //dest.tripMemories = selectedTrip?.tripMemories?.allObjects as! [TripMemory]
                 dest.currUser = currUser
-                dest.title = selectedTrip?.tripTitle
+                dest.title = selectedTrip.tripTitle
             }
         }
     }
