@@ -9,19 +9,25 @@
 import UIKit
 import CoreData
 
-class AddTagsViewController: UIViewController {
+class AddTagsViewController: UIViewController, UITextFieldDelegate {
 
     var parentTrip: Trip?
     var currMemory: TripMemory?
     var memoryTags = [Tag]()
     var currUser: User?
+    var activeTextField: UITextField? = nil
     
+    
+    @IBOutlet var textFields: [UITextField]!
     @IBOutlet weak var tagsTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        for field in textFields {
+            field.delegate = self
+        }
+
         
         //Add Done button
         //if button pressed, SAVE Trip
@@ -108,10 +114,24 @@ class AddTagsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func hideKeyBoardOnTouch(_ sender: Any) {
-        tagsTextField.resignFirstResponder()
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        activeTextField = nil
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        activeTextField?.resignFirstResponder()
+        
+        return true
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: AnyObject) {
+        activeTextField?.resignFirstResponder()
+    }
+
 
     /*
     // MARK: - Navigation

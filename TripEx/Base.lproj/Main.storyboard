@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1S9-Tt-Wta">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1S9-Tt-Wta">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -41,10 +41,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="3a5-cI-x5k">
-                                <rect key="frame" x="20" y="219" width="374" height="416"/>
+                                <rect key="frame" x="20" y="217" width="374" height="418"/>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hws-3J-VQq">
-                                <rect key="frame" x="0.0" y="66" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCT-Nc-aJL">
                                         <rect key="frame" x="8" y="10" width="67" height="23"/>
@@ -74,7 +74,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2OW-hy-pBk">
-                                <rect key="frame" x="0.0" y="109" width="414" height="40"/>
+                                <rect key="frame" x="0.0" y="107" width="414" height="40"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lDj-xq-p0R">
                                         <rect key="frame" x="8" y="10" width="58" height="21"/>
@@ -104,7 +104,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Where I've Traveled:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6l-eg-quv">
-                                <rect key="frame" x="129.66666666666669" y="191" width="155.00000000000006" height="20"/>
+                                <rect key="frame" x="129.66666666666669" y="189" width="155.00000000000006" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="ZaH-O4-VY7"/>
                                 </constraints>
@@ -113,13 +113,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="jSx-Js-CLw">
-                                <rect key="frame" x="0.0" y="215" width="414" height="472"/>
+                                <rect key="frame" x="0.0" y="213" width="414" height="474"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="tintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="Hws-3J-VQq" firstAttribute="top" secondItem="uMO-w5-Ha1" secondAttribute="bottom" constant="2" id="Edh-tF-bE9"/>
+                            <constraint firstItem="Hws-3J-VQq" firstAttribute="top" secondItem="uMO-w5-Ha1" secondAttribute="bottom" id="Edh-tF-bE9"/>
                             <constraint firstItem="Hws-3J-VQq" firstAttribute="trailing" secondItem="2OW-hy-pBk" secondAttribute="trailing" id="IvM-Z5-9nV"/>
                             <constraint firstItem="3a5-cI-x5k" firstAttribute="leading" secondItem="JVv-ra-uxM" secondAttribute="leadingMargin" id="Kxq-cZ-4HU"/>
                             <constraint firstAttribute="trailing" secondItem="Hws-3J-VQq" secondAttribute="trailing" id="N7A-9A-LdI"/>
@@ -913,9 +913,6 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="16z-j5-iYj" secondAttribute="bottom" constant="8" id="G9z-Da-Qqk"/>
                                 </constraints>
-                                <connections>
-                                    <outlet property="memoryTitleTextField" destination="16z-j5-iYj" id="ead-uK-tUq"/>
-                                </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="note" rowHeight="314" id="jLo-V0-A5v" customClass="MemoryNoteCell" customModule="TripEx" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="414" height="314"/>
@@ -1106,8 +1103,13 @@
                     </tableView>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xt9-kF-wde" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="W8H-Ld-qoa">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="eYO-pA-jc6" id="K6f-Kk-HHz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-2346.4000000000001" y="121.88905547226388"/>
+            <point key="canvasLocation" x="-2347" y="85"/>
         </scene>
         <!--Add Memory View Controller-->
         <scene sceneID="vkn-4e-Li1">
@@ -1454,12 +1456,13 @@
                     </view>
                     <connections>
                         <outlet property="tagsTextField" destination="ZTk-eg-bs4" id="xNa-va-Ftx"/>
+                        <outletCollection property="textFields" destination="ZTk-eg-bs4" collectionClass="NSMutableArray" id="7TF-Ik-cz5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C2U-rP-F3p" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="lmO-Xr-oRL">
                     <connections>
-                        <action selector="hideKeyBoardOnTouch:" destination="Acw-AR-ZhG" id="g3F-dh-gxl"/>
+                        <action selector="dismissKeyboard:" destination="Acw-AR-ZhG" id="18B-49-rYF"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -1482,6 +1485,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Cqz-lp-x9G"/>
-        <segue reference="LML-8R-FDA"/>
+        <segue reference="GNk-vi-sYU"/>
     </inferredMetricsTieBreakers>
 </document>

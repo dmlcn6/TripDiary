@@ -39,20 +39,6 @@ class ProfileViewController: UIViewController {
             print("\n\nProfile Not logged or nil\n\n")
         }
         
-        let backgroundView = UIImageView(frame: UIScreen.main.bounds)
-        backgroundView.contentMode = .scaleAspectFit
-        backgroundView.clipsToBounds = true
-        
-        let image = UIImage(named: "imageMasterBackground.jpg")
-        
-        
-        backgroundView.image = image
-        
-        self.view.insertSubview(backgroundView, at: 0)
-        
-        self.view.addSubview(backgroundView)
-        self.view.sendSubview(toBack: backgroundView)
-        
         
     }
     

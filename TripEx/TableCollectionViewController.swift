@@ -55,8 +55,19 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         self.tabBarController?.tabBar.isHidden = false
         fetchData(searchDate)
         
+        let backgroundView = UIImageView(frame: UIScreen.main.bounds)
+        backgroundView.contentMode = .scaleAspectFill
+        backgroundView.clipsToBounds = true
+        
+        let image = UIImage(named: "imageMasterBackground.jpg")
+        
+        backgroundView.image = image
+        
+        self.view.insertSubview(backgroundView, at: 0)
+        self.view.addSubview(backgroundView)
+        self.view.sendSubview(toBack: backgroundView)
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
