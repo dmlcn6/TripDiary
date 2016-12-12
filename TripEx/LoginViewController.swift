@@ -130,7 +130,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                             }else {
                                 //wrong password
                                 print(authResposes.wrongCredentials.rawValue)
-                                responseLabel.text = String(describing: authResposes.emptyString.rawValue)
+                                responseLabel.text = String(describing: authResposes.wrongCredentials.rawValue)
                             }
                         }else {
                             print("not the right user to check")
