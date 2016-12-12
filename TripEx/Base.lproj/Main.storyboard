@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1S9-Tt-Wta">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="1S9-Tt-Wta">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -167,7 +167,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHn-t2-6Xv">
-                                <rect key="frame" x="167.66666666666663" y="270" width="79" height="21"/>
+                                <rect key="frame" x="167.66666666666666" y="270" width="79" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -456,7 +456,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="MCs-vi-59j">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="108" width="414" height="579"/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="T3H-ci-pER">
                                     <size key="itemSize" width="221" height="167"/>
@@ -504,23 +504,41 @@
                                     <outlet property="delegate" destination="73C-ZE-unq" id="ZIb-Iw-vHP"/>
                                 </connections>
                             </collectionView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="FtQ-h4-0J5">
+                                <rect key="frame" x="20" y="72" width="374" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Alphabetical"/>
+                                    <segment title="Chronological"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentChange:" destination="73C-ZE-unq" eventType="valueChanged" id="QNk-hY-Bib"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="MCs-vi-59j" secondAttribute="trailing" id="1Wa-xm-koh"/>
                             <constraint firstItem="MCs-vi-59j" firstAttribute="leading" secondItem="27t-Qo-Vou" secondAttribute="leading" id="1qz-qj-34M"/>
                             <constraint firstItem="MCs-vi-59j" firstAttribute="bottom" secondItem="lrg-rb-1fy" secondAttribute="top" id="X3y-4t-wTf"/>
-                            <constraint firstItem="MCs-vi-59j" firstAttribute="top" secondItem="27t-Qo-Vou" secondAttribute="top" constant="64" id="yX4-AM-N2M"/>
+                            <constraint firstItem="MCs-vi-59j" firstAttribute="top" secondItem="27t-Qo-Vou" secondAttribute="top" constant="108" id="yX4-AM-N2M"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="My Trips" id="dB8-QG-FhT"/>
+                    <navigationItem key="navigationItem" title="My Trips" id="dB8-QG-FhT">
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="aOR-Tg-Qe5">
+                            <connections>
+                                <action selector="searchTrips:" destination="73C-ZE-unq" id="zaj-U5-gpo"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="MCs-vi-59j" id="DZ4-7o-4be"/>
+                        <outlet property="segmentedControl" destination="FtQ-h4-0J5" id="0EW-OG-Tug"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NBo-f8-ldK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4074.4000000000001" y="884.70764617691157"/>
+            <point key="canvasLocation" x="-4075.36231884058" y="884.51086956521749"/>
         </scene>
         <!--AddTrip-->
         <scene sceneID="dXE-O3-SIs">
