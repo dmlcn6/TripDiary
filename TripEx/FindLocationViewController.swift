@@ -31,14 +31,14 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
         let span = MKCoordinateSpanMake(0.08, 0.08)
         let region = MKCoordinateRegionMake(coordinate, span)
         self.map.setRegion(region, animated: true)
-        
-        let backItem = UIBarButtonItem()
-        backItem.title = "Back"
-        navigationItem.backBarButtonItem = backItem
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
     }
     
     override func didReceiveMemoryWarning() {
