@@ -89,8 +89,8 @@ class AddTagsViewController: UIViewController, UICollectionViewDelegate, UIColle
         super.didReceiveMemoryWarning()
     }
     
-    @IBAction func hideKeyBoardOnTouch(_ sender: Any) {
-        tagsTextField.resignFirstResponder()
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        activeTextField = textField
     }
 
 }

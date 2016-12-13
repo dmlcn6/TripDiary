@@ -37,6 +37,10 @@ class AddMemoryTableViewController: UITableViewController, UIImagePickerControll
         } else {
             print("Location and Trip Title are both empty")
         }
+        
+        tableView.estimatedRowHeight = 80.0
+        tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
 
         tableView.reloadData()
         
@@ -46,10 +50,6 @@ class AddMemoryTableViewController: UITableViewController, UIImagePickerControll
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tableView.estimatedRowHeight = 80.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.tableFooterView = UIView(frame: CGRect.zero)
-        
         // Refresh the table every time this view appears to load in new data
         tableView.reloadData()
         
@@ -74,7 +74,7 @@ class AddMemoryTableViewController: UITableViewController, UIImagePickerControll
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "title") as! MemoryTitleCell
-            
+
             memoryTitle = cell.memoryTitleTextField.text
             
             return cell
