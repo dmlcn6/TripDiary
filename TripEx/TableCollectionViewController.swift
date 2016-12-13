@@ -79,7 +79,7 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if let searchText = searchController.searchBar.text {
-            let predicate = NSPredicate(format: "tripTitle contains[c] '%@'", searchText)
+            let predicate = NSPredicate(format: "tripTitle contains[c] %@", searchText)
             
             if let currUser = currUser {
                 if let userTrips = currUser.userTrips?.allObjects{
