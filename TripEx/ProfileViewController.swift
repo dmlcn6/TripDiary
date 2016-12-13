@@ -25,8 +25,12 @@ class ProfileViewController: UIViewController {
         
         //changes color of the nav bar at the top
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0.35, green:0.78, blue:0.98, alpha:1.0)
+        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
         
+        //fetchData()
         addTripToMap()
+        nameLabel.text = currUser?.userName
+        emailLabel.text = currUser?.userEmail
     }
     
     
@@ -38,22 +42,22 @@ class ProfileViewController: UIViewController {
         }else {
             print("\n\nProfile Not logged or nil\n\n")
         }
-        
-        let backgroundView = UIImageView(frame: UIScreen.main.bounds)
-        backgroundView.contentMode = .scaleAspectFit
-        backgroundView.clipsToBounds = true
-        
-        let image = UIImage(named: "imageMasterBackground.jpg")
-        
-        
-        backgroundView.image = image
-        
-        self.view.insertSubview(backgroundView, at: 0)
-        
-        self.view.addSubview(backgroundView)
-        self.view.sendSubview(toBack: backgroundView)
-        
-        
+
+//        let backgroundView = UIImageView(frame: UIScreen.main.bounds)
+//        backgroundView.contentMode = .scaleAspectFit
+//        backgroundView.clipsToBounds = true
+//        
+//        let image = UIImage(named: "imageMasterBackground.jpg")
+//        
+//        
+//        backgroundView.image = image
+//        
+//        self.view.insertSubview(backgroundView, at: 0)
+//        
+//        self.view.addSubview(backgroundView)
+//        self.view.sendSubview(toBack: backgroundView)
+
+        addTripToMap()
     }
     
     override func didReceiveMemoryWarning() {
@@ -62,22 +66,28 @@ class ProfileViewController: UIViewController {
     }
     
     func addTripToMap() {
-        if let trips = trips{
+        //print("addTripToMap called")
+        //print((currUser?.userName)! as String)
+        if let trips = currUser?.userTrips?.allObjects as? [Trip] {
             for trip in trips {
                 let annotation = MKPointAnnotation()
                 annotation.coordinate = CLLocationCoordinate2DMake(trip.tripLatitude, trip.tripLongitude)
                 annotation.title = trip.tripTitle
-                //annotation.subtitle = "815 Olive Street"
+                annotation.subtitle = trip.tripLocation
                 mapView.addAnnotation(annotation)
                 
             }
+        }else {
+            print("cant unwrap")
         }
         
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = CLLocationCoordinate2DMake(38, -92)
-        //annotation.title = trip.tripTitle
-        //annotation.subtitle = "815 Olive Street"
-        mapView.addAnnotation(annotation)
+        /*
+         let annotation = MKPointAnnotation()
+         annotation.coordinate = CLLocationCoordinate2DMake(38, -92)
+         //annotation.title = trip.tripTitle
+         //annotation.subtitle = "815 Olive Street"
+         mapView.addAnnotation(annotation)
+         */
     }
     
     func fetchData() {
@@ -90,8 +100,9 @@ class ProfileViewController: UIViewController {
         
         do{
             trips = try DatabaseController.getContext().fetch(fetch)
+            print("fetch")
         }catch let error as NSError {
-            print(" hello error \(error.userInfo)")
+            print("\n\n\nhello error \(error.userInfo)\n\n\n")
         }
         
         //collectionView.reloadData()
