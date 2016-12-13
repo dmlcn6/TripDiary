@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class TableCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate, UISearchResultsUpdating {
+class TableCollectionViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UISearchBarDelegate {
 
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -22,8 +22,8 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     var selectedTrip: Trip?
     var selectedIndexPath: IndexPath = IndexPath()
     var currUser: User?
-
-    
+    var userTripNum: Int = 0
+    var loadNum: Int = 1
     let layout = UICollectionViewFlowLayout()
     var cellCount = 0
     
@@ -55,11 +55,11 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     override func viewWillAppear(_ animated: Bool) {
         collectionView.reloadData()
-        segmentedControl.setEnabled(true, forSegmentAt: 1)
+        //segmentedControl.setEnabled(true, forSegmentAt: 1)
         self.tabBarController?.tabBar.isHidden = false
         
         fetchData(searchDate)
-        
+        loadNum += 1
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,10 +77,10 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
 
     }
     
-    func updateSearchResults(for searchController: UISearchController) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         if let searchText = searchController.searchBar.text {
-            let predicate = NSPredicate(format: "tripTite contains[c] '%@'", searchText)
-           
+            let predicate = NSPredicate(format: "tripTitle contains[c] '%@'", searchText)
+            
             if let currUser = currUser {
                 if let userTrips = currUser.userTrips?.allObjects{
                     let array  = userTrips as NSArray
@@ -97,6 +97,27 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
         }
         collectionView.reloadData()
     }
+    
+//    func updateSearchResults(for searchController: UISearchController) {
+//        if let searchText = searchController.searchBar.text {
+//            let predicate = NSPredicate(format: "tripTitle contains[c] '%@'", searchText)
+//           
+//            if let currUser = currUser {
+//                if let userTrips = currUser.userTrips?.allObjects{
+//                    let array  = userTrips as NSArray
+//                    
+//                    fetchedTrips = (array.filtered(using: predicate) as! [Trip])
+//                    
+//                }
+//            }else {
+//                print("no user plz login")
+//            }
+//        }
+//        else {
+//            print("im getting no search text")
+//        }
+//        collectionView.reloadData()
+//    }
     
     
     @IBAction func segmentChange(_ sender: Any) {
@@ -138,9 +159,12 @@ class TableCollectionViewController: UIViewController, UICollectionViewDelegate,
     
     //setting number of items in section
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        //fetchData(searchDate)
         
-        if fetchedTrips.isEmpty {
+        if let currUser = currUser, let userTrips = currUser.userTrips {
+            userTripNum = userTrips.count
+        }
+        
+        if userTripNum == 0 {
             cellCount = 0
             return 1
         }else{
