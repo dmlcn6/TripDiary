@@ -168,11 +168,11 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             let registerMessage = UIAlertAction(title: customAlertTitle, style: .default, handler: {
             (action) -> Void in
                 //perform makeshift segue to go to home screen as logged IN user
-                /*get iniital tab bar
+                //get iniital tab bar
                  let initialLogin = self.storyboard?.instantiateViewController(withIdentifier: "initialLoginScreen") as! LoginViewController
                 
                  self.appDelegate.window?.rootViewController = initialLogin
-                */
+                
             })
             
             failedAlert.addAction(okMessage)
