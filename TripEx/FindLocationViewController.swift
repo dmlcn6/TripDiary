@@ -33,7 +33,7 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
         self.map.setRegion(region, animated: true)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewDidAppear(_ animated: Bool) {
         self.tabBarController?.tabBar.isHidden = true
         
         let backItem = UIBarButtonItem()
@@ -89,7 +89,6 @@ class FindLocationViewController: UIViewController, UISearchBarDelegate {
                 self.addTripController?.tripLongitude = Double(self.pointAnnotation.coordinate.longitude)
                 self.addTripController?.trip?.tripLocation = self.pointAnnotation.title?.capitalized
                 self.addTripController?.locationText.text = self.pointAnnotation.title?.capitalized
-                print("\(self.pointAnnotation.coordinate.latitude)")
             }
         }
     }

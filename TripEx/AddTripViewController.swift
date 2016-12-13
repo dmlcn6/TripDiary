@@ -118,8 +118,8 @@ class AddTripViewController: UIViewController, UIImagePickerControllerDelegate, 
             if let trip = trip{
                 trip.tripTitle = titleText.text
                 trip.tripLocation = locationText.text
-                trip.tripLatitude = self.tripLatitude
-                trip.tripLongitude = self.tripLongitude
+                trip.tripLatitude = tripLatitude
+                trip.tripLongitude = tripLongitude
                 
                 let currentDate = NSDate()
                 trip.tripDate = currentDate

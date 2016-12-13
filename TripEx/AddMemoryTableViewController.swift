@@ -146,7 +146,7 @@ class AddMemoryTableViewController: UITableViewController, UIImagePickerControll
                 let context = DatabaseController.getContext()
                 
                 // new memory
-                if currMemory == nil{
+                if currMemory == nil {
                     currMemory = NSEntityDescription.insertNewObject(forEntityName: "TripMemory", into: context) as? TripMemory
                 }
                 
@@ -155,6 +155,12 @@ class AddMemoryTableViewController: UITableViewController, UIImagePickerControll
                     print("MEMORY \(currMemory.memTitle) HAS  \(currMemory.memPhotos?.count) # PHOTOS\n\n")
                     currMemory.memTitle = titleText
                     currMemory.memNote = memoryNote
+                    
+                    if let memoryTags = memoryTags {
+                        for tag in memoryTags {
+                            currMemory.memTags?.adding(tag)
+                        }
+                    }
                     
                     let currentDate = NSDate()
                     currMemory.memDate = currentDate
@@ -219,6 +225,7 @@ class AddMemoryTableViewController: UITableViewController, UIImagePickerControll
         if (segue.identifier == "addTags"), let destination = segue.destination as? AddTagsViewController {
             destination.currUser = currUser
             destination.currMemory = currMemory
+            destination.addMemoryController = self
         }
     }
 }
