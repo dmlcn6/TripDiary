@@ -7,15 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		48B283B31DF8FB610041D2AA /* img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 48B283B11DF8FB610041D2AA /* img2.jpg */; };
+		48B283B41DF8FB610041D2AA /* img1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 48B283B21DF8FB610041D2AA /* img1.jpg */; };
+		6500F8521DF372A300CABEA1 /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6500F8511DF372A300CABEA1 /* TripCollectionViewCell.swift */; };
+		6500F8541DF3DC0D00CABEA1 /* InitialTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6500F8531DF3DC0D00CABEA1 /* InitialTabBarController.swift */; };
 		653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */; };
 		653D5F401DDC240600BC0E85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F3E1DDC240600BC0E85 /* Main.storyboard */; };
 		653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F411DDC240600BC0E85 /* TripEx.xcdatamodeld */; };
 		653D5F451DDC240600BC0E85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F441DDC240600BC0E85 /* Assets.xcassets */; };
 		653D5F481DDC240600BC0E85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */; };
 		653D5F501DDC267A00BC0E85 /* DatabaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */; };
+		6577A4151DFA38C700ED0273 /* MemoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577A4141DFA38C700ED0273 /* MemoryTableViewController.swift */; };
+		6577A4171DFA390F00ED0273 /* MemoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577A4161DFA390F00ED0273 /* MemoryTableViewCell.swift */; };
+		6577A41B1DFB6E6200ED0273 /* AddTagsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6577A41A1DFB6E6200ED0273 /* AddTagsViewController.swift */; };
+		65A969951DEFCF9200708B2A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A969941DEFCF9200708B2A /* LoginViewController.swift */; };
+		65A969971DF0079400708B2A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A969961DF0079400708B2A /* SignupViewController.swift */; };
+		65B13ECF1DDE489100BC8CCA /* TableCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B13ECE1DDE489100BC8CCA /* TableCollectionViewController.swift */; };
+		65FCCFDF1DDE55C7003350E3 /* AddMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65FCCFDE1DDE55C7003350E3 /* AddMemoryViewController.swift */; };
+		8B0BA1CB1DFB441C00F6E137 /* AddMemoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA1CA1DFB441C00F6E137 /* AddMemoryTableViewController.swift */; };
+		8B0BA1CD1DFB491800F6E137 /* MemoryTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA1CC1DFB491800F6E137 /* MemoryTitleCell.swift */; };
+		8B0BA1CF1DFB492D00F6E137 /* MemoryNoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA1CE1DFB492D00F6E137 /* MemoryNoteCell.swift */; };
+		8B0BA1D11DFB493E00F6E137 /* MemoryTripTitleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA1D01DFB493E00F6E137 /* MemoryTripTitleCell.swift */; };
+		8B0BA1D31DFB494A00F6E137 /* MemoryLocationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA1D21DFB494A00F6E137 /* MemoryLocationCell.swift */; };
+		8B0BA1D51DFB497800F6E137 /* MemoryActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0BA1D41DFB497800F6E137 /* MemoryActionCell.swift */; };
+		8B6634591DFE40E800A8CEFE /* TagsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6634581DFE40E800A8CEFE /* TagsCollectionViewCell.swift */; };
+		8BD276B91DF4A27B006F4D71 /* SelectTripTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD276B81DF4A27B006F4D71 /* SelectTripTableViewController.swift */; };
+		8BD358621DF211FC0030E657 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BD358611DF211FC0030E657 /* MapKit.framework */; };
+		8BD358641DF2158E0030E657 /* FindLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD358631DF2158E0030E657 /* FindLocationViewController.swift */; };
+		F53594B91DDE38DA0051B28C /* RootTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B51DDE38DA0051B28C /* RootTableViewController.swift */; };
+		F53594BA1DDE38DA0051B28C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B61DDE38DA0051B28C /* ProfileViewController.swift */; };
+		F53594BB1DDE38DA0051B28C /* AddTripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B71DDE38DA0051B28C /* AddTripViewController.swift */; };
+		F53594BC1DDE38DA0051B28C /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F53594B81DDE38DA0051B28C /* TripViewController.swift */; };
+		F5E138CC1DFC84A500945F16 /* HorizontalAttempt.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E138CB1DFC84A500945F16 /* HorizontalAttempt.png */; };
+		F5E138CE1DFC84CB00945F16 /* imageMasterBackground.jpg in Resources */ = {isa = PBXBuildFile; fileRef = F5E138CD1DFC84CB00945F16 /* imageMasterBackground.jpg */; };
+		F5E138D01DFC884600945F16 /* camera2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F5E138CF1DFC884600945F16 /* camera2x.png */; };
+		F5E138D21DFC908000945F16 /* ShowMemoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E138D11DFC908000945F16 /* ShowMemoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		48B283B11DF8FB610041D2AA /* img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img2.jpg; sourceTree = "<group>"; };
+		48B283B21DF8FB610041D2AA /* img1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img1.jpg; sourceTree = "<group>"; };
+		6500F8511DF372A300CABEA1 /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripCollectionViewCell.swift; sourceTree = "<group>"; };
+		6500F8531DF3DC0D00CABEA1 /* InitialTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialTabBarController.swift; sourceTree = "<group>"; };
 		653D5F371DDC240600BC0E85 /* TripEx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TripEx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		653D5F3F1DDC240600BC0E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -24,6 +57,31 @@
 		653D5F471DDC240600BC0E85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		653D5F491DDC240600BC0E85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseController.swift; sourceTree = "<group>"; };
+		6577A4141DFA38C700ED0273 /* MemoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryTableViewController.swift; sourceTree = "<group>"; };
+		6577A4161DFA390F00ED0273 /* MemoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryTableViewCell.swift; sourceTree = "<group>"; };
+		6577A41A1DFB6E6200ED0273 /* AddTagsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTagsViewController.swift; sourceTree = "<group>"; };
+		65A969941DEFCF9200708B2A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		65A969961DF0079400708B2A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		65B13ECE1DDE489100BC8CCA /* TableCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableCollectionViewController.swift; sourceTree = "<group>"; };
+		65FCCFDE1DDE55C7003350E3 /* AddMemoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoryViewController.swift; sourceTree = "<group>"; };
+		8B0BA1CA1DFB441C00F6E137 /* AddMemoryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMemoryTableViewController.swift; sourceTree = "<group>"; };
+		8B0BA1CC1DFB491800F6E137 /* MemoryTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryTitleCell.swift; sourceTree = "<group>"; };
+		8B0BA1CE1DFB492D00F6E137 /* MemoryNoteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryNoteCell.swift; sourceTree = "<group>"; };
+		8B0BA1D01DFB493E00F6E137 /* MemoryTripTitleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryTripTitleCell.swift; sourceTree = "<group>"; };
+		8B0BA1D21DFB494A00F6E137 /* MemoryLocationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryLocationCell.swift; sourceTree = "<group>"; };
+		8B0BA1D41DFB497800F6E137 /* MemoryActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoryActionCell.swift; sourceTree = "<group>"; };
+		8B6634581DFE40E800A8CEFE /* TagsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagsCollectionViewCell.swift; sourceTree = "<group>"; };
+		8BD276B81DF4A27B006F4D71 /* SelectTripTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectTripTableViewController.swift; sourceTree = "<group>"; };
+		8BD358611DF211FC0030E657 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		8BD358631DF2158E0030E657 /* FindLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FindLocationViewController.swift; sourceTree = "<group>"; };
+		F53594B51DDE38DA0051B28C /* RootTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootTableViewController.swift; sourceTree = "<group>"; };
+		F53594B61DDE38DA0051B28C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F53594B71DDE38DA0051B28C /* AddTripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddTripViewController.swift; sourceTree = "<group>"; };
+		F53594B81DDE38DA0051B28C /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		F5E138CB1DFC84A500945F16 /* HorizontalAttempt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HorizontalAttempt.png; sourceTree = "<group>"; };
+		F5E138CD1DFC84CB00945F16 /* imageMasterBackground.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = imageMasterBackground.jpg; sourceTree = "<group>"; };
+		F5E138CF1DFC884600945F16 /* camera2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = camera2x.png; sourceTree = "<group>"; };
+		F5E138D11DFC908000945F16 /* ShowMemoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowMemoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +89,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD358621DF211FC0030E657 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6500F84E1DF20ACD00CABEA1 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				F5E138CF1DFC884600945F16 /* camera2x.png */,
+				F5E138CD1DFC84CB00945F16 /* imageMasterBackground.jpg */,
+				F5E138CB1DFC84A500945F16 /* HorizontalAttempt.png */,
+				48B283B11DF8FB610041D2AA /* img2.jpg */,
+				48B283B21DF8FB610041D2AA /* img1.jpg */,
+			);
+			name = Images;
+			path = TripEx;
+			sourceTree = "<group>";
+		};
 		653D5F2E1DDC240600BC0E85 = {
 			isa = PBXGroup;
 			children = (
+				6500F84E1DF20ACD00CABEA1 /* Images */,
 				653D5F391DDC240600BC0E85 /* TripEx */,
 				653D5F381DDC240600BC0E85 /* Products */,
+				8BD358601DF211FC0030E657 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +131,45 @@
 			isa = PBXGroup;
 			children = (
 				653D5F3A1DDC240600BC0E85 /* AppDelegate.swift */,
+				F53594B51DDE38DA0051B28C /* RootTableViewController.swift */,
+				65B13ECE1DDE489100BC8CCA /* TableCollectionViewController.swift */,
+				F53594B61DDE38DA0051B28C /* ProfileViewController.swift */,
+				F53594B71DDE38DA0051B28C /* AddTripViewController.swift */,
+				653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */,
+				65FCCFDE1DDE55C7003350E3 /* AddMemoryViewController.swift */,
+				F53594B81DDE38DA0051B28C /* TripViewController.swift */,
 				653D5F3E1DDC240600BC0E85 /* Main.storyboard */,
+				8BD358631DF2158E0030E657 /* FindLocationViewController.swift */,
 				653D5F441DDC240600BC0E85 /* Assets.xcassets */,
 				653D5F461DDC240600BC0E85 /* LaunchScreen.storyboard */,
 				653D5F491DDC240600BC0E85 /* Info.plist */,
 				653D5F411DDC240600BC0E85 /* TripEx.xcdatamodeld */,
-				653D5F4F1DDC267A00BC0E85 /* DatabaseController.swift */,
+				65A969941DEFCF9200708B2A /* LoginViewController.swift */,
+				65A969961DF0079400708B2A /* SignupViewController.swift */,
+				8BD276B81DF4A27B006F4D71 /* SelectTripTableViewController.swift */,
+				6500F8511DF372A300CABEA1 /* TripCollectionViewCell.swift */,
+				6500F8531DF3DC0D00CABEA1 /* InitialTabBarController.swift */,
+				6577A4141DFA38C700ED0273 /* MemoryTableViewController.swift */,
+				6577A4161DFA390F00ED0273 /* MemoryTableViewCell.swift */,
+				8B0BA1CA1DFB441C00F6E137 /* AddMemoryTableViewController.swift */,
+				8B0BA1CC1DFB491800F6E137 /* MemoryTitleCell.swift */,
+				8B0BA1CE1DFB492D00F6E137 /* MemoryNoteCell.swift */,
+				8B0BA1D01DFB493E00F6E137 /* MemoryTripTitleCell.swift */,
+				8B0BA1D21DFB494A00F6E137 /* MemoryLocationCell.swift */,
+				8B0BA1D41DFB497800F6E137 /* MemoryActionCell.swift */,
+				6577A41A1DFB6E6200ED0273 /* AddTagsViewController.swift */,
+				F5E138D11DFC908000945F16 /* ShowMemoryViewController.swift */,
+				8B6634581DFE40E800A8CEFE /* TagsCollectionViewCell.swift */,
 			);
 			path = TripEx;
+			sourceTree = "<group>";
+		};
+		8BD358601DF211FC0030E657 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8BD358611DF211FC0030E657 /* MapKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -99,6 +204,7 @@
 				TargetAttributes = {
 					653D5F361DDC240600BC0E85 = {
 						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 2DA2WCNU9X;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -127,8 +233,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				653D5F481DDC240600BC0E85 /* LaunchScreen.storyboard in Resources */,
+				48B283B41DF8FB610041D2AA /* img1.jpg in Resources */,
+				F5E138D01DFC884600945F16 /* camera2x.png in Resources */,
 				653D5F451DDC240600BC0E85 /* Assets.xcassets in Resources */,
+				F5E138CC1DFC84A500945F16 /* HorizontalAttempt.png in Resources */,
 				653D5F401DDC240600BC0E85 /* Main.storyboard in Resources */,
+				F5E138CE1DFC84CB00945F16 /* imageMasterBackground.jpg in Resources */,
+				48B283B31DF8FB610041D2AA /* img2.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,9 +250,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BD276B91DF4A27B006F4D71 /* SelectTripTableViewController.swift in Sources */,
+				8BD358641DF2158E0030E657 /* FindLocationViewController.swift in Sources */,
+				65FCCFDF1DDE55C7003350E3 /* AddMemoryViewController.swift in Sources */,
+				8B0BA1D31DFB494A00F6E137 /* MemoryLocationCell.swift in Sources */,
 				653D5F501DDC267A00BC0E85 /* DatabaseController.swift in Sources */,
+				6577A41B1DFB6E6200ED0273 /* AddTagsViewController.swift in Sources */,
+				65A969971DF0079400708B2A /* SignupViewController.swift in Sources */,
+				65B13ECF1DDE489100BC8CCA /* TableCollectionViewController.swift in Sources */,
+				F5E138D21DFC908000945F16 /* ShowMemoryViewController.swift in Sources */,
+				8B6634591DFE40E800A8CEFE /* TagsCollectionViewCell.swift in Sources */,
 				653D5F3B1DDC240600BC0E85 /* AppDelegate.swift in Sources */,
+				6577A4171DFA390F00ED0273 /* MemoryTableViewCell.swift in Sources */,
+				8B0BA1D11DFB493E00F6E137 /* MemoryTripTitleCell.swift in Sources */,
+				8B0BA1CB1DFB441C00F6E137 /* AddMemoryTableViewController.swift in Sources */,
+				6500F8521DF372A300CABEA1 /* TripCollectionViewCell.swift in Sources */,
+				8B0BA1CF1DFB492D00F6E137 /* MemoryNoteCell.swift in Sources */,
+				F53594BC1DDE38DA0051B28C /* TripViewController.swift in Sources */,
+				8B0BA1CD1DFB491800F6E137 /* MemoryTitleCell.swift in Sources */,
+				8B0BA1D51DFB497800F6E137 /* MemoryActionCell.swift in Sources */,
+				F53594BA1DDE38DA0051B28C /* ProfileViewController.swift in Sources */,
+				6577A4151DFA38C700ED0273 /* MemoryTableViewController.swift in Sources */,
 				653D5F431DDC240600BC0E85 /* TripEx.xcdatamodeld in Sources */,
+				6500F8541DF3DC0D00CABEA1 /* InitialTabBarController.swift in Sources */,
+				F53594B91DDE38DA0051B28C /* RootTableViewController.swift in Sources */,
+				65A969951DEFCF9200708B2A /* LoginViewController.swift in Sources */,
+				F53594BB1DDE38DA0051B28C /* AddTripViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +398,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2DA2WCNU9X;
 				INFOPLIST_FILE = TripEx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.missouri.cs.TripEx;
@@ -276,6 +411,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2DA2WCNU9X;
 				INFOPLIST_FILE = TripEx/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = edu.missouri.cs.TripEx;
@@ -303,6 +439,7 @@
 				653D5F4E1DDC240600BC0E85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
